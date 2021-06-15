@@ -29,67 +29,71 @@ namespace QuanLyNhaSach.UserControls
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.TxTimkiem = new System.Windows.Forms.TextBox();
+            this.CbChude = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Grid_tb_books = new System.Windows.Forms.DataGridView();
+            this.Deletebook = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid_tb_books)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.comboBox2);
+            this.panel1.Controls.Add(this.TxTimkiem);
+            this.panel1.Controls.Add(this.CbChude);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1767, 122);
+            this.panel1.Size = new System.Drawing.Size(1087, 76);
             this.panel1.TabIndex = 0;
             // 
-            // textBox1
+            // TxTimkiem
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(1108, 40);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(364, 44);
-            this.textBox1.TabIndex = 21;
+            this.TxTimkiem.BackColor = System.Drawing.Color.White;
+            this.TxTimkiem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TxTimkiem.Location = new System.Drawing.Point(682, 25);
+            this.TxTimkiem.Margin = new System.Windows.Forms.Padding(2);
+            this.TxTimkiem.Name = "TxTimkiem";
+            this.TxTimkiem.Size = new System.Drawing.Size(226, 30);
+            this.TxTimkiem.TabIndex = 21;
+            this.TxTimkiem.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // comboBox2
+            // CbChude
             // 
-            this.comboBox2.BackColor = System.Drawing.Color.White;
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.CbChude.BackColor = System.Drawing.Color.White;
+            this.CbChude.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CbChude.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CbChude.FormattingEnabled = true;
+            this.CbChude.Items.AddRange(new object[] {
+            "Mã sách",
             "Tên sách",
+            "Thể loại",
             "Tác giả"});
-            this.comboBox2.Location = new System.Drawing.Point(858, 40);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(244, 44);
-            this.comboBox2.TabIndex = 3;
-            this.comboBox2.Text = "Chủ đề tìm kiếm";
+            this.CbChude.Location = new System.Drawing.Point(510, 25);
+            this.CbChude.Margin = new System.Windows.Forms.Padding(2);
+            this.CbChude.Name = "CbChude";
+            this.CbChude.Size = new System.Drawing.Size(170, 31);
+            this.CbChude.TabIndex = 3;
+            this.CbChude.Text = "Chủ đề tìm kiếm";
+            this.CbChude.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(715, 40);
+            this.label1.Location = new System.Drawing.Point(401, 28);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(168, 45);
+            this.label1.Size = new System.Drawing.Size(105, 28);
             this.label1.TabIndex = 20;
             this.label1.Text = "Tìm kiếm:";
             // 
@@ -104,96 +108,65 @@ namespace QuanLyNhaSach.UserControls
             this.button1.Image = global::QuanLyNhaSach.Properties.Resources.Add_to_Collection_60px;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(245, 122);
+            this.button1.Size = new System.Drawing.Size(251, 76);
             this.button1.TabIndex = 19;
             this.button1.Text = "Thêm sách";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dataGridView1
+            // Grid_tb_books
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 122);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 82;
-            this.dataGridView1.RowTemplate.Height = 41;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1767, 796);
-            this.dataGridView1.TabIndex = 1;
+            this.Grid_tb_books.AllowUserToAddRows = false;
+            this.Grid_tb_books.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Grid_tb_books.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.Grid_tb_books.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Grid_tb_books.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Deletebook});
+            this.Grid_tb_books.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Grid_tb_books.Location = new System.Drawing.Point(0, 76);
+            this.Grid_tb_books.Margin = new System.Windows.Forms.Padding(2);
+            this.Grid_tb_books.Name = "Grid_tb_books";
+            this.Grid_tb_books.ReadOnly = true;
+            this.Grid_tb_books.RowHeadersVisible = false;
+            this.Grid_tb_books.RowHeadersWidth = 82;
+            this.Grid_tb_books.RowTemplate.Height = 41;
+            this.Grid_tb_books.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Grid_tb_books.Size = new System.Drawing.Size(1087, 498);
+            this.Grid_tb_books.TabIndex = 1;
+            this.Grid_tb_books.AllowUserToDeleteRowsChanged += new System.EventHandler(this.Grid_tb_books_AllowUserToDeleteRowsChanged);
+            this.Grid_tb_books.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // Column1
+            // Deletebook
             // 
-            this.Column1.HeaderText = "STT";
-            this.Column1.MinimumWidth = 10;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 200;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Tên sách";
-            this.Column2.MinimumWidth = 10;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 600;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Thể loại";
-            this.Column3.MinimumWidth = 10;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 400;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Tác giả";
-            this.Column4.MinimumWidth = 10;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 400;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Số lượng";
-            this.Column5.MinimumWidth = 10;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 250;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Giá";
-            this.Column6.MinimumWidth = 10;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 400;
+            this.Deletebook.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.Deletebook.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Deletebook.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Deletebook.HeaderText = "Xóa";
+            this.Deletebook.MinimumWidth = 6;
+            this.Deletebook.Name = "Deletebook";
+            this.Deletebook.ReadOnly = true;
+            this.Deletebook.Text = "X";
+            this.Deletebook.ToolTipText = "Xóa sách này";
+            this.Deletebook.UseColumnTextForButtonValue = true;
+            this.Deletebook.Width = 41;
             // 
             // UC_KhoSach
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.Grid_tb_books);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UC_KhoSach";
-            this.Size = new System.Drawing.Size(1767, 918);
+            this.Size = new System.Drawing.Size(1087, 574);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid_tb_books)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -203,14 +176,15 @@ namespace QuanLyNhaSach.UserControls
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox TxTimkiem;
+        private System.Windows.Forms.ComboBox CbChude;
+        private System.Windows.Forms.DataGridView Grid_tb_books;
+        private System.Windows.Forms.DataGridViewButtonColumn Deletebook;
     }
 }

@@ -18,8 +18,8 @@ namespace QuanLyNhaSach
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new Forms.Login());
-            //Application.Run(new Forms.Dashboard_NhanVien());
+            //Application.Run(new Forms.Login());
+            Application.Run(new Forms.Dashboard_Admin()) ;
 
         }
     }
