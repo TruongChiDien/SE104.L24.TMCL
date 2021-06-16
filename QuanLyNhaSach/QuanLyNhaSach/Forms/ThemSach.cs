@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using QuanLyNhaSach.DA;
 
 namespace QuanLyNhaSach.Forms
 {
@@ -78,11 +79,7 @@ namespace QuanLyNhaSach.Forms
 
         private void add_new_books()
         {
-            string connectionstring = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = E:\CNPM\Quan ly nha sach\QLNS.mdf; Integrated Security = True; Connect Timeout = 30";
-            SqlConnection con = new SqlConnection(connectionstring);
-            SqlDataAdapter da;
-            con.Open();
-            string StrAddBooks = @"INSERT INTO SACH " +
+            string query = @"INSERT INTO SACH " +
                                   "VALUES("+TxMasach.Text+",'"
                                   +TxTenSach.Text+"','"
                                   +CbTheLoai.Text+"','"
@@ -90,10 +87,7 @@ namespace QuanLyNhaSach.Forms
                                   +TxGianhap.Text+","
                                   +TxGiaban.Text+","
                                   +TxSoluong.Text+")";
-            SqlCommand cmd = new SqlCommand(StrAddBooks,con);
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Thêm sách thành công!");
-            con.Close();
+            DataProvider.Instance.ExecuteNonQuery(query);
         }
         private void containedButton6_Click(object sender, EventArgs e)
         {

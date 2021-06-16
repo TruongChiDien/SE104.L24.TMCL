@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using QuanLyNhaSach.DA;
 
 namespace QuanLyNhaSach.UserControls
 {
@@ -35,31 +36,21 @@ namespace QuanLyNhaSach.UserControls
 
         private void Grid_tb_loadData()
         {
-            string connectionstring =@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = E:\CNPM\Quan ly nha sach\QLNS.mdf; Integrated Security = True; Connect Timeout = 30";
-            SqlConnection con = new SqlConnection(connectionstring);
-            SqlDataAdapter da;
-            con.Open();
-            da = new SqlDataAdapter("select * from SACH",con);
-            con.Close();
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            Grid_tb_books.DataSource = dt;
+            string query = "SELECT * FROM SACH";
+
+            Grid_tb_books.DataSource = DataProvider.Instance.ExecuteQuery(query);
         }
 
         private void Grid_tb_books_AllowUserToDeleteRowsChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
             string chude = "MaSach";
-            switch(CbChude.SelectedIndex)
+            switch (CbChude.SelectedIndex)
             {
                 case -1:
                     MessageBox.Show("Chọn chủ dề!");
                     break;
-                case 1: chude = "TenSach";
+                case 1:
+                    chude = "TenSach";
                     break;
                 case 2:
                     chude = "TheLoai";
@@ -70,26 +61,54 @@ namespace QuanLyNhaSach.UserControls
             }
             try
             {
-                string connectionstring = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = E:\CNPM\Quan ly nha sach\QLNS.mdf; Integrated Security = True; Connect Timeout = 30";
-                SqlConnection con = new SqlConnection(connectionstring);
-                SqlDataAdapter da;
-                con.Open();
-                string query = "SELECT * FROM SACH WHERE + "+ chude +" like '" + TxTimkiem.Text +"  %'";
-                da = new SqlDataAdapter(query, con);
-                con.Close();
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                Grid_tb_books.DataSource = dt;
+                string query = "SELECT * FROM SACH WHERE + " + chude + " like '" + TxTimkiem.Text + "%'";
+
+                Grid_tb_books.DataSource = DataProvider.Instance.ExecuteQuery(query);
             }
-            catch(Exception)
+            catch (Exception)
             {
 
             }
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        private void Search_book()
         {
 
+            string chude = "MaSach";
+            switch (CbChude.SelectedIndex)
+            {
+                case -1:
+                    MessageBox.Show("Chọn chủ dề!");
+                    return;
+                case 1:
+                    chude = "TenSach";
+                    break;
+                case 2:
+                    chude = "TheLoai";
+                    break;
+                case 3:
+                    chude = "TacGia";
+                    break;
+            }
+            try
+            {
+                string query = "SELECT * FROM SACH WHERE + " + chude + " like '" + TxTimkiem.Text + "%'";
+
+                Grid_tb_books.DataSource = DataProvider.Instance.ExecuteQuery(query);
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            Search_book();
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Search_book();
         }
     }
 }

@@ -29,7 +29,7 @@ namespace QuanLyNhaSach.UserControls
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.TxTimkiem = new System.Windows.Forms.TextBox();
             this.CbChude = new System.Windows.Forms.ComboBox();
@@ -57,6 +57,7 @@ namespace QuanLyNhaSach.UserControls
             // 
             // TxTimkiem
             // 
+            this.TxTimkiem.AcceptsReturn = true;
             this.TxTimkiem.BackColor = System.Drawing.Color.White;
             this.TxTimkiem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TxTimkiem.Location = new System.Drawing.Point(682, 25);
@@ -141,10 +142,10 @@ namespace QuanLyNhaSach.UserControls
             // Deletebook
             // 
             this.Deletebook.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.Deletebook.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.Deletebook.DefaultCellStyle = dataGridViewCellStyle1;
             this.Deletebook.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Deletebook.HeaderText = "Xóa";
             this.Deletebook.MinimumWidth = 6;
