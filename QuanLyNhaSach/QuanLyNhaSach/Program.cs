@@ -19,7 +19,8 @@ namespace QuanLyNhaSach
             Application.SetCompatibleTextRenderingDefault(false);
 
             //Application.Run(new Forms.Login());
-            Application.Run(new Forms.Dashboard_Admin()) ;
+            //Application.Run(new Forms.Dashboard_Admin()) ;
+            Application.Run(new Forms.Dashboard_NhanVien());
 
         }
     }
