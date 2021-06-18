@@ -36,15 +36,17 @@ namespace QuanLyNhaSach.DA
             return data;
         }
 
-        public void ExecuteNonQuery(string query)
+        public int ExecuteNonQuery(string query)
         {
+            int i = 0;
             using (SqlConnection connection = new SqlConnection(stringconnection))
             {
                 connection.Open();
                 SqlCommand command = new SqlCommand(query, connection);
-                command.ExecuteNonQuery();
+                i= command.ExecuteNonQuery();
                 connection.Close();
             }
+            return i;
         }
     }
 }

@@ -27,6 +27,7 @@ namespace QuanLyNhaSach.Forms
 
         private void containedButton6_Click(object sender, EventArgs e)
         {
+
             this.Dispose();
         }
 
@@ -38,6 +39,11 @@ namespace QuanLyNhaSach.Forms
         private void button4_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

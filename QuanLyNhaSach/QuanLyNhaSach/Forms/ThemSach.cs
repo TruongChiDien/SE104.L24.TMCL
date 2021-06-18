@@ -79,15 +79,50 @@ namespace QuanLyNhaSach.Forms
 
         private void add_new_books()
         {
-            string query = @"INSERT INTO SACH " +
-                                  "VALUES("+TxMasach.Text+",'"
-                                  +TxTenSach.Text+"','"
-                                  +CbTheLoai.Text+"','"
-                                  +TxTacGia.Text+"',"
-                                  +TxGianhap.Text+","
-                                  +TxGiaban.Text+","
-                                  +TxSoluong.Text+")";
-            DataProvider.Instance.ExecuteNonQuery(query);
+            string query;
+            try
+            {
+                //Check if a book existed
+                query = " SELECT COUNT(1) FROM SACH WHERE MaSach = " + TxMasach.Text;
+                int i = 0;
+                i = DataProvider.Instance.ExecuteNonQuery(query);
+                //add book
+                if (i == 0 ) 
+                {
+                    query = @"INSERT INTO SACH " +
+                                         "VALUES(" + TxMasach.Text + ",'"
+                                         + TxTenSach.Text + "','"
+                                         + CbTheLoai.Text + "','"
+                                         + TxTacGia.Text + "',"
+                                         + TxGianhap.Text + ","
+                                         + TxGiaban.Text + ","
+                                         + TxSoluong.Text + ")";
+                    DataProvider.Instance.ExecuteNonQuery(query);
+                }
+                else
+                {
+                    YesNo MesBox = new YesNo();
+                    MesBox.Messageshow("Mã sách đã tồn tại, bạn có muốn cập nhật lại?");
+                    bool Yes = MesBox.yes;
+                    MesBox.Dispose();
+                    if (Yes)
+                    { 
+                        query = @"DELETE FROM SACH WHERE MaSach = " + TxMasach.Text;
+                        DataProvider.Instance.ExecuteNonQuery(query);
+
+                        query = @"INSERT INTO SACH " +
+                                             "VALUES(" + TxMasach.Text + ",'"
+                                             + TxTenSach.Text + "','"
+                                             + CbTheLoai.Text + "','"
+                                             + TxTacGia.Text + "',"
+                                             + TxGianhap.Text + ","
+                                             + TxGiaban.Text + ","
+                                             + TxSoluong.Text + ")";
+                        DataProvider.Instance.ExecuteNonQuery(query);
+                    }
+                }
+            }
+            catch { }
         }
         private void containedButton6_Click(object sender, EventArgs e)
         {
@@ -104,6 +139,11 @@ namespace QuanLyNhaSach.Forms
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CbTheLoai_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

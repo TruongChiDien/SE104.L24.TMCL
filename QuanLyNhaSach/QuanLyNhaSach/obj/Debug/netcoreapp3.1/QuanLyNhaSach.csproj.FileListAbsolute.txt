@@ -97,3 +97,4 @@ E:\CNPM\Quan ly nha sach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\Qua
 E:\CNPM\Quan ly nha sach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.dll
 E:\CNPM\Quan ly nha sach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.pdb
 E:\CNPM\Quan ly nha sach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.genruntimeconfig.cache
+E:\CNPM\Quan ly nha sach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.YesNo.resources

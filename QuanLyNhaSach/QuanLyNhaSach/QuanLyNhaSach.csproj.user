@@ -25,6 +25,9 @@
     <Compile Update="Forms\ThemSach.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\YesNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="UserControls\UC_BanSach.cs">
       <SubType>UserControl</SubType>
     </Compile>

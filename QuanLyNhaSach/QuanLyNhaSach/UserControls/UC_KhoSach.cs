@@ -31,7 +31,20 @@ namespace QuanLyNhaSach.UserControls
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            MessageBox.Show("Delete?");
+            int a = e.RowIndex;
+            string ID = Grid_tb_books.Rows[a].Cells[1].FormattedValue.ToString();
+            YesNo Messagebox = new Forms.YesNo();
+            bool Yes = Messagebox.Messageshow("Bạn có muốn xóa sách?");
+            Messagebox.Dispose();
+
+            if (Yes)
+            {
+                string query = @"DELETE FROM SACH WHERE MaSach = " + ID;
+
+                DataProvider.Instance.ExecuteNonQuery(query);
+
+                Grid_tb_loadData();
+            }  
         }
 
         private void Grid_tb_loadData()

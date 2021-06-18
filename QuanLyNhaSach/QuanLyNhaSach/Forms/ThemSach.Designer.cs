@@ -49,8 +49,8 @@ namespace QuanLyNhaSach.Forms
             this.panel8 = new System.Windows.Forms.Panel();
             this.TxTacGia = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.containedButton1 = new MaterialSurface.ContainedButton();
-            this.containedButton6 = new MaterialSurface.ContainedButton();
+            this.BtCancel = new MaterialSurface.ContainedButton();
+            this.BtSave = new MaterialSurface.ContainedButton();
             this.CbTheLoai = new System.Windows.Forms.ComboBox();
             this.TxMasach = new System.Windows.Forms.TextBox();
             this.Masach = new System.Windows.Forms.Label();
@@ -65,7 +65,7 @@ namespace QuanLyNhaSach.Forms
             this.TxSoluong.Margin = new System.Windows.Forms.Padding(2);
             this.TxSoluong.Name = "TxSoluong";
             this.TxSoluong.Size = new System.Drawing.Size(214, 27);
-            this.TxSoluong.TabIndex = 45;
+            this.TxSoluong.TabIndex = 4;
             // 
             // TxGianhap
             // 
@@ -73,7 +73,7 @@ namespace QuanLyNhaSach.Forms
             this.TxGianhap.Margin = new System.Windows.Forms.Padding(2);
             this.TxGianhap.Name = "TxGianhap";
             this.TxGianhap.Size = new System.Drawing.Size(214, 27);
-            this.TxGianhap.TabIndex = 44;
+            this.TxGianhap.TabIndex = 5;
             // 
             // TxTenSach
             // 
@@ -81,7 +81,7 @@ namespace QuanLyNhaSach.Forms
             this.TxTenSach.Margin = new System.Windows.Forms.Padding(2);
             this.TxTenSach.Name = "TxTenSach";
             this.TxTenSach.Size = new System.Drawing.Size(214, 27);
-            this.TxTenSach.TabIndex = 43;
+            this.TxTenSach.TabIndex = 1;
             // 
             // label5
             // 
@@ -137,7 +137,7 @@ namespace QuanLyNhaSach.Forms
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Black", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            this.label1.Location = new System.Drawing.Point(315, 48);
+            this.label1.Location = new System.Drawing.Point(335, 48);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(217, 37);
@@ -163,17 +163,17 @@ namespace QuanLyNhaSach.Forms
             this.panel4.Location = new System.Drawing.Point(9, 494);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(786, 9);
+            this.panel4.Size = new System.Drawing.Size(785, 9);
             this.panel4.TabIndex = 64;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(795, 9);
+            this.panel3.Location = new System.Drawing.Point(794, 9);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(9, 494);
+            this.panel3.Size = new System.Drawing.Size(10, 494);
             this.panel3.TabIndex = 63;
             // 
             // panel2
@@ -203,14 +203,14 @@ namespace QuanLyNhaSach.Forms
             this.panel5.Location = new System.Drawing.Point(18, 485);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(768, 9);
+            this.panel5.Size = new System.Drawing.Size(767, 9);
             this.panel5.TabIndex = 68;
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(786, 18);
+            this.panel6.Location = new System.Drawing.Point(785, 18);
             this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(9, 476);
@@ -223,7 +223,7 @@ namespace QuanLyNhaSach.Forms
             this.panel7.Location = new System.Drawing.Point(18, 9);
             this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(777, 9);
+            this.panel7.Size = new System.Drawing.Size(776, 9);
             this.panel7.TabIndex = 66;
             // 
             // panel8
@@ -242,7 +242,7 @@ namespace QuanLyNhaSach.Forms
             this.TxTacGia.Margin = new System.Windows.Forms.Padding(2);
             this.TxTacGia.Name = "TxTacGia";
             this.TxTacGia.Size = new System.Drawing.Size(214, 27);
-            this.TxTacGia.TabIndex = 70;
+            this.TxTacGia.TabIndex = 3;
             // 
             // label8
             // 
@@ -256,47 +256,47 @@ namespace QuanLyNhaSach.Forms
             this.label8.TabIndex = 69;
             this.label8.Text = "Tác giả:";
             // 
-            // containedButton1
+            // BtCancel
             // 
-            this.containedButton1.EffectType = MaterialSurface.ET.Custom;
-            this.containedButton1.Font = new System.Drawing.Font("Segoe UI", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.containedButton1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.containedButton1.Icon = null;
-            this.containedButton1.Location = new System.Drawing.Point(246, 391);
-            this.containedButton1.Margin = new System.Windows.Forms.Padding(2);
-            this.containedButton1.MouseState = MaterialSurface.MouseState.OUT;
-            this.containedButton1.Name = "containedButton1";
-            this.containedButton1.PrimaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
-            this.containedButton1.Radius = 6;
-            this.containedButton1.ShawdowDepth = 3;
-            this.containedButton1.ShawdowOpacity = 50;
-            this.containedButton1.Size = new System.Drawing.Size(166, 50);
-            this.containedButton1.TabIndex = 72;
-            this.containedButton1.Text = "Hủy";
-            this.containedButton1.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.containedButton1.UseVisualStyleBackColor = true;
-            this.containedButton1.Click += new System.EventHandler(this.containedButton1_Click);
+            this.BtCancel.EffectType = MaterialSurface.ET.Custom;
+            this.BtCancel.Font = new System.Drawing.Font("Segoe UI", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtCancel.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.BtCancel.Icon = null;
+            this.BtCancel.Location = new System.Drawing.Point(246, 391);
+            this.BtCancel.Margin = new System.Windows.Forms.Padding(2);
+            this.BtCancel.MouseState = MaterialSurface.MouseState.OUT;
+            this.BtCancel.Name = "BtCancel";
+            this.BtCancel.PrimaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            this.BtCancel.Radius = 6;
+            this.BtCancel.ShawdowDepth = 3;
+            this.BtCancel.ShawdowOpacity = 50;
+            this.BtCancel.Size = new System.Drawing.Size(166, 50);
+            this.BtCancel.TabIndex = 72;
+            this.BtCancel.Text = "Hủy";
+            this.BtCancel.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.BtCancel.UseVisualStyleBackColor = true;
+            this.BtCancel.Click += new System.EventHandler(this.containedButton1_Click);
             // 
-            // containedButton6
+            // BtSave
             // 
-            this.containedButton6.EffectType = MaterialSurface.ET.Custom;
-            this.containedButton6.Font = new System.Drawing.Font("Segoe UI", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.containedButton6.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.containedButton6.Icon = null;
-            this.containedButton6.Location = new System.Drawing.Point(429, 391);
-            this.containedButton6.Margin = new System.Windows.Forms.Padding(2);
-            this.containedButton6.MouseState = MaterialSurface.MouseState.OUT;
-            this.containedButton6.Name = "containedButton6";
-            this.containedButton6.PrimaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.containedButton6.Radius = 6;
-            this.containedButton6.ShawdowDepth = 3;
-            this.containedButton6.ShawdowOpacity = 50;
-            this.containedButton6.Size = new System.Drawing.Size(166, 50);
-            this.containedButton6.TabIndex = 71;
-            this.containedButton6.Text = "Lưu lại";
-            this.containedButton6.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.containedButton6.UseVisualStyleBackColor = true;
-            this.containedButton6.Click += new System.EventHandler(this.containedButton6_Click);
+            this.BtSave.EffectType = MaterialSurface.ET.Custom;
+            this.BtSave.Font = new System.Drawing.Font("Segoe UI", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtSave.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.BtSave.Icon = null;
+            this.BtSave.Location = new System.Drawing.Point(429, 391);
+            this.BtSave.Margin = new System.Windows.Forms.Padding(2);
+            this.BtSave.MouseState = MaterialSurface.MouseState.OUT;
+            this.BtSave.Name = "BtSave";
+            this.BtSave.PrimaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.BtSave.Radius = 6;
+            this.BtSave.ShawdowDepth = 3;
+            this.BtSave.ShawdowOpacity = 50;
+            this.BtSave.Size = new System.Drawing.Size(166, 50);
+            this.BtSave.TabIndex = 7;
+            this.BtSave.Text = "Lưu lại";
+            this.BtSave.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.BtSave.UseVisualStyleBackColor = true;
+            this.BtSave.Click += new System.EventHandler(this.containedButton6_Click);
             // 
             // CbTheLoai
             // 
@@ -305,7 +305,8 @@ namespace QuanLyNhaSach.Forms
             this.CbTheLoai.Margin = new System.Windows.Forms.Padding(2);
             this.CbTheLoai.Name = "CbTheLoai";
             this.CbTheLoai.Size = new System.Drawing.Size(214, 28);
-            this.CbTheLoai.TabIndex = 73;
+            this.CbTheLoai.TabIndex = 2;
+            this.CbTheLoai.SelectedIndexChanged += new System.EventHandler(this.CbTheLoai_SelectedIndexChanged);
             // 
             // TxMasach
             // 
@@ -313,7 +314,7 @@ namespace QuanLyNhaSach.Forms
             this.TxMasach.Margin = new System.Windows.Forms.Padding(2);
             this.TxMasach.Name = "TxMasach";
             this.TxMasach.Size = new System.Drawing.Size(214, 27);
-            this.TxMasach.TabIndex = 75;
+            this.TxMasach.TabIndex = 0;
             this.TxMasach.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Masach
@@ -335,7 +336,7 @@ namespace QuanLyNhaSach.Forms
             this.TxGiaban.Margin = new System.Windows.Forms.Padding(2);
             this.TxGiaban.Name = "TxGiaban";
             this.TxGiaban.Size = new System.Drawing.Size(214, 27);
-            this.TxGiaban.TabIndex = 77;
+            this.TxGiaban.TabIndex = 6;
             // 
             // label6
             // 
@@ -360,8 +361,8 @@ namespace QuanLyNhaSach.Forms
             this.Controls.Add(this.TxMasach);
             this.Controls.Add(this.Masach);
             this.Controls.Add(this.CbTheLoai);
-            this.Controls.Add(this.containedButton1);
-            this.Controls.Add(this.containedButton6);
+            this.Controls.Add(this.BtCancel);
+            this.Controls.Add(this.BtSave);
             this.Controls.Add(this.TxTacGia);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.panel5);
@@ -412,8 +413,8 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.TextBox TxTacGia;
         private System.Windows.Forms.Label label8;
-        private MaterialSurface.ContainedButton containedButton1;
-        private MaterialSurface.ContainedButton containedButton6;
+        private MaterialSurface.ContainedButton BtCancel;
+        private MaterialSurface.ContainedButton BtSave;
         private System.Windows.Forms.ComboBox CbTheLoai;
         private System.Windows.Forms.TextBox TxMasach;
         private System.Windows.Forms.Label Masach;
