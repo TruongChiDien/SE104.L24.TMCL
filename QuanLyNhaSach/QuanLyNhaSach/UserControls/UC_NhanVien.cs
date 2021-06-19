@@ -40,7 +40,20 @@ namespace QuanLyNhaSach.UserControls
 
         private void Grid_nhanvien_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            int a = e.RowIndex;
+            string ID = Grid_nhanvien.Rows[a].Cells[1].FormattedValue.ToString();
+            YesNo Messagebox = new Forms.YesNo();
+            bool Yes = Messagebox.Messageshow("Bạn có muốn xóa nhân viên?");
+            Messagebox.Dispose();
 
+            if (Yes)
+            {
+                string query = @"DELETE FROM NHANVIEN WHERE MaNV = " + ID;
+
+                DataProvider.Instance.ExecuteNonQuery(query);
+
+                Grid_nhanvien_load();
+            }
         }
     }
 }

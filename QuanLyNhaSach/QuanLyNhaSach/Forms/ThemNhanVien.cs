@@ -25,9 +25,30 @@ namespace QuanLyNhaSach.Forms
             this.Dispose();
         }
 
+        private bool isTrueTxt()
+        {
+            bool isAlltrue = true;
+            if (String.IsNullOrEmpty(TxTenNV.Text))
+            {
+                MessageBox.Show("Tên không được để trống!");
+                isAlltrue = false;
+            }
+            else if (String.IsNullOrEmpty(TxSDT.Text))
+            {
+                MessageBox.Show("Số điện thoại không được để trống!");
+                isAlltrue = false;
+            }
+            else if (String.IsNullOrEmpty(TxSDT.Text))
+            {
+                MessageBox.Show("Số điện thoại không được để trống!");
+                isAlltrue = false;
+            }
+
+            return isAlltrue;
+        }
         private void containedButton6_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show(DtNgayvaolam.Value.ToString("yyyy-MM-dd"));
             this.Dispose();
         }
 

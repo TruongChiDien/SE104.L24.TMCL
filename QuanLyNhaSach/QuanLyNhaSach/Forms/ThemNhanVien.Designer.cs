@@ -30,12 +30,11 @@ namespace QuanLyNhaSach.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThemNhanVien));
-            this.containedButton1 = new MaterialSurface.ContainedButton();
-            this.containedButton6 = new MaterialSurface.ContainedButton();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.BtHuy = new MaterialSurface.ContainedButton();
+            this.BtXong = new MaterialSurface.ContainedButton();
+            this.TxDiachi = new System.Windows.Forms.TextBox();
+            this.TxSDT = new System.Windows.Forms.TextBox();
+            this.TxTenNV = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,88 +42,81 @@ namespace QuanLyNhaSach.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CbGioitinh = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
+            this.DtNgayvaolam = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // containedButton1
+            // BtHuy
             // 
-            this.containedButton1.EffectType = MaterialSurface.ET.Custom;
-            this.containedButton1.Font = new System.Drawing.Font("Segoe UI", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.containedButton1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.containedButton1.Icon = null;
-            this.containedButton1.Location = new System.Drawing.Point(290, 400);
-            this.containedButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.containedButton1.MouseState = MaterialSurface.MouseState.OUT;
-            this.containedButton1.Name = "containedButton1";
-            this.containedButton1.PrimaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
-            this.containedButton1.Radius = 6;
-            this.containedButton1.ShawdowDepth = 3;
-            this.containedButton1.ShawdowOpacity = 50;
-            this.containedButton1.Size = new System.Drawing.Size(166, 50);
-            this.containedButton1.TabIndex = 53;
-            this.containedButton1.Text = "Hủy";
-            this.containedButton1.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.containedButton1.UseVisualStyleBackColor = true;
-            this.containedButton1.Click += new System.EventHandler(this.containedButton1_Click);
+            this.BtHuy.EffectType = MaterialSurface.ET.Custom;
+            this.BtHuy.Font = new System.Drawing.Font("Segoe UI", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtHuy.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.BtHuy.Icon = null;
+            this.BtHuy.Location = new System.Drawing.Point(290, 400);
+            this.BtHuy.Margin = new System.Windows.Forms.Padding(2);
+            this.BtHuy.MouseState = MaterialSurface.MouseState.OUT;
+            this.BtHuy.Name = "BtHuy";
+            this.BtHuy.PrimaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            this.BtHuy.Radius = 6;
+            this.BtHuy.ShawdowDepth = 3;
+            this.BtHuy.ShawdowOpacity = 50;
+            this.BtHuy.Size = new System.Drawing.Size(166, 50);
+            this.BtHuy.TabIndex = 53;
+            this.BtHuy.Text = "Hủy";
+            this.BtHuy.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.BtHuy.UseVisualStyleBackColor = true;
+            this.BtHuy.Click += new System.EventHandler(this.containedButton1_Click);
             // 
-            // containedButton6
+            // BtXong
             // 
-            this.containedButton6.EffectType = MaterialSurface.ET.Custom;
-            this.containedButton6.Font = new System.Drawing.Font("Segoe UI", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.containedButton6.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.containedButton6.Icon = null;
-            this.containedButton6.Location = new System.Drawing.Point(473, 400);
-            this.containedButton6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.containedButton6.MouseState = MaterialSurface.MouseState.OUT;
-            this.containedButton6.Name = "containedButton6";
-            this.containedButton6.PrimaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.containedButton6.Radius = 6;
-            this.containedButton6.ShawdowDepth = 3;
-            this.containedButton6.ShawdowOpacity = 50;
-            this.containedButton6.Size = new System.Drawing.Size(166, 50);
-            this.containedButton6.TabIndex = 50;
-            this.containedButton6.Text = "Xong";
-            this.containedButton6.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.containedButton6.UseVisualStyleBackColor = true;
-            this.containedButton6.Click += new System.EventHandler(this.containedButton6_Click);
+            this.BtXong.EffectType = MaterialSurface.ET.Custom;
+            this.BtXong.Font = new System.Drawing.Font("Segoe UI", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtXong.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.BtXong.Icon = null;
+            this.BtXong.Location = new System.Drawing.Point(473, 400);
+            this.BtXong.Margin = new System.Windows.Forms.Padding(2);
+            this.BtXong.MouseState = MaterialSurface.MouseState.OUT;
+            this.BtXong.Name = "BtXong";
+            this.BtXong.PrimaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.BtXong.Radius = 6;
+            this.BtXong.ShawdowDepth = 3;
+            this.BtXong.ShawdowOpacity = 50;
+            this.BtXong.Size = new System.Drawing.Size(166, 50);
+            this.BtXong.TabIndex = 50;
+            this.BtXong.Text = "Xong";
+            this.BtXong.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.BtXong.UseVisualStyleBackColor = true;
+            this.BtXong.Click += new System.EventHandler(this.containedButton6_Click);
             // 
-            // textBox5
+            // TxDiachi
             // 
-            this.textBox5.Location = new System.Drawing.Point(358, 356);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(265, 27);
-            this.textBox5.TabIndex = 52;
+            this.TxDiachi.Location = new System.Drawing.Point(358, 356);
+            this.TxDiachi.Margin = new System.Windows.Forms.Padding(2);
+            this.TxDiachi.Name = "TxDiachi";
+            this.TxDiachi.Size = new System.Drawing.Size(265, 27);
+            this.TxDiachi.TabIndex = 5;
             // 
-            // textBox2
+            // TxSDT
             // 
-            this.textBox2.Location = new System.Drawing.Point(358, 242);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(265, 27);
-            this.textBox2.TabIndex = 51;
+            this.TxSDT.Location = new System.Drawing.Point(358, 242);
+            this.TxSDT.Margin = new System.Windows.Forms.Padding(2);
+            this.TxSDT.Name = "TxSDT";
+            this.TxSDT.Size = new System.Drawing.Size(265, 27);
+            this.TxSDT.TabIndex = 2;
             // 
-            // textBox4
+            // TxTenNV
             // 
-            this.textBox4.Location = new System.Drawing.Point(358, 280);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(265, 27);
-            this.textBox4.TabIndex = 49;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(358, 205);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(265, 27);
-            this.textBox1.TabIndex = 48;
+            this.TxTenNV.Location = new System.Drawing.Point(358, 205);
+            this.TxTenNV.Margin = new System.Windows.Forms.Padding(2);
+            this.TxTenNV.Name = "TxTenNV";
+            this.TxTenNV.Size = new System.Drawing.Size(265, 27);
+            this.TxTenNV.TabIndex = 1;
             // 
             // label6
             // 
@@ -192,7 +184,7 @@ namespace QuanLyNhaSach.Forms
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
             this.pictureBox1.Location = new System.Drawing.Point(81, 49);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(112, 118);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -211,27 +203,27 @@ namespace QuanLyNhaSach.Forms
             this.label5.TabIndex = 54;
             this.label5.Text = "Giới tính:";
             // 
-            // comboBox1
+            // CbGioitinh
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.CbGioitinh.FormattingEnabled = true;
+            this.CbGioitinh.Items.AddRange(new object[] {
             "Nam",
             "Nữ",
             "Khác"});
-            this.comboBox1.Location = new System.Drawing.Point(358, 319);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(265, 28);
-            this.comboBox1.TabIndex = 56;
-            this.comboBox1.Text = "Chọn giới tính";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.CbGioitinh.Location = new System.Drawing.Point(358, 319);
+            this.CbGioitinh.Margin = new System.Windows.Forms.Padding(2);
+            this.CbGioitinh.Name = "CbGioitinh";
+            this.CbGioitinh.Size = new System.Drawing.Size(265, 28);
+            this.CbGioitinh.TabIndex = 4;
+            this.CbGioitinh.Text = "Chọn giới tính";
+            this.CbGioitinh.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(9, 494);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(786, 9);
             this.panel4.TabIndex = 60;
@@ -241,7 +233,7 @@ namespace QuanLyNhaSach.Forms
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel3.Location = new System.Drawing.Point(795, 9);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(9, 494);
             this.panel3.TabIndex = 59;
@@ -252,7 +244,7 @@ namespace QuanLyNhaSach.Forms
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(9, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(795, 9);
             this.panel2.TabIndex = 58;
@@ -262,7 +254,7 @@ namespace QuanLyNhaSach.Forms
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(9, 503);
             this.panel1.TabIndex = 57;
@@ -274,12 +266,20 @@ namespace QuanLyNhaSach.Forms
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.Location = new System.Drawing.Point(745, 9);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(49, 50);
             this.button4.TabIndex = 76;
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // DtNgayvaolam
+            // 
+            this.DtNgayvaolam.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.DtNgayvaolam.Location = new System.Drawing.Point(358, 277);
+            this.DtNgayvaolam.Name = "DtNgayvaolam";
+            this.DtNgayvaolam.Size = new System.Drawing.Size(265, 27);
+            this.DtNgayvaolam.TabIndex = 77;
             // 
             // ThemNhanVien
             // 
@@ -287,19 +287,19 @@ namespace QuanLyNhaSach.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(804, 503);
+            this.Controls.Add(this.DtNgayvaolam);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.CbGioitinh);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.containedButton1);
-            this.Controls.Add(this.containedButton6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.BtHuy);
+            this.Controls.Add(this.BtXong);
+            this.Controls.Add(this.TxDiachi);
+            this.Controls.Add(this.TxSDT);
+            this.Controls.Add(this.TxTenNV);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -307,7 +307,7 @@ namespace QuanLyNhaSach.Forms
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ThemNhanVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ThemNhanVien";
@@ -320,12 +320,11 @@ namespace QuanLyNhaSach.Forms
 
         #endregion
 
-        private MaterialSurface.ContainedButton containedButton1;
-        private MaterialSurface.ContainedButton containedButton6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox1;
+        private MaterialSurface.ContainedButton BtHuy;
+        private MaterialSurface.ContainedButton BtXong;
+        private System.Windows.Forms.TextBox TxDiachi;
+        private System.Windows.Forms.TextBox TxSDT;
+        private System.Windows.Forms.TextBox TxTenNV;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -333,11 +332,12 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CbGioitinh;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DateTimePicker DtNgayvaolam;
     }
 }
