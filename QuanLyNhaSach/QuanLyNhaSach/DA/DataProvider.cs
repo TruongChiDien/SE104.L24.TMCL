@@ -18,7 +18,7 @@ namespace QuanLyNhaSach.DA
 
         private DataProvider() { }
         
-        private string stringconnection = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = E:\C#\QLNS\QLNS.mdf; Integrated Security = True; Connect Timeout = 30";
+        private string stringconnection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\Github\QuanLyNhaSach\QLNS.mdf;Integrated Security=True;Connect Timeout=30";
 
         public DataTable ExecuteQuery(string query, object[] paramater =null)
         {
@@ -46,5 +46,20 @@ namespace QuanLyNhaSach.DA
                 connection.Close();
             }
         }
+
+
+        public object ExecuteScalar(string query)
+        {
+            object data;
+            using (SqlConnection connection = new SqlConnection(stringconnection))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(query, connection);
+                data = command.ExecuteScalar();
+                connection.Close();
+            }
+            return data;
+        }
+
     }
 }
