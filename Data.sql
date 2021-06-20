@@ -20,7 +20,8 @@ CREATE TABLE SACH (
 	TenSach NVARCHAR(100),
 	TheLoai NVARCHAR(100),
 	TacGia NVARCHAR(100),
-	DGNhap INT
+	DGNhap INT,
+	DGBan INT
 )
 GO
 
