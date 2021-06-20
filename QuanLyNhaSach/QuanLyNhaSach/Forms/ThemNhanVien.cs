@@ -38,9 +38,14 @@ namespace QuanLyNhaSach.Forms
                 MessageBox.Show("Số điện thoại không được để trống!");
                 isAlltrue = false;
             }
-            else if (String.IsNullOrEmpty(TxSDT.Text))
+            else if (String.IsNullOrEmpty(TxEmail.Text))
             {
-                MessageBox.Show("Số điện thoại không được để trống!");
+                MessageBox.Show("Email không được để trống!");
+                isAlltrue = false;
+            }
+            else if (String.IsNullOrEmpty(TxDiachi.Text))
+            {
+                MessageBox.Show("Địa chỉ không được để trống!");
                 isAlltrue = false;
             }
 
