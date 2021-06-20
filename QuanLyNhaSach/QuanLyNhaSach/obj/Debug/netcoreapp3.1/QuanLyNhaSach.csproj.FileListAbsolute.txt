@@ -98,3 +98,39 @@ E:\CNPM\Quan ly nha sach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\Qua
 E:\CNPM\Quan ly nha sach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.pdb
 E:\CNPM\Quan ly nha sach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.genruntimeconfig.cache
 E:\CNPM\Quan ly nha sach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.YesNo.resources
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\netcoreapp3.1\QuanLyNhaSach.exe
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\netcoreapp3.1\QuanLyNhaSach.deps.json
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\netcoreapp3.1\QuanLyNhaSach.runtimeconfig.json
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\netcoreapp3.1\QuanLyNhaSach.runtimeconfig.dev.json
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\netcoreapp3.1\QuanLyNhaSach.dll
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\netcoreapp3.1\QuanLyNhaSach.pdb
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\netcoreapp3.1\MaterialSurface.dll
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.csproj.AssemblyReference.cache
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.Dashboard_Admin.resources
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.Dashboard_NhanVien.resources
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.HoanThanhDonHang.resources
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.Login.resources
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.Login_Admin.resources
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.ThemKhachHang.resources
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.ThemNhanVien.resources
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.ThemSach.resources
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.YesNo.resources
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Properties.Resources.resources
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.UserControls.UC_BanSach.resources
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.UserControls.UC_KhachHang.resources
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.UserControls.UC_KhoSach.resources
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.UserControls.UC_NhanVien.resources
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.csproj.GenerateResource.cache
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.AssemblyInfoInputs.cache
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.AssemblyInfo.cs
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.csproj.CoreCompileInputs.cache
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.csproj.CopyComplete
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.dll
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.pdb
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.genruntimeconfig.cache
