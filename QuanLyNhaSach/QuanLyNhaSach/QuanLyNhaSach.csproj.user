@@ -7,6 +7,9 @@
     <Compile Update="Forms\Dashboard_NhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\Dialog_BaoCaoCongNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\HoanThanhDonHang.cs">
       <SubType>Form</SubType>
     </Compile>

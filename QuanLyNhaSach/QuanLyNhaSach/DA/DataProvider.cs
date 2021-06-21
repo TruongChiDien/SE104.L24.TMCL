@@ -48,5 +48,18 @@ namespace QuanLyNhaSach.DA
             }
             return i;
         }
+
+        public object ExecuteScalar(string query)
+        {
+            object i;
+            using (SqlConnection connection = new SqlConnection(stringconnection))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(query, connection);
+                i = command.ExecuteScalar();
+                connection.Close();
+            }
+            return i;
+        }
     }
 }

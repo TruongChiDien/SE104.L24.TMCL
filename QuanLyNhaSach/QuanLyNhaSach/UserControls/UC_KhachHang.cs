@@ -160,20 +160,45 @@ namespace QuanLyNhaSach.UserControls
             SuaKH();
         }
 
+        Bitmap bmp;
         private void btnBaoCao_Click(object sender, EventArgs e)
         {
-            prtdocBaocao.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("pprnm", 285, 600);
-            if (prtprevBaocao.ShowDialog() == DialogResult.OK)
+            Dialog_BaoCaoCongNo temp = new Dialog_BaoCaoCongNo();
+            temp.ShowDialog();
+            if (temp.Ok == false) return;
+            
+            DateTime date = temp.Date;
+
+            DataGridView dtgv_temp = new DataGridView();
+
+
+            string query = "SELECT COUNT(*) FROM CONGNO WHERE MONTH(ThoiGian) = " + date.Month.ToString() + " AND YEAR(ThoiGian) = " + date.Year.ToString();
+            int i = Convert.ToInt32(DataProvider.Instance.ExecuteScalar(query));
+            if (i == 1)
             {
-                prtdocBaocao.Print();
+                query = "SELECT KH.HoTenKH AS [Khách Hàng], CT.NoDau AS [Nợ Đầu], CT.PhatSinh AS [Phát Sinh], CT.NoCuoi AS [Nợ Cuối]  FROM CONGNO CN, CTCONGNO CT, KHACHHANG KH WHERE CN.MaNo = CT.MaNo AND CT.MaKH = KH.MaKH";
+                dtgv_temp.DataSource = DataProvider.Instance.ExecuteQuery(query);
+
+                bmp = new Bitmap(dtgv_temp.Width, dtgv_temp.Height);
+
+                dtgv_temp.DrawToBitmap(bmp, new Rectangle(0, 0, dtgv_temp.Width, dtgv_temp.Height));
+
+                if (prtprevBaocao.ShowDialog() == DialogResult.OK)
+                {
+                    prtdocBaocao.Print();
+                }
             }
+            
+
+            //prtdocBaocao.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("pprnm", 600, 1200);
+
+            
         }
 
         private void prtdocBaocao_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            DataGridView dtgv_temp = new DataGridView();
-            string query = "SELECT * FROM CONGNO CN, CTCONGNO, CT " +
-                            "WHERE CN.MaNo == CT.MaNo AND ";
+            e.Graphics.DrawImage(bmp, 0, 0);           
         }
+
     }
 }
