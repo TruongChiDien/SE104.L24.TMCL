@@ -54,8 +54,6 @@ namespace QuanLyNhaSach.UserControls
             this.txbMaKH = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.prtdocBaocao = new System.Drawing.Printing.PrintDocument();
-            this.prtprevBaocao = new System.Windows.Forms.PrintPreviewDialog();
             this.dtgvKH = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -372,21 +370,6 @@ namespace QuanLyNhaSach.UserControls
             this.panel2.Size = new System.Drawing.Size(1260, 125);
             this.panel2.TabIndex = 23;
             // 
-            // prtdocBaocao
-            // 
-            this.prtdocBaocao.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.prtdocBaocao_PrintPage);
-            // 
-            // prtprevBaocao
-            // 
-            this.prtprevBaocao.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.prtprevBaocao.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.prtprevBaocao.ClientSize = new System.Drawing.Size(400, 300);
-            this.prtprevBaocao.Document = this.prtdocBaocao;
-            this.prtprevBaocao.Enabled = true;
-            this.prtprevBaocao.Icon = ((System.Drawing.Icon)(resources.GetObject("prtprevBaocao.Icon")));
-            this.prtprevBaocao.Name = "prtprevBaocao";
-            this.prtprevBaocao.Visible = false;
-            // 
             // dtgvKH
             // 
             this.dtgvKH.AllowUserToAddRows = false;
@@ -465,8 +448,6 @@ namespace QuanLyNhaSach.UserControls
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnClear;
-        private System.Drawing.Printing.PrintDocument prtdocBaocao;
-        private System.Windows.Forms.PrintPreviewDialog prtprevBaocao;
         private System.Windows.Forms.DataGridView dtgvKH;
         private System.Windows.Forms.Button btnBaoCao;
     }

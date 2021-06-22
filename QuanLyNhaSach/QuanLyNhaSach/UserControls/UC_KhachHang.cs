@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using QuanLyNhaSach.DA;
+using DGVPrinterHelper;
 
 namespace QuanLyNhaSach.UserControls
 {
@@ -19,6 +20,11 @@ namespace QuanLyNhaSach.UserControls
             dtgvKH.ColumnHeadersHeight = 28;
             Grid_Load();
         }
+
+        #region Properties
+        YesNo msb = new YesNo();
+
+        #endregion
 
         #region Method
 
@@ -124,7 +130,9 @@ namespace QuanLyNhaSach.UserControls
         private void btnThem_Click(object sender, EventArgs e)
         {
             if (txbTenKH.Text == "" || txbDiaChi.Text == "" || txbDienThoai.Text == "" || txbEmail.Text == "" || txbNo.Text == "")
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin Khách hàng!");
+            {
+                msb.Messageshow("Vui lòng nhập đầy đủ thông tin Khách hàng!");
+            }
 
             string query = "INSERT INTO KHACHHANG (HoTenKH, DiaChi, DienThoai, Email, NoKH) VALUES (N'" + txbTenKH.Text + "', N'" + txbDiaChi.Text + "', N'" + txbDienThoai.Text + "', N'" + txbEmail.Text + "', " + Convert.ToInt32(txbNo.Text) + ")";
 
@@ -160,45 +168,41 @@ namespace QuanLyNhaSach.UserControls
             SuaKH();
         }
 
-        Bitmap bmp;
         private void btnBaoCao_Click(object sender, EventArgs e)
         {
-            Dialog_BaoCaoCongNo temp = new Dialog_BaoCaoCongNo();
-            temp.ShowDialog();
-            if (temp.Ok == false) return;
-            
-            DateTime date = temp.Date;
+            Dialog_BaoCaoCongNo d = new Dialog_BaoCaoCongNo();
+            d.ShowDialog();
+            if (d.Ok == false) return;
 
-            DataGridView dtgv_temp = new DataGridView();
+            string query = "select * from ctcongno where month(ThoiGian) =" + d.Date.Month + " and year(ThoiGian) = " + d.Date.Year;
 
+            object makh = DataProvider.Instance.ExecuteScalar(query);
 
-            string query = "SELECT COUNT(*) FROM CONGNO WHERE MONTH(ThoiGian) = " + date.Month.ToString() + " AND YEAR(ThoiGian) = " + date.Year.ToString();
-            int i = Convert.ToInt32(DataProvider.Instance.ExecuteScalar(query));
-            if (i == 1)
+            if (makh == null)
             {
-                query = "SELECT KH.HoTenKH AS [Khách Hàng], CT.NoDau AS [Nợ Đầu], CT.PhatSinh AS [Phát Sinh], CT.NoCuoi AS [Nợ Cuối]  FROM CONGNO CN, CTCONGNO CT, KHACHHANG KH WHERE CN.MaNo = CT.MaNo AND CT.MaKH = KH.MaKH";
-                dtgv_temp.DataSource = DataProvider.Instance.ExecuteQuery(query);
-
-                bmp = new Bitmap(dtgv_temp.Width, dtgv_temp.Height);
-
-                dtgv_temp.DrawToBitmap(bmp, new Rectangle(0, 0, dtgv_temp.Width, dtgv_temp.Height));
-
-                if (prtprevBaocao.ShowDialog() == DialogResult.OK)
-                {
-                    prtdocBaocao.Print();
-                }
+                msb.Messageshow("Chưa có thông tin công nợ tháng " + d.Date.Month + " năm " + d.Date.Year);
+                //MessageBox.Show("Chưa có thông tin công nợ tháng " + d.Date.Month + " năm " + d.Date.Year);
+                return;
             }
+
+            query = "select kh.HoTenKH as [Khách Hàng], ct.NoDau as [Nợ đầu], ct.PhatSinh as [Phát sinh], ct.NoCuoi as [Nợ cuối] from CTCONGNO ct, khachhang kh where ct.MaKH = kh.MaKH and month(ThoiGian) =" + d.Date.Month + " and year(ThoiGian) = " + d.Date.Year;
+
+            FormTempForPrint temp = new FormTempForPrint();
+            temp.Setdtgv(DataProvider.Instance.ExecuteQuery(query));
             
 
-            //prtdocBaocao.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("pprnm", 600, 1200);
-
-            
+            DGVPrinter printer = new DGVPrinter();
+            printer.Title = "Báo Cáo Công Nợ";
+            printer.SubTitle = string.Format("Tháng {0} Năm {1}", d.Date.Month, d.Date.Year);
+            printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+            printer.PageNumbers = true;
+            printer.PageNumberInHeader = false;
+            printer.PorportionalColumns = true;
+            printer.HeaderCellAlignment = StringAlignment.Near;
+            printer.PrintPreviewDataGridView(temp.Getdtgv());
         }
 
-        private void prtdocBaocao_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
-        {
-            e.Graphics.DrawImage(bmp, 0, 0);           
-        }
+       
 
     }
 }
