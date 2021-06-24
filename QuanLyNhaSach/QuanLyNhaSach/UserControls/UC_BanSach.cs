@@ -7,7 +7,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using QuanLyNhaSach.DA;
-
+using DGVPrinterHelper;
 namespace QuanLyNhaSach.UserControls
 {
     public partial class UC_BanSach : UserControl
@@ -63,10 +63,34 @@ namespace QuanLyNhaSach.UserControls
 
         private void containedButton5_Click(object sender, EventArgs e)
         {
-            using (HoanThanhDonHang htdh = new HoanThanhDonHang())
-            {
-                htdh.ShowDialog();
-            }
+            //using (HoanThanhDonHang htdh = new HoanThanhDonHang())
+            //{
+            //    htdh.ShowDialog();
+            //}
+
+            //FormTempForPrint Inhoadon = new FormTempForPrint();
+
+
+            DGVPrinter printer = new DGVPrinter();
+            printer.Title = "Hoa Don";
+            printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+            printer.PageNumbers = true;
+            printer.PageNumberInHeader = false;
+            printer.PorportionalColumns = true;
+            printer.HeaderCellAlignment = StringAlignment.Near;
+            printer.PrintPreviewDataGridView(dataGridView2);
+
+
+            //List<sach> lst = new List<sach>();
+            //lst.Clear();
+
+            //for( int i = 0; i < dataGridView2.Rows.Count - 1; i++)
+            //{
+            //    lst.Add(new sach { Tensach = dataGridView2.Rows[0].Cells[1].Value.ToString(),
+            //                        int.Parse(dataGridView2)
+            //    });
+            //}
+
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -292,5 +316,29 @@ namespace QuanLyNhaSach.UserControls
         {
             
         }
+
+        private void containedButton1_Click_1(object sender, EventArgs e)
+        {
+            DGVPrinter printer = new DGVPrinter();
+            printer.Title = "Hoa Don";
+            printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+            printer.PageNumbers = true;
+            printer.PageNumberInHeader = false;
+            printer.PorportionalColumns = true;
+            printer.HeaderCellAlignment = StringAlignment.Near;
+            printer.PrintPreviewDataGridView(dataGridView2);
+        }
+
+        private void textBox1_TextChanged_3(object sender, EventArgs e)
+        {
+
+        }
+    }
+
+    public class sach
+    {
+        public string Tensach { get; set; }
+        public int SL { get; set; }
+        public int Giatien { get; set; }
     }
 }
