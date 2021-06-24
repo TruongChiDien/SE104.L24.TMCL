@@ -127,7 +127,7 @@ namespace QuanLyNhaSach.Forms
             this.Location = new System.Drawing.Point(800, 400);
             this.Name = "Dialog_BaoCaoCongNo";
             this.Padding = new System.Windows.Forms.Padding(2);
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dialog_BaoCaoCongNo";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
