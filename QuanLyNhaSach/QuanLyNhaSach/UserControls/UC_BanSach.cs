@@ -19,16 +19,118 @@ namespace QuanLyNhaSach.UserControls
 
         }
 
+        #region Properties
+        int n = 0;
+        YesNo msb = new YesNo();
+        int tienthu;
+        #endregion
+
+        #region Method
         private void Grid_tb_loadData()
         {
             string query = "SELECT MaSach, TenSach,TheLoai,TacGia,DGBan FROM SACH";
 
             dataGridView1.DataSource = DataProvider.Instance.ExecuteQuery(query);
         }
+
+        private void Search_book()
+        {
+
+            string chude = "MaSach";
+            switch (CbChude.SelectedIndex)
+            {
+                case -1:
+                    MessageBox.Show("Chọn chủ dề!");
+                    return;
+                case 1:
+                    chude = "TenSach";
+
+                    break;
+                case 2:
+                    chude = "TheLoai";
+
+                    break;
+                case 3:
+                    chude = "TacGia";
+
+                    break;
+            }
+            try
+            {
+
+                string query = "SELECT * FROM SACH WHERE + " + chude + " like '" + TxTimkiem.Text + "%'";
+
+                dataGridView1.DataSource = DataProvider.Instance.ExecuteQuery(query);
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void Print_HoaDon()
+        {
+
+            string query = string.Format("select HoTenKH from khachhang where MaKH = {0}", txtMaKH.Text);
+            string tenKH = DataProvider.Instance.ExecuteScalar(query).ToString();
+            if (tenKH == "")
+            {
+                msb.Messageshow("Khách hàng không tồn tại!");
+                return;
+            }
+
+            query = string.Format("update ctcongno set PhatSinh += {0}, NoCuoi += {1} where MaKH = {2} and month(Thoigian) = {3} and year(ThoiGian) = {4}", txtTongcong.Text, txtTongcong.Text, txtMaKH.Text, DateTime.Now.Month, DateTime.Now.Year);
+            DataProvider.Instance.ExecuteNonQuery(query);
+            query = string.Format("update khachhang set NoKH += {0} where MaKH = {1} ", txtTongcong.Text, txtMaKH.Text);
+            DataProvider.Instance.ExecuteNonQuery(query);
+
+            DGVPrinter printer = new DGVPrinter();
+            printer.Title = "HÓA ĐƠN";
+            printer.SubTitle = string.Format("Tên khách hàng: {0}                  Ngày lập hóa đơn: {1}/{2}/{3}", tenKH, DateTime.Now.Day, DateTime.Now.Month, DateTime.Now.Year);
+            printer.SubTitleAlignment = StringAlignment.Near;
+            printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+            printer.PageNumbers = true;
+            printer.PageNumberInHeader = false;
+            printer.PorportionalColumns = true;
+            printer.HeaderCellAlignment = StringAlignment.Near;
+            printer.PrintPreviewDataGridView(dataGridView2);
+        }
+
+        public void PrintPhieuThu()
+        {
+
+            tienthu = Convert.ToInt32(txtTongcong.Text);
+            string query = string.Format("select * from ctcongno where MaKH = {0} and month(ThoiGian) = {1} and year(ThoiGian) = {2}", Convert.ToInt32(txtMaKH.Text), DateTime.Now.Month, DateTime.Now.Year);
+            DataTable dtt = DataProvider.Instance.ExecuteQuery(query);
+            int NoCuoi = Convert.ToInt32(dtt.Rows[0]["NoCuoi"]);
+            int PhatSinh = Convert.ToInt32(dtt.Rows[0]["PhatSinh"]);
+            while (tienthu > NoCuoi)
+            {
+                msb.Messageshow("Số tiền thu không được phép lớn hơn số tiền nợ!");
+                Dialog_ThuTien t_thutien1 = new Dialog_ThuTien();
+                t_thutien1.ShowDialog();
+                if (t_thutien1.Ok == false) return;
+                tienthu = t_thutien1.Tienthu;
+            }
+            query = string.Format("update ctcongno set PhatSinh = {0}, NoCuoi = {1} where MaKH = {2} and month(ThoiGian) = {3} and year(ThoiGian) = {4}", PhatSinh - tienthu, NoCuoi - tienthu, Convert.ToInt32(txtMaKH.Text), DateTime.Now.Month, DateTime.Now.Year);
+            DataProvider.Instance.ExecuteNonQuery(query);
+            query = string.Format("update khachhang set NoKH = {0} where MaKH = {1}", NoCuoi - tienthu, Convert.ToInt32(txtMaKH.Text));
+            DataProvider.Instance.ExecuteNonQuery(query);
+
+            this.prtDoc.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("custom", 970, 234);
+            this.prtprvDoc.Document = this.prtDoc;
+            if (this.prtprvDoc.ShowDialog() == DialogResult.OK)
+                this.prtDoc.Print();
+        }
+
+
+        #endregion
+
+        #region Event
+
         private void UC_BanSach_Load(object sender, EventArgs e)
         {
-            Search_book();
-        
+            //Search_book();       
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -41,61 +143,9 @@ namespace QuanLyNhaSach.UserControls
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void containedButton5_Click(object sender, EventArgs e)
         {
-            //using (HoanThanhDonHang htdh = new HoanThanhDonHang())
-            //{
-            //    htdh.ShowDialog();
-            //}
-
-            //FormTempForPrint Inhoadon = new FormTempForPrint();
-
-
-            DGVPrinter printer = new DGVPrinter();
-            printer.Title = "Hoa Don";
-            printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
-            printer.PageNumbers = true;
-            printer.PageNumberInHeader = false;
-            printer.PorportionalColumns = true;
-            printer.HeaderCellAlignment = StringAlignment.Near;
-            printer.PrintPreviewDataGridView(dataGridView2);
-
-
-            //List<sach> lst = new List<sach>();
-            //lst.Clear();
-
-            //for( int i = 0; i < dataGridView2.Rows.Count - 1; i++)
-            //{
-            //    lst.Add(new sach { Tensach = dataGridView2.Rows[0].Cells[1].Value.ToString(),
-            //                        int.Parse(dataGridView2)
-            //    });
-            //}
-
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            this.Print_HoaDon();
         }
 
         private void SetFontAndColors()
@@ -114,7 +164,6 @@ namespace QuanLyNhaSach.UserControls
 
         }
 
-        int n = 0;
         private void containedButton6_Click(object sender, EventArgs e)
         {
             try
@@ -145,42 +194,10 @@ namespace QuanLyNhaSach.UserControls
             txtTongtien.Text = Convert.ToString(total);
         }
 
-
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void containedButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void containedButton2_Click(object sender, EventArgs e)
         {
             int rowIndex = dataGridView2.CurrentCell.RowIndex;
             dataGridView2.Rows.RemoveAt(rowIndex);
-        }
-
-        private void containedButton3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Quantity_book()
@@ -191,57 +208,6 @@ namespace QuanLyNhaSach.UserControls
                 MessageBox.Show("Nhập số lượng");
                 return;
             }
-        }
-            private void Search_book()
-        {
-
-            string chude = "MaSach";
-            switch (CbChude.SelectedIndex)
-            {
-                case -1:
-                    MessageBox.Show("Chọn chủ dề!");
-                    return;
-                case 1:
-                    chude = "TenSach";
-                    
-                    break;
-                case 2:
-                    chude = "TheLoai";
-                   
-                    break;
-                case 3:
-                    chude = "TacGia";
-                    
-                    break;
-            }
-            try
-            {
-                
-                string query = "SELECT * FROM SACH WHERE + " + chude + " like '" + TxTimkiem.Text + "%'";
-
-                dataGridView1.DataSource = DataProvider.Instance.ExecuteQuery(query);
-            }
-            catch (Exception)
-            {
-
-            }
-        }
-
-        private void textBox2_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        
-
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-
         }
 
         private void txtSoluong_TextChanged(object sender, EventArgs e)
@@ -259,30 +225,6 @@ namespace QuanLyNhaSach.UserControls
             {
                 e.Handled = true;
             }
-            
-
-            // If you want, you can allow decimal (float) numbers
-
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel7_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -294,15 +236,6 @@ namespace QuanLyNhaSach.UserControls
             }
         }
 
-        private void txtTongcong_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void label8_Click_1(object sender, EventArgs e)
-        {
-            
-        }
         void showTotal()
         {
             int total = 0;
@@ -312,28 +245,34 @@ namespace QuanLyNhaSach.UserControls
             }
             txtTongcong.Text = total.ToString();
         }
-        private void textBox1_TextChanged_2(object sender, EventArgs e)
-        {
-            
-        }
 
         private void containedButton1_Click_1(object sender, EventArgs e)
         {
-            DGVPrinter printer = new DGVPrinter();
-            printer.Title = "Hoa Don";
-            printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
-            printer.PageNumbers = true;
-            printer.PageNumberInHeader = false;
-            printer.PorportionalColumns = true;
-            printer.HeaderCellAlignment = StringAlignment.Near;
-            printer.PrintPreviewDataGridView(dataGridView2);
+            this.Print_HoaDon();
+            this.PrintPhieuThu();
         }
 
-        private void textBox1_TextChanged_3(object sender, EventArgs e)
+        private void prtDoc_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
+            string query = string.Format("select * from khachhang where MaKH  = {0}", txtMaKH.Text);
+            DataTable t = DataProvider.Instance.ExecuteQuery(query);
+            string TenKH = t.Rows[0]["HoTenKH"].ToString();
+            string DiaChi = t.Rows[0]["DiaChi"].ToString();
+            string DienThoai = t.Rows[0]["DienThoai"].ToString();
+            string Email = t.Rows[0]["Email"].ToString();
+
+            e.Graphics.DrawRectangle(new Pen(Brushes.Black), new Rectangle(12, 9, 926, 50));
+            e.Graphics.DrawString("PHIẾU THU TIỀN", new Font("Times New Roman", 14, FontStyle.Regular), Brushes.Black, new Point(376, 26));
+            e.Graphics.DrawString("Họ tên khách hàng: " + TenKH, new Font("Times New Roman", 14, FontStyle.Regular), Brushes.Black, new Point(32, 86));
+            e.Graphics.DrawString("Địa chỉ: " + DiaChi, new Font("Times New Roman", 14, FontStyle.Regular), Brushes.Black, new Point(533, 86));
+            e.Graphics.DrawString("Điện thoại: " + DienThoai, new Font("Times New Roman", 14, FontStyle.Regular), Brushes.Black, new Point(32, 124));
+            e.Graphics.DrawString("Email: " + Email, new Font("Times New Roman", 14, FontStyle.Regular), Brushes.Black, new Point(533, 124));
+            e.Graphics.DrawString("Ngày thu tiền: " + DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString(), new Font("Times New Roman", 14, FontStyle.Regular), Brushes.Black, new Point(32, 170));
+            e.Graphics.DrawString("Số tiền thu: " + tienthu.ToString(), new Font("Times New Roman", 14, FontStyle.Regular), Brushes.Black, new Point(533, 170));
 
         }
     }
+    #endregion
 
     public class sach
     {

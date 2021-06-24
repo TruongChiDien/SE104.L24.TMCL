@@ -25,7 +25,7 @@ namespace QuanLyNhaSach.UserControls
 
         #region Properties
         YesNo msb = new YesNo();
-        int tienthu;
+        public int tienthu;
         #endregion
 
         #region Method
@@ -289,7 +289,7 @@ namespace QuanLyNhaSach.UserControls
             printer.PageNumbers = true;
             printer.PageNumberInHeader = false;
             printer.PorportionalColumns = true;
-            printer.HeaderCellAlignment = StringAlignment.Near;
+            printer.HeaderCellAlignment = StringAlignment.Center;
             printer.PrintPreviewDataGridView(temp.Getdtgv());
         }
         
