@@ -425,6 +425,7 @@ namespace QuanLyNhaSach.UserControls
             this.dtgvKH.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvKH.Size = new System.Drawing.Size(1260, 483);
             this.dtgvKH.TabIndex = 24;
+            this.dtgvKH.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvKH_CellClick);
             this.dtgvKH.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvKH_CellContentClick);
             // 
             // prtDoc

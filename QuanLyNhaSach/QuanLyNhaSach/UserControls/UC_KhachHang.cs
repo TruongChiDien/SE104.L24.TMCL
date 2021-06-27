@@ -155,18 +155,27 @@ namespace QuanLyNhaSach.UserControls
             DataTable dtt = DataProvider.Instance.ExecuteQuery(query);
             int NoCuoi = Convert.ToInt32(dtt.Rows[0]["NoCuoi"]);
             int PhatSinh = Convert.ToInt32(dtt.Rows[0]["PhatSinh"]);
+            bool bigger = false;
             while (tienthu > NoCuoi)
             {
-                msb.Messageshow("Số tiền thu không được phép lớn hơn số tiền nợ!");
+                msb.Messageshow("Bạn muốn thu số tiền lớn hơn số tiền khách đang nợ?");
+                if (msb.yes == true)
+                {
+                    bigger = true;
+                    break;
+                }
                 Dialog_ThuTien t_thutien1 = new Dialog_ThuTien();
                 t_thutien1.ShowDialog();
                 if (t_thutien1.Ok == false) return;
                 tienthu = t_thutien1.Tienthu;
             }
-            query = string.Format("update ctcongno set PhatSinh = {0}, NoCuoi = {1} where MaKH = {2} and month(ThoiGian) = {3} and year(ThoiGian) = {4}", PhatSinh - tienthu, NoCuoi - tienthu, Convert.ToInt32(txbMaKH.Text), DateTime.Now.Month, DateTime.Now.Year);
-            DataProvider.Instance.ExecuteNonQuery(query);
-            query = string.Format("update khachhang set NoKH = {0} where MaKH = {1}", NoCuoi - tienthu, Convert.ToInt32(txbMaKH.Text));
-            DataProvider.Instance.ExecuteNonQuery(query);
+            if(bigger == false)
+            {
+                query = string.Format("update ctcongno set PhatSinh = {0}, NoCuoi = {1} where MaKH = {2} and month(ThoiGian) = {3} and year(ThoiGian) = {4}", PhatSinh - tienthu, NoCuoi - tienthu, Convert.ToInt32(txbMaKH.Text), DateTime.Now.Month, DateTime.Now.Year);
+                DataProvider.Instance.ExecuteNonQuery(query);
+                query = string.Format("update khachhang set NoKH = {0} where MaKH = {1}", NoCuoi - tienthu, Convert.ToInt32(txbMaKH.Text));
+                DataProvider.Instance.ExecuteNonQuery(query);
+            }
 
             this.prtDoc.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("custom", 970, 234);
             this.prtprevDoc.Document = this.prtDoc;
@@ -308,6 +317,20 @@ namespace QuanLyNhaSach.UserControls
             e.Graphics.DrawString("Email: " + this.txbEmail.Text, new Font("Times New Roman", 14, FontStyle.Regular), Brushes.Black, new Point(533, 124));
             e.Graphics.DrawString("Ngày thu tiền: " + DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString(), new Font("Times New Roman", 14, FontStyle.Regular), Brushes.Black, new Point(32, 170));
             e.Graphics.DrawString("Số tiền thu: " + tienthu.ToString(), new Font("Times New Roman", 14, FontStyle.Regular), Brushes.Black, new Point(533, 170));
+        }
+
+        private void dtgvKH_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dtgvKH.CurrentRow.Selected = true;
+            if (e.RowIndex == -1)
+                return;
+            txbMaKH.Text = dtgvKH.Rows[e.RowIndex].Cells["Mã Khách hàng"].FormattedValue.ToString();
+            txbTenKH.Text = dtgvKH.Rows[e.RowIndex].Cells["Họ tên"].FormattedValue.ToString();
+            txbDiaChi.Text = dtgvKH.Rows[e.RowIndex].Cells["Địa Chỉ"].FormattedValue.ToString();
+            txbDienThoai.Text = dtgvKH.Rows[e.RowIndex].Cells["Điện Thoại"].FormattedValue.ToString();
+            txbEmail.Text = dtgvKH.Rows[e.RowIndex].Cells["Email"].FormattedValue.ToString();
+            txbNo.Text = dtgvKH.Rows[e.RowIndex].Cells["Nợ"].FormattedValue.ToString();
+            
         }
     }
     #endregion
