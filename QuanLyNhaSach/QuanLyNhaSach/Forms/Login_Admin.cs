@@ -30,8 +30,7 @@ namespace QuanLyNhaSach.Forms
                 DataTable dta = DataProvider.Instance.ExecuteQuery(query);
                 if (dta.Rows.Count > 0)    
                 {
-    
-
+   
                     MessageBox.Show("Thanh cong dang nhap Admin");
                     Dashboard_Admin da = new Dashboard_Admin();
                     da.Show();
