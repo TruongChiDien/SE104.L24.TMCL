@@ -70,7 +70,11 @@ namespace QuanLyNhaSach.UserControls
 
         private void Print_HoaDon()
         {
-
+            if(txtMaKH.Text == "")
+            {
+                msb.Messageshow("Nhập mã khách hàng!");
+                return;
+            }
             string query = string.Format("select HoTenKH from khachhang where MaKH = {0}", txtMaKH.Text);
             string tenKH = DataProvider.Instance.ExecuteScalar(query).ToString();
             if (tenKH == "")
