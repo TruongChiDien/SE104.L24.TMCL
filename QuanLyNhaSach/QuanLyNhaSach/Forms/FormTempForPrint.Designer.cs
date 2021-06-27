@@ -63,6 +63,7 @@ namespace QuanLyNhaSach.Forms
             this.dtgvTemp.RowTemplate.Height = 29;
             this.dtgvTemp.Size = new System.Drawing.Size(788, 459);
             this.dtgvTemp.TabIndex = 0;
+            this.dtgvTemp.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvTemp_CellContentClick);
             // 
             // FormTempForPrint
             // 

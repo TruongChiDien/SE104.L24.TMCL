@@ -33,6 +33,7 @@ namespace QuanLyNhaSach.UserControls
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnThutien = new System.Windows.Forms.Button();
             this.btnBaoCao = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
@@ -55,6 +56,8 @@ namespace QuanLyNhaSach.UserControls
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtgvKH = new System.Windows.Forms.DataGridView();
+            this.prtDoc = new System.Drawing.Printing.PrintDocument();
+            this.prtprevDoc = new System.Windows.Forms.PrintPreviewDialog();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvKH)).BeginInit();
@@ -63,6 +66,7 @@ namespace QuanLyNhaSach.UserControls
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
+            this.panel1.Controls.Add(this.btnThutien);
             this.panel1.Controls.Add(this.btnBaoCao);
             this.panel1.Controls.Add(this.btnClear);
             this.panel1.Controls.Add(this.btnSua);
@@ -77,6 +81,23 @@ namespace QuanLyNhaSach.UserControls
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1260, 76);
             this.panel1.TabIndex = 17;
+            // 
+            // btnThutien
+            // 
+            this.btnThutien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
+            this.btnThutien.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnThutien.Enabled = false;
+            this.btnThutien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThutien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnThutien.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnThutien.Image = ((System.Drawing.Image)(resources.GetObject("btnThutien.Image")));
+            this.btnThutien.Location = new System.Drawing.Point(380, 0);
+            this.btnThutien.Margin = new System.Windows.Forms.Padding(2);
+            this.btnThutien.Name = "btnThutien";
+            this.btnThutien.Size = new System.Drawing.Size(76, 76);
+            this.btnThutien.TabIndex = 29;
+            this.btnThutien.UseVisualStyleBackColor = false;
+            this.btnThutien.Click += new System.EventHandler(this.btnThutien_Click);
             // 
             // btnBaoCao
             // 
@@ -209,7 +230,7 @@ namespace QuanLyNhaSach.UserControls
             this.txbEmail.AcceptsReturn = true;
             this.txbEmail.BackColor = System.Drawing.Color.White;
             this.txbEmail.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txbEmail.Location = new System.Drawing.Point(1037, 67);
+            this.txbEmail.Location = new System.Drawing.Point(1037, 64);
             this.txbEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txbEmail.Name = "txbEmail";
             this.txbEmail.Size = new System.Drawing.Size(223, 30);
@@ -404,7 +425,22 @@ namespace QuanLyNhaSach.UserControls
             this.dtgvKH.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvKH.Size = new System.Drawing.Size(1260, 483);
             this.dtgvKH.TabIndex = 24;
+            this.dtgvKH.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvKH_CellClick);
             this.dtgvKH.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvKH_CellContentClick);
+            // 
+            // prtDoc
+            // 
+            this.prtDoc.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.prtDoc_PrintPage);
+            // 
+            // prtprevDoc
+            // 
+            this.prtprevDoc.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.prtprevDoc.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.prtprevDoc.ClientSize = new System.Drawing.Size(400, 300);
+            this.prtprevDoc.Enabled = true;
+            this.prtprevDoc.Icon = ((System.Drawing.Icon)(resources.GetObject("prtprevDoc.Icon")));
+            this.prtprevDoc.Name = "prtprevDoc";
+            this.prtprevDoc.Visible = false;
             // 
             // UC_KhachHang
             // 
@@ -450,5 +486,8 @@ namespace QuanLyNhaSach.UserControls
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.DataGridView dtgvKH;
         private System.Windows.Forms.Button btnBaoCao;
+        private System.Windows.Forms.Button btnThutien;
+        private System.Drawing.Printing.PrintDocument prtDoc;
+        private System.Windows.Forms.PrintPreviewDialog prtprevDoc;
     }
 }

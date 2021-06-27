@@ -25,5 +25,9 @@ namespace QuanLyNhaSach.Forms
             this.dtgvTemp.DataSource = ds;
         }
 
+        private void dtgvTemp_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

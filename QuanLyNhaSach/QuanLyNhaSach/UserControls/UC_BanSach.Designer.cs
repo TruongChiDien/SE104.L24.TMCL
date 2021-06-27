@@ -34,6 +34,7 @@ namespace QuanLyNhaSach.UserControls
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_BanSach));
             this.label5 = new System.Windows.Forms.Label();
             this.TxTimkiem = new System.Windows.Forms.TextBox();
             this.CbChude = new System.Windows.Forms.ComboBox();
@@ -46,6 +47,7 @@ namespace QuanLyNhaSach.UserControls
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.containedButton1 = new MaterialSurface.ContainedButton();
             this.txtTongcong = new System.Windows.Forms.TextBox();
             this.containedButton5 = new MaterialSurface.ContainedButton();
             this.containedButton4 = new MaterialSurface.ContainedButton();
@@ -68,6 +70,11 @@ namespace QuanLyNhaSach.UserControls
             this.txtTheloai = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtTongtien = new System.Windows.Forms.TextBox();
+            this.txtMaKH = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.prtDoc = new System.Drawing.Printing.PrintDocument();
+            this.prtprvDoc = new System.Windows.Forms.PrintPreviewDialog();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel4.SuspendLayout();
@@ -80,17 +87,16 @@ namespace QuanLyNhaSach.UserControls
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            this.label5.Location = new System.Drawing.Point(44, 213);
+            this.label5.Location = new System.Drawing.Point(12, 213);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(163, 24);
             this.label5.TabIndex = 4;
             this.label5.Text = "Chủ đề tìm kiếm";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // TxTimkiem
             // 
             this.TxTimkiem.AccessibleName = "";
-            this.TxTimkiem.Location = new System.Drawing.Point(821, 206);
+            this.TxTimkiem.Location = new System.Drawing.Point(707, 206);
             this.TxTimkiem.Name = "TxTimkiem";
             this.TxTimkiem.Size = new System.Drawing.Size(297, 30);
             this.TxTimkiem.TabIndex = 6;
@@ -105,13 +111,12 @@ namespace QuanLyNhaSach.UserControls
             "Tên sách",
             "Thể loại ",
             "Tác giả"});
-            this.CbChude.Location = new System.Drawing.Point(250, 205);
+            this.CbChude.Location = new System.Drawing.Point(218, 205);
             this.CbChude.Name = "CbChude";
-            this.CbChude.Size = new System.Drawing.Size(345, 31);
+            this.CbChude.Size = new System.Drawing.Size(272, 31);
             this.CbChude.TabIndex = 8;
             this.CbChude.Text = "Chọn thể loại";
             this.CbChude.UseWaitCursor = true;
-            this.CbChude.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // containedButton2
             // 
@@ -136,14 +141,13 @@ namespace QuanLyNhaSach.UserControls
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            this.label2.Location = new System.Drawing.Point(652, 90);
+            this.label2.Location = new System.Drawing.Point(418, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 29);
+            this.label2.Size = new System.Drawing.Size(177, 36);
             this.label2.TabIndex = 15;
-            this.label2.Text = "Bán sách";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.label2.Text = "BÁN SÁCH";
             // 
             // panel1
             // 
@@ -181,7 +185,7 @@ namespace QuanLyNhaSach.UserControls
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -231,6 +235,7 @@ namespace QuanLyNhaSach.UserControls
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.containedButton1);
             this.panel4.Controls.Add(this.txtTongcong);
             this.panel4.Controls.Add(this.containedButton5);
             this.panel4.Controls.Add(this.containedButton4);
@@ -244,10 +249,30 @@ namespace QuanLyNhaSach.UserControls
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(515, 393);
             this.panel4.TabIndex = 17;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // containedButton1
+            // 
+            this.containedButton1.EffectType = MaterialSurface.ET.Custom;
+            this.containedButton1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.containedButton1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.containedButton1.Icon = null;
+            this.containedButton1.Location = new System.Drawing.Point(309, 284);
+            this.containedButton1.MouseState = MaterialSurface.MouseState.OUT;
+            this.containedButton1.Name = "containedButton1";
+            this.containedButton1.PrimaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.containedButton1.Radius = 6;
+            this.containedButton1.ShawdowDepth = 3;
+            this.containedButton1.ShawdowOpacity = 50;
+            this.containedButton1.Size = new System.Drawing.Size(200, 75);
+            this.containedButton1.TabIndex = 31;
+            this.containedButton1.Text = "Thanh toán và In hóa đơn";
+            this.containedButton1.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.containedButton1.UseVisualStyleBackColor = true;
+            this.containedButton1.Click += new System.EventHandler(this.containedButton1_Click_1);
             // 
             // txtTongcong
             // 
+            this.txtTongcong.BackColor = System.Drawing.Color.Gainsboro;
             this.txtTongcong.Enabled = false;
             this.txtTongcong.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtTongcong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -255,8 +280,8 @@ namespace QuanLyNhaSach.UserControls
             this.txtTongcong.Name = "txtTongcong";
             this.txtTongcong.Size = new System.Drawing.Size(203, 42);
             this.txtTongcong.TabIndex = 30;
+            this.txtTongcong.Text = "0";
             this.txtTongcong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtTongcong.TextChanged += new System.EventHandler(this.textBox1_TextChanged_2);
             // 
             // containedButton5
             // 
@@ -264,16 +289,16 @@ namespace QuanLyNhaSach.UserControls
             this.containedButton5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.containedButton5.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.containedButton5.Icon = null;
-            this.containedButton5.Location = new System.Drawing.Point(261, 316);
+            this.containedButton5.Location = new System.Drawing.Point(134, 284);
             this.containedButton5.MouseState = MaterialSurface.MouseState.OUT;
             this.containedButton5.Name = "containedButton5";
             this.containedButton5.PrimaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
             this.containedButton5.Radius = 6;
             this.containedButton5.ShawdowDepth = 3;
             this.containedButton5.ShawdowOpacity = 50;
-            this.containedButton5.Size = new System.Drawing.Size(200, 75);
+            this.containedButton5.Size = new System.Drawing.Size(137, 75);
             this.containedButton5.TabIndex = 15;
-            this.containedButton5.Text = "Xong";
+            this.containedButton5.Text = "In hóa đơn";
             this.containedButton5.TextAlignment = System.Drawing.StringAlignment.Center;
             this.containedButton5.UseVisualStyleBackColor = true;
             this.containedButton5.Click += new System.EventHandler(this.containedButton5_Click);
@@ -284,14 +309,14 @@ namespace QuanLyNhaSach.UserControls
             this.containedButton4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.containedButton4.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.containedButton4.Icon = null;
-            this.containedButton4.Location = new System.Drawing.Point(14, 316);
+            this.containedButton4.Location = new System.Drawing.Point(6, 284);
             this.containedButton4.MouseState = MaterialSurface.MouseState.OUT;
             this.containedButton4.Name = "containedButton4";
             this.containedButton4.PrimaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
             this.containedButton4.Radius = 6;
             this.containedButton4.ShawdowDepth = 3;
             this.containedButton4.ShawdowOpacity = 50;
-            this.containedButton4.Size = new System.Drawing.Size(200, 75);
+            this.containedButton4.Size = new System.Drawing.Size(86, 75);
             this.containedButton4.TabIndex = 15;
             this.containedButton4.Text = "Hủy";
             this.containedButton4.TextAlignment = System.Drawing.StringAlignment.Center;
@@ -326,7 +351,6 @@ namespace QuanLyNhaSach.UserControls
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(515, 10);
             this.panel7.TabIndex = 1;
-            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
             // panel5
             // 
@@ -354,7 +378,6 @@ namespace QuanLyNhaSach.UserControls
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(20, 1059);
             this.panel3.TabIndex = 17;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // containedButton6
             // 
@@ -362,7 +385,7 @@ namespace QuanLyNhaSach.UserControls
             this.containedButton6.Font = new System.Drawing.Font("Segoe UI", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.containedButton6.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.containedButton6.Icon = null;
-            this.containedButton6.Location = new System.Drawing.Point(821, 476);
+            this.containedButton6.Location = new System.Drawing.Point(763, 476);
             this.containedButton6.MouseState = MaterialSurface.MouseState.OUT;
             this.containedButton6.Name = "containedButton6";
             this.containedButton6.PrimaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
@@ -408,7 +431,7 @@ namespace QuanLyNhaSach.UserControls
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(784, 394);
+            this.dataGridView1.Size = new System.Drawing.Size(711, 394);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -417,18 +440,17 @@ namespace QuanLyNhaSach.UserControls
             // 
             this.txtGiatien.AccessibleName = "";
             this.txtGiatien.Enabled = false;
-            this.txtGiatien.Location = new System.Drawing.Point(821, 323);
+            this.txtGiatien.Location = new System.Drawing.Point(707, 323);
             this.txtGiatien.Name = "txtGiatien";
             this.txtGiatien.Size = new System.Drawing.Size(297, 30);
             this.txtGiatien.TabIndex = 17;
-            this.txtGiatien.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            this.label1.Location = new System.Drawing.Point(652, 326);
+            this.label1.Location = new System.Drawing.Point(538, 326);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 24);
             this.label1.TabIndex = 18;
@@ -437,7 +459,7 @@ namespace QuanLyNhaSach.UserControls
             // txtSoluong
             // 
             this.txtSoluong.AccessibleName = "";
-            this.txtSoluong.Location = new System.Drawing.Point(821, 267);
+            this.txtSoluong.Location = new System.Drawing.Point(707, 267);
             this.txtSoluong.Name = "txtSoluong";
             this.txtSoluong.Size = new System.Drawing.Size(297, 30);
             this.txtSoluong.TabIndex = 19;
@@ -450,7 +472,7 @@ namespace QuanLyNhaSach.UserControls
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            this.label3.Location = new System.Drawing.Point(652, 270);
+            this.label3.Location = new System.Drawing.Point(538, 270);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(111, 24);
             this.label3.TabIndex = 20;
@@ -459,10 +481,10 @@ namespace QuanLyNhaSach.UserControls
             // txtTensach
             // 
             this.txtTensach.AccessibleName = "";
-            this.txtTensach.Location = new System.Drawing.Point(250, 270);
+            this.txtTensach.Location = new System.Drawing.Point(218, 270);
             this.txtTensach.Name = "txtTensach";
             this.txtTensach.ReadOnly = true;
-            this.txtTensach.Size = new System.Drawing.Size(345, 30);
+            this.txtTensach.Size = new System.Drawing.Size(272, 30);
             this.txtTensach.TabIndex = 21;
             // 
             // label4
@@ -470,20 +492,19 @@ namespace QuanLyNhaSach.UserControls
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            this.label4.Location = new System.Drawing.Point(44, 276);
+            this.label4.Location = new System.Drawing.Point(12, 276);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(116, 24);
             this.label4.TabIndex = 22;
             this.label4.Text = "Tên sách  :";
-            this.label4.Click += new System.EventHandler(this.label4_Click_1);
             // 
             // txtTacgia
             // 
             this.txtTacgia.AccessibleName = "";
-            this.txtTacgia.Location = new System.Drawing.Point(250, 326);
+            this.txtTacgia.Location = new System.Drawing.Point(218, 326);
             this.txtTacgia.Name = "txtTacgia";
             this.txtTacgia.ReadOnly = true;
-            this.txtTacgia.Size = new System.Drawing.Size(345, 30);
+            this.txtTacgia.Size = new System.Drawing.Size(272, 30);
             this.txtTacgia.TabIndex = 23;
             // 
             // label6
@@ -491,7 +512,7 @@ namespace QuanLyNhaSach.UserControls
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            this.label6.Location = new System.Drawing.Point(44, 329);
+            this.label6.Location = new System.Drawing.Point(12, 329);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(98, 24);
             this.label6.TabIndex = 24;
@@ -500,10 +521,10 @@ namespace QuanLyNhaSach.UserControls
             // txtTheloai
             // 
             this.txtTheloai.AccessibleName = "";
-            this.txtTheloai.Location = new System.Drawing.Point(250, 393);
+            this.txtTheloai.Location = new System.Drawing.Point(218, 393);
             this.txtTheloai.Name = "txtTheloai";
             this.txtTheloai.ReadOnly = true;
-            this.txtTheloai.Size = new System.Drawing.Size(345, 30);
+            this.txtTheloai.Size = new System.Drawing.Size(272, 30);
             this.txtTheloai.TabIndex = 25;
             // 
             // label9
@@ -511,7 +532,7 @@ namespace QuanLyNhaSach.UserControls
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            this.label9.Location = new System.Drawing.Point(44, 393);
+            this.label9.Location = new System.Drawing.Point(12, 393);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(98, 24);
             this.label9.TabIndex = 26;
@@ -520,17 +541,59 @@ namespace QuanLyNhaSach.UserControls
             // txtTongtien
             // 
             this.txtTongtien.AccessibleName = "";
-            this.txtTongtien.Location = new System.Drawing.Point(821, 403);
+            this.txtTongtien.Location = new System.Drawing.Point(707, 403);
             this.txtTongtien.Name = "txtTongtien";
             this.txtTongtien.ReadOnly = true;
             this.txtTongtien.Size = new System.Drawing.Size(239, 30);
             this.txtTongtien.TabIndex = 27;
-            this.txtTongtien.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            // 
+            // txtMaKH
+            // 
+            this.txtMaKH.AccessibleName = "";
+            this.txtMaKH.Location = new System.Drawing.Point(218, 156);
+            this.txtMaKH.Name = "txtMaKH";
+            this.txtMaKH.Size = new System.Drawing.Size(272, 30);
+            this.txtMaKH.TabIndex = 28;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
+            this.label8.Location = new System.Drawing.Point(12, 162);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(85, 24);
+            this.label8.TabIndex = 29;
+            this.label8.Text = "Mã KH :";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(707, 153);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(297, 30);
+            this.dateTimePicker1.TabIndex = 30;
+            // 
+            // prtDoc
+            // 
+            this.prtDoc.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.prtDoc_PrintPage);
+            // 
+            // prtprvDoc
+            // 
+            this.prtprvDoc.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.prtprvDoc.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.prtprvDoc.ClientSize = new System.Drawing.Size(400, 300);
+            this.prtprvDoc.Enabled = true;
+            this.prtprvDoc.Icon = ((System.Drawing.Icon)(resources.GetObject("prtprvDoc.Icon")));
+            this.prtprvDoc.Name = "prtprvDoc";
+            this.prtprvDoc.Visible = false;
             // 
             // UC_BanSach
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtMaKH);
             this.Controls.Add(this.txtTongtien);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtTheloai);
@@ -586,7 +649,7 @@ namespace QuanLyNhaSach.UserControls
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtTénach;
+        private System.Windows.Forms.TextBox txtTensach;
         private System.Windows.Forms.TextBox txtTacgia;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtTheloai;
@@ -601,5 +664,11 @@ namespace QuanLyNhaSach.UserControls
         private System.Windows.Forms.TextBox txtGiatien;
         private System.Windows.Forms.TextBox txtTensach;
         private System.Windows.Forms.TextBox txtTongcong;
+        private MaterialSurface.ContainedButton containedButton1;
+        private System.Windows.Forms.TextBox txtMaKH;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Drawing.Printing.PrintDocument prtDoc;
+        private System.Windows.Forms.PrintPreviewDialog prtprvDoc;
     }
 }

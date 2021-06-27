@@ -10,6 +10,9 @@
     <Compile Update="Forms\Dialog_BaoCaoCongNo.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\Dialog_ThuTien.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\FormTempForPrint.cs">
       <SubType>Form</SubType>
     </Compile>
