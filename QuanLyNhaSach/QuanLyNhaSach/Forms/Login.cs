@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using QuanLyNhaSach.DA;
 
 namespace QuanLyNhaSach.Forms
 {
@@ -54,15 +55,19 @@ namespace QuanLyNhaSach.Forms
 
             try
             {
-                SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\CNPM\Quan ly nha sach\QLNS.mdf;Integrated Security=True;Connect Timeout=30");
+                //SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\C#\QLNS2\QLNS.mdf;Integrated Security=True;Connect Timeout=30");
 
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("select * from NHANVIEN where Username='" + txtuser.Text + "' and Password='" + txtpassword.Text + "' and Type='nhanvien'", conn);
-                SqlDataReader dta = cmd.ExecuteReader();
+                //conn.Open();
+                //SqlCommand cmd = new SqlCommand("select * from NHANVIEN where Username='" + txtuser.Text + "' and Password='" + txtpassword.Text + "' and Type='nhanvien'", conn);
+                //SqlDataReader dta = cmd.ExecuteReader();
 
-                if (dta.HasRows)
+                //string query = @"INSERT INTO PHIEUNHAP VALUES((SELECT CONVERT(DATETIME, GETDATE())))";
+                //SqlDataReader dta = DataProvider.Instance.ExecuteNonQuery(query);
+                string query = "select * from NHANVIEN where Username='" + txtuser.Text + "' and Password='" + txtpassword.Text + "' and Type='nhanvien'";
+                DataTable dta= DataProvider.Instance.ExecuteQuery(query);
+                if (dta.Rows.Count>0)
                 {
-                    dta.Read();
+                   
 
                     MessageBox.Show("Thanh cong dang nhap user");
                     Dashboard_NhanVien da = new Dashboard_NhanVien();

@@ -28,7 +28,7 @@ namespace QuanLyNhaSach.UserControls
         #region Method
         private void Grid_tb_loadData()
         {
-            string query = "SELECT MaSach, TenSach,TheLoai,TacGia,DGBan FROM SACH";
+            string query = "SELECT MaSach, TenSach,TheLoai,TacGia,DGBan,SoLuong FROM SACH";
 
             dataGridView1.DataSource = DataProvider.Instance.ExecuteQuery(query);
         }
@@ -173,36 +173,63 @@ namespace QuanLyNhaSach.UserControls
             txtTensach.Text = dataGridView1.Rows[e.RowIndex].Cells["TenSach"].FormattedValue.ToString();
             txtTacgia.Text = dataGridView1.Rows[e.RowIndex].Cells["TacGia"].FormattedValue.ToString();
 
+
         }
 
         private void containedButton6_Click(object sender, EventArgs e)
         {
-            try
+            if (txtSoluong.Text == "")
             {
-                DataGridViewRow newRow = new DataGridViewRow();
-                newRow.CreateCells(dataGridView2);
-                newRow.Cells[0].Value = n + 1;
-                newRow.Cells[1].Value = txtTensach.Text;
-                newRow.Cells[2].Value = txtSoluong.Text;
-                newRow.Cells[3].Value = txtGiatien.Text;
-
-                dataGridView2.Rows.Add(newRow);
-                n++;
-                showTotal();
+                MessageBox.Show("Nhập số lượng");
+                return;
             }
-            catch { }
+            else
+            {
+                try
+                {
+                    DataGridViewRow newRow = new DataGridViewRow();
+                    newRow.CreateCells(dataGridView2);
+                    newRow.Cells[0].Value = n + 1;
+                    newRow.Cells[1].Value = txtTensach.Text;
+                    newRow.Cells[2].Value = txtSoluong.Text;
+                    newRow.Cells[3].Value = txtGiatien.Text;
+
+                    dataGridView2.Rows.Add(newRow);
+                    n++;
+                    showTotal();
+                }
+                catch { }
+            }
             //dataGridView2.Rows.Add(newRow);
          
         }
+
+        int total = 0;
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            dataGridView1.CurrentRow.Selected = true;
-            txtTensach.Text = dataGridView1.Rows[e.RowIndex].Cells["TenSach"].FormattedValue.ToString();
-            txtTacgia.Text = dataGridView1.Rows[e.RowIndex].Cells["TacGia"].FormattedValue.ToString();
-            txtTheloai.Text = dataGridView1.Rows[e.RowIndex].Cells["TheLoai"].FormattedValue.ToString();
-            txtGiatien.Text = dataGridView1.Rows[e.RowIndex].Cells["DGBan"].FormattedValue.ToString();
-            int total = Convert.ToInt32(txtSoluong.Text) * Convert.ToInt32(txtGiatien.Text);
-            txtTongtien.Text = Convert.ToString(total);
+            int num_row = 0;
+            for (int i = 1; i < dataGridView1.Rows.Count; i++)
+            {
+                num_row=num_row+1;
+            }
+            if (e.RowIndex >= 0&& e.RowIndex<num_row)
+            {
+                dataGridView1.CurrentRow.Selected = true;
+                txtTensach.Text = dataGridView1.Rows[e.RowIndex].Cells["TenSach"].FormattedValue.ToString();
+                txtTacgia.Text = dataGridView1.Rows[e.RowIndex].Cells["TacGia"].FormattedValue.ToString();
+                txtTheloai.Text = dataGridView1.Rows[e.RowIndex].Cells["TheLoai"].FormattedValue.ToString();
+                txtGiatien.Text = dataGridView1.Rows[e.RowIndex].Cells["DGBan"].FormattedValue.ToString();
+                if (txtSoluong.Text == "")
+                {
+                    return;
+                }
+                total = Convert.ToInt32(txtSoluong.Text) * Convert.ToInt32(txtGiatien.Text);
+                txtTongtien.Text = Convert.ToString(total);
+            }
+            else
+            {
+                return;
+            }
         }
 
         private void containedButton2_Click(object sender, EventArgs e)
@@ -225,9 +252,15 @@ namespace QuanLyNhaSach.UserControls
         {
             if (txtSoluong.Text == null)
             {
-                MessageBox.Show("Nhập số lượng");
                 return;
             }
+            if (txtSoluong.Text != "")
+            {
+                total = Convert.ToInt32(txtSoluong.Text) * Convert.ToInt32(txtGiatien.Text);
+            }
+          
+            txtTongtien.Text = Convert.ToString(total);
+
         }
 
         private void txtSoluong_KeyPress(object sender, KeyPressEventArgs e)
