@@ -204,6 +204,7 @@ namespace QuanLyNhaSach.UserControls
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(515, 556);
             this.dataGridView2.TabIndex = 19;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             this.dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellDoubleClick);
             // 
             // txtSTT
@@ -648,7 +649,7 @@ namespace QuanLyNhaSach.UserControls
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtTénach;
+        private System.Windows.Forms.TextBox txtTensach;
         private System.Windows.Forms.TextBox txtTacgia;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtTheloai;

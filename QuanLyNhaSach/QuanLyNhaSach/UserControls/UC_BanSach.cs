@@ -145,7 +145,14 @@ namespace QuanLyNhaSach.UserControls
 
         private void containedButton5_Click(object sender, EventArgs e)
         {
-            this.Print_HoaDon();
+            if (dataGridView2.Rows.Count == 0)
+            {
+                MessageBox.Show("Chưa có sản phẩm nào được chọn");
+            }
+            else
+            {
+                this.Print_HoaDon();
+            }
         }
 
         private void SetFontAndColors()
@@ -248,8 +255,16 @@ namespace QuanLyNhaSach.UserControls
 
         private void containedButton1_Click_1(object sender, EventArgs e)
         {
-            this.Print_HoaDon();
-            this.PrintPhieuThu();
+            if (dataGridView2.Rows.Count == 0)
+            {
+                MessageBox.Show("Chưa có sản phẩm nào được chọn");
+            }
+            else
+            {
+                this.Print_HoaDon();
+                this.PrintPhieuThu();
+            }
+            
         }
 
         private void prtDoc_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
@@ -269,6 +284,11 @@ namespace QuanLyNhaSach.UserControls
             e.Graphics.DrawString("Email: " + Email, new Font("Times New Roman", 14, FontStyle.Regular), Brushes.Black, new Point(533, 124));
             e.Graphics.DrawString("Ngày thu tiền: " + DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString(), new Font("Times New Roman", 14, FontStyle.Regular), Brushes.Black, new Point(32, 170));
             e.Graphics.DrawString("Số tiền thu: " + tienthu.ToString(), new Font("Times New Roman", 14, FontStyle.Regular), Brushes.Black, new Point(533, 170));
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

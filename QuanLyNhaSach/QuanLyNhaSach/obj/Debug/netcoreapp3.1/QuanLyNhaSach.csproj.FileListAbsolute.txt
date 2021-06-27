@@ -177,3 +177,4 @@ E:\C#\QLNS2\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.ge
 E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.Dialog_ThuTien.resources
 E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.PhieuThuTien.resources
 >>>>>>> 626aea6b0c0e0b50f4a73f3eba8b1c12c9000db8
+E:\C#\QLNS2\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.Dialog_ThuTien.resources
