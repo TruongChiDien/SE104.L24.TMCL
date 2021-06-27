@@ -32,6 +32,8 @@ namespace QuanLyNhaSach.Forms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard_Admin));
             this.panelLeft = new System.Windows.Forms.Panel();
+            this.BtPhieuNhap = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.btnKhoSach = new System.Windows.Forms.Button();
             this.panelTicked = new System.Windows.Forms.Panel();
             this.btnNhanVien = new System.Windows.Forms.Button();
@@ -62,6 +64,8 @@ namespace QuanLyNhaSach.Forms
             // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
+            this.panelLeft.Controls.Add(this.BtPhieuNhap);
+            this.panelLeft.Controls.Add(this.button2);
             this.panelLeft.Controls.Add(this.btnKhoSach);
             this.panelLeft.Controls.Add(this.panelTicked);
             this.panelLeft.Controls.Add(this.btnNhanVien);
@@ -71,6 +75,38 @@ namespace QuanLyNhaSach.Forms
             this.panelLeft.Name = "panelLeft";
             this.panelLeft.Size = new System.Drawing.Size(350, 927);
             this.panelLeft.TabIndex = 0;
+            // 
+            // BtPhieuNhap
+            // 
+            this.BtPhieuNhap.FlatAppearance.BorderSize = 0;
+            this.BtPhieuNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtPhieuNhap.Font = new System.Drawing.Font("Century Gothic", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtPhieuNhap.ForeColor = System.Drawing.Color.White;
+            this.BtPhieuNhap.Image = ((System.Drawing.Image)(resources.GetObject("BtPhieuNhap.Image")));
+            this.BtPhieuNhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtPhieuNhap.Location = new System.Drawing.Point(5, 552);
+            this.BtPhieuNhap.Name = "BtPhieuNhap";
+            this.BtPhieuNhap.Size = new System.Drawing.Size(340, 140);
+            this.BtPhieuNhap.TabIndex = 5;
+            this.BtPhieuNhap.Text = "Tra cứu phiếu nhập";
+            this.BtPhieuNhap.UseVisualStyleBackColor = true;
+            this.BtPhieuNhap.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(5, 393);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(340, 140);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Kho sách";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // btnKhoSach
             // 
@@ -340,5 +376,7 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelControl;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BtPhieuNhap;
     }
 }

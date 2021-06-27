@@ -49,6 +49,12 @@ namespace QuanLyNhaSach.Forms
             this.button4 = new System.Windows.Forms.Button();
             this.DtNgayvaolam = new System.Windows.Forms.DateTimePicker();
             this.TxEmail = new System.Windows.Forms.TextBox();
+            this.TxPassword = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.TxUsername = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.CbType = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +64,7 @@ namespace QuanLyNhaSach.Forms
             this.BtHuy.Font = new System.Drawing.Font("Segoe UI", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtHuy.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.BtHuy.Icon = null;
-            this.BtHuy.Location = new System.Drawing.Point(290, 400);
+            this.BtHuy.Location = new System.Drawing.Point(285, 426);
             this.BtHuy.Margin = new System.Windows.Forms.Padding(2);
             this.BtHuy.MouseState = MaterialSurface.MouseState.OUT;
             this.BtHuy.Name = "BtHuy";
@@ -67,7 +73,7 @@ namespace QuanLyNhaSach.Forms
             this.BtHuy.ShawdowDepth = 3;
             this.BtHuy.ShawdowOpacity = 50;
             this.BtHuy.Size = new System.Drawing.Size(166, 50);
-            this.BtHuy.TabIndex = 53;
+            this.BtHuy.TabIndex = 10;
             this.BtHuy.Text = "Hủy";
             this.BtHuy.TextAlignment = System.Drawing.StringAlignment.Center;
             this.BtHuy.UseVisualStyleBackColor = true;
@@ -79,7 +85,7 @@ namespace QuanLyNhaSach.Forms
             this.BtXong.Font = new System.Drawing.Font("Segoe UI", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtXong.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.BtXong.Icon = null;
-            this.BtXong.Location = new System.Drawing.Point(473, 400);
+            this.BtXong.Location = new System.Drawing.Point(468, 426);
             this.BtXong.Margin = new System.Windows.Forms.Padding(2);
             this.BtXong.MouseState = MaterialSurface.MouseState.OUT;
             this.BtXong.Name = "BtXong";
@@ -88,7 +94,7 @@ namespace QuanLyNhaSach.Forms
             this.BtXong.ShawdowDepth = 3;
             this.BtXong.ShawdowOpacity = 50;
             this.BtXong.Size = new System.Drawing.Size(166, 50);
-            this.BtXong.TabIndex = 50;
+            this.BtXong.TabIndex = 9;
             this.BtXong.Text = "Xong";
             this.BtXong.TextAlignment = System.Drawing.StringAlignment.Center;
             this.BtXong.UseVisualStyleBackColor = true;
@@ -96,23 +102,24 @@ namespace QuanLyNhaSach.Forms
             // 
             // TxDiachi
             // 
-            this.TxDiachi.Location = new System.Drawing.Point(358, 354);
+            this.TxDiachi.Location = new System.Drawing.Point(358, 256);
             this.TxDiachi.Margin = new System.Windows.Forms.Padding(2);
             this.TxDiachi.Name = "TxDiachi";
             this.TxDiachi.Size = new System.Drawing.Size(265, 27);
             this.TxDiachi.TabIndex = 5;
+            this.TxDiachi.TextChanged += new System.EventHandler(this.TxDiachi_TextChanged);
             // 
             // TxSDT
             // 
-            this.TxSDT.Location = new System.Drawing.Point(358, 279);
+            this.TxSDT.Location = new System.Drawing.Point(358, 181);
             this.TxSDT.Margin = new System.Windows.Forms.Padding(2);
             this.TxSDT.Name = "TxSDT";
             this.TxSDT.Size = new System.Drawing.Size(265, 27);
-            this.TxSDT.TabIndex = 2;
+            this.TxSDT.TabIndex = 3;
             // 
             // TxTenNV
             // 
-            this.TxTenNV.Location = new System.Drawing.Point(358, 205);
+            this.TxTenNV.Location = new System.Drawing.Point(358, 107);
             this.TxTenNV.Margin = new System.Windows.Forms.Padding(2);
             this.TxTenNV.Name = "TxTenNV";
             this.TxTenNV.Size = new System.Drawing.Size(265, 27);
@@ -123,7 +130,7 @@ namespace QuanLyNhaSach.Forms
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            this.label6.Location = new System.Drawing.Point(190, 282);
+            this.label6.Location = new System.Drawing.Point(186, 184);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(141, 24);
@@ -136,7 +143,7 @@ namespace QuanLyNhaSach.Forms
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            this.label4.Location = new System.Drawing.Point(250, 352);
+            this.label4.Location = new System.Drawing.Point(246, 259);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 24);
@@ -148,7 +155,7 @@ namespace QuanLyNhaSach.Forms
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            this.label3.Location = new System.Drawing.Point(187, 245);
+            this.label3.Location = new System.Drawing.Point(183, 147);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(144, 24);
@@ -160,7 +167,7 @@ namespace QuanLyNhaSach.Forms
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            this.label2.Location = new System.Drawing.Point(180, 209);
+            this.label2.Location = new System.Drawing.Point(176, 111);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(151, 23);
@@ -172,7 +179,7 @@ namespace QuanLyNhaSach.Forms
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Black", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            this.label1.Location = new System.Drawing.Point(384, 130);
+            this.label1.Location = new System.Drawing.Point(375, 39);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(230, 37);
@@ -183,7 +190,7 @@ namespace QuanLyNhaSach.Forms
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(81, 49);
+            this.pictureBox1.Location = new System.Drawing.Point(38, 39);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(112, 118);
@@ -196,7 +203,7 @@ namespace QuanLyNhaSach.Forms
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            this.label5.Location = new System.Drawing.Point(263, 320);
+            this.label5.Location = new System.Drawing.Point(259, 222);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 24);
@@ -261,18 +268,82 @@ namespace QuanLyNhaSach.Forms
             // DtNgayvaolam
             // 
             this.DtNgayvaolam.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.DtNgayvaolam.Location = new System.Drawing.Point(358, 242);
+            this.DtNgayvaolam.Location = new System.Drawing.Point(358, 144);
             this.DtNgayvaolam.Name = "DtNgayvaolam";
             this.DtNgayvaolam.Size = new System.Drawing.Size(265, 27);
-            this.DtNgayvaolam.TabIndex = 77;
+            this.DtNgayvaolam.TabIndex = 2;
             // 
             // TxEmail
             // 
-            this.TxEmail.Location = new System.Drawing.Point(358, 317);
+            this.TxEmail.Location = new System.Drawing.Point(358, 219);
             this.TxEmail.Margin = new System.Windows.Forms.Padding(2);
             this.TxEmail.Name = "TxEmail";
             this.TxEmail.Size = new System.Drawing.Size(265, 27);
-            this.TxEmail.TabIndex = 78;
+            this.TxEmail.TabIndex = 4;
+            // 
+            // TxPassword
+            // 
+            this.TxPassword.Location = new System.Drawing.Point(358, 332);
+            this.TxPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.TxPassword.Name = "TxPassword";
+            this.TxPassword.Size = new System.Drawing.Size(265, 27);
+            this.TxPassword.TabIndex = 7;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
+            this.label7.Location = new System.Drawing.Point(217, 335);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(110, 24);
+            this.label7.TabIndex = 83;
+            this.label7.Text = "Password:";
+            // 
+            // TxUsername
+            // 
+            this.TxUsername.Location = new System.Drawing.Point(358, 294);
+            this.TxUsername.Margin = new System.Windows.Forms.Padding(2);
+            this.TxUsername.Name = "TxUsername";
+            this.TxUsername.Size = new System.Drawing.Size(265, 27);
+            this.TxUsername.TabIndex = 6;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
+            this.label8.Location = new System.Drawing.Point(215, 297);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(112, 24);
+            this.label8.TabIndex = 82;
+            this.label8.Text = "Username:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.White;
+            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
+            this.label9.Location = new System.Drawing.Point(264, 372);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(63, 24);
+            this.label9.TabIndex = 81;
+            this.label9.Text = "Type:";
+            // 
+            // CbType
+            // 
+            this.CbType.FormattingEnabled = true;
+            this.CbType.Items.AddRange(new object[] {
+            "nhanvien",
+            "admin"});
+            this.CbType.Location = new System.Drawing.Point(358, 372);
+            this.CbType.Name = "CbType";
+            this.CbType.Size = new System.Drawing.Size(265, 28);
+            this.CbType.TabIndex = 8;
             // 
             // ThemNhanVien
             // 
@@ -280,6 +351,12 @@ namespace QuanLyNhaSach.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(804, 503);
+            this.Controls.Add(this.CbType);
+            this.Controls.Add(this.TxPassword);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.TxUsername);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.TxEmail);
             this.Controls.Add(this.DtNgayvaolam);
             this.Controls.Add(this.button4);
@@ -332,5 +409,11 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DateTimePicker DtNgayvaolam;
         private System.Windows.Forms.TextBox TxEmail;
+        private System.Windows.Forms.TextBox TxPassword;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox TxUsername;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox CbType;
     }
 }

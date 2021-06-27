@@ -5,7 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-
+using QuanLyNhaSach.DA;
 namespace QuanLyNhaSach.Forms
 {
     public partial class ThemNhanVien : Form
@@ -48,12 +48,32 @@ namespace QuanLyNhaSach.Forms
                 MessageBox.Show("Địa chỉ không được để trống!");
                 isAlltrue = false;
             }
+            else if (String.IsNullOrEmpty(TxUsername.Text))
+            {
+                MessageBox.Show("Username không được để trống!");
+                isAlltrue = false;
+            }
+            else if (String.IsNullOrEmpty(TxPassword.Text))
+            {
+                MessageBox.Show("Password không được để trống!");
+                isAlltrue = false;
+            }
+            else if (String.IsNullOrEmpty(CbType.Text))
+            {
+                MessageBox.Show("Type không được để trống!");
+                isAlltrue = false;
+            }
 
             return isAlltrue;
         }
         private void containedButton6_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(DtNgayvaolam.Value.ToString("yyyy-MM-dd"));
+            if (!isTrueTxt())
+                return;
+            string query = string.Format("insert into NHANVIEN values({0},{1},{2},{3},N'{4}',{5},{6},{7})"
+                            ,TxTenNV.Text,TxDiachi.Text,TxSDT.Text,TxEmail.Text,DtNgayvaolam.Value.ToString("yyyy-MM-dd"),
+                            TxUsername.Text,TxPassword.Text,CbType.Text);
+            DataProvider.Instance.ExecuteNonQuery(query);
             this.Dispose();
         }
 
@@ -68,6 +88,11 @@ namespace QuanLyNhaSach.Forms
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxDiachi_TextChanged(object sender, EventArgs e)
         {
 
         }

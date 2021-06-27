@@ -22,10 +22,22 @@ namespace QuanLyNhaSach.UserControls
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (ThemSach ts = new ThemSach())
+
+            string query = @"INSERT INTO PHIEUNHAP VALUES((SELECT CONVERT(DATETIME, GETDATE())))";
+            DataProvider.Instance.ExecuteNonQuery(query);
+            using (TaoPhieuNhap ts = new TaoPhieuNhap())
             {
+
+                try
+                {
+                    DataProvider.Instance.ExecuteNonQuery(@"drop table SACHPHU");
+                }
+                catch { }
+                query = @"select * into SACHPHU from SACH";
+                DataProvider.Instance.ExecuteNonQuery(query);
                 ts.ShowDialog();
             }
+
             Grid_tb_loadData();
         }
 

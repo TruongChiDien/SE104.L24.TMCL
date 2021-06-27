@@ -87,7 +87,7 @@ namespace QuanLyNhaSach.Forms
                 int i = 0;
                 i = DataProvider.Instance.ExecuteNonQuery(query);
                 //add book
-                if (i == 0 ) 
+                if (i == -1 ) 
                 {
                     query = @"INSERT INTO SACH " +
                                          "VALUES(" + TxMasach.Text + ",'"
@@ -97,6 +97,10 @@ namespace QuanLyNhaSach.Forms
                                          + TxGianhap.Text + ","
                                          + TxGiaban.Text + ","
                                          + TxSoluong.Text + ")";
+                    DataProvider.Instance.ExecuteNonQuery(query);
+                    query = @"insert into CTPHIEUNHAP values((select max(MaPN) from PHIEUNHAP),"
+                            + TxMasach.Text + ", "
+                            + TxSoluong.Text + ")";
                     DataProvider.Instance.ExecuteNonQuery(query);
                 }
                 else

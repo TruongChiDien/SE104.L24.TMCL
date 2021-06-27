@@ -111,9 +111,9 @@ namespace QuanLyNhaSach.UserControls
             this.button1.Location = new System.Drawing.Point(0, 0);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(251, 76);
+            this.button1.Size = new System.Drawing.Size(324, 76);
             this.button1.TabIndex = 19;
-            this.button1.Text = "Thêm sách";
+            this.button1.Text = "Tạo phiếu nhập";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -186,6 +186,7 @@ namespace QuanLyNhaSach.UserControls
         private System.Windows.Forms.TextBox TxTimkiem;
         private System.Windows.Forms.ComboBox CbChude;
         private System.Windows.Forms.DataGridView Grid_tb_books;
+        private System.Windows.Forms.DataGridViewButtonColumn Xoa;
         private System.Windows.Forms.DataGridViewButtonColumn Deletebook;
     }
 }

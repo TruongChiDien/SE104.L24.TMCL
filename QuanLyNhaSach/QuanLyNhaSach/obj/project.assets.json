@@ -473,19 +473,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Asus\\.nuget\\packages\\": {}
+    "C:\\Users\\ducdu\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj",
+      "projectUniqueName": "E:\\CNPM\\Quan ly nha sach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj",
       "projectName": "QuanLyNhaSach",
-      "projectPath": "E:\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj",
-      "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-      "outputPath": "E:\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach\\obj\\",
+      "projectPath": "E:\\CNPM\\Quan ly nha sach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj",
+      "packagesPath": "C:\\Users\\ducdu\\.nuget\\packages\\",
+      "outputPath": "E:\\CNPM\\Quan ly nha sach\\QuanLyNhaSach\\QuanLyNhaSach\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ducdu\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

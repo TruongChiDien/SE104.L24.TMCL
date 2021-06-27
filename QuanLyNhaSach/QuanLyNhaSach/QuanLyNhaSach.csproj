@@ -12,10 +12,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Forms\PhieuNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\TaoPhieuNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="UserControls\UC_PhieuNhap.cs">
+      <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
 

@@ -123,5 +123,21 @@ namespace QuanLyNhaSach.Forms
         {
             timer1.Start();
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
+            // btn KhoSach
+            moveTickedPanel(btnKhoSach);
+            UC_KhoSach uks = new UC_KhoSach();
+            AddControlToPanel(uks);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            moveTickedPanel(BtPhieuNhap);
+            UC_PhieuNhap uks = new UC_PhieuNhap();
+            AddControlToPanel(uks);
+        }
     }
 }

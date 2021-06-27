@@ -21,8 +21,8 @@ namespace QuanLyNhaSach
             //Application.Run(new Forms.Login());
             //Application.Run(new Forms.Dashboard_Admin()) ;
            // Application.Run(new Forms.YesNo());
-            //Application.Run(new Forms.Dashboard_Admin()) ;
-            Application.Run(new Forms.Dashboard_NhanVien());
+            Application.Run(new Forms.Dashboard_Admin()) ;
+            //Application.Run(new Forms.Dashboard_NhanVien());
 
         }
     }

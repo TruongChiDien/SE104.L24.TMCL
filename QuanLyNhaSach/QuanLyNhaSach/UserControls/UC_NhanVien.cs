@@ -16,7 +16,7 @@ namespace QuanLyNhaSach.UserControls
         {
             InitializeComponent();
             Grid_nhanvien_load();
-            this.Grid_nhanvien.Columns["CDelete"].DisplayIndex = 6;
+            this.Grid_nhanvien.Columns["CDelete"].DisplayIndex = 9;
 
         }
 
@@ -31,6 +31,7 @@ namespace QuanLyNhaSach.UserControls
             {
                 tnv.ShowDialog();
             }
+            this.Grid_nhanvien_load();
         }
 
         private void UC_NhanVien_Load(object sender, EventArgs e)
