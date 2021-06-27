@@ -662,7 +662,7 @@ namespace QuanLyNhaSach.UserControls
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.TextBox txtSoluong;
         private System.Windows.Forms.TextBox txtGiatien;
-        private System.Windows.Forms.TextBox txtTensach;
+        //private System.Windows.Forms.TextBox txtTensach;
         private System.Windows.Forms.TextBox txtTongcong;
         private MaterialSurface.ContainedButton containedButton1;
         private System.Windows.Forms.TextBox txtMaKH;

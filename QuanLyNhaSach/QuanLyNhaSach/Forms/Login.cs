@@ -54,10 +54,10 @@ namespace QuanLyNhaSach.Forms
 
             try
             {
-                SqlConnection conn = new SqlConnection("Data Source=MSI\\ANHDUNGSQL;Initial Catalog=E:\\CNPM\\QLNS\\QLNS.MDF;Integrated Security=True");
+                SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\CNPM\Quan ly nha sach\QLNS.mdf;Integrated Security=True;Connect Timeout=30");
 
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("select * from NHANVIEN where Username='" + txtuser.Text + "' and Password='" + txtpassword.Text + "' and Type='user'", conn);
+                SqlCommand cmd = new SqlCommand("select * from NHANVIEN where Username='" + txtuser.Text + "' and Password='" + txtpassword.Text + "' and Type='nhanvien'", conn);
                 SqlDataReader dta = cmd.ExecuteReader();
 
                 if (dta.HasRows)
@@ -88,7 +88,9 @@ namespace QuanLyNhaSach.Forms
         {
             using (Login_Admin la = new Login_Admin())
             {
-                la.ShowDialog();               
+           
+                la.Show();
+                this.Hide();               
             }
         }
     }

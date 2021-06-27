@@ -1,41 +1,20 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
-    "E:\\CNPM\\Quan ly nha sach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj": {}
+    "E:\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj": {}
   },
   "projects": {
-    "E:\\CNPM\\Quan ly nha sach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj": {
+    "E:\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\CNPM\\Quan ly nha sach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj",
+        "projectUniqueName": "E:\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj",
         "projectName": "QuanLyNhaSach",
-        "projectPath": "E:\\CNPM\\Quan ly nha sach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj",
-        "packagesPath": "C:\\Users\\ducdu\\.nuget\\packages\\",
-        "outputPath": "E:\\CNPM\\Quan ly nha sach\\QuanLyNhaSach\\QuanLyNhaSach\\obj\\",
-=======
-    "E:\\C#\\QLNS2\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj": {}
-  },
-  "projects": {
-    "E:\\C#\\QLNS2\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "E:\\C#\\QLNS2\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj",
-        "projectName": "QuanLyNhaSach",
-        "projectPath": "E:\\C#\\QLNS2\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "E:\\C#\\QLNS2\\QuanLyNhaSach\\QuanLyNhaSach\\obj\\",
->>>>>>> 3387f95733f177cd29397d65a7fda891b8e40e36
+        "projectPath": "E:\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj",
+        "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
+        "outputPath": "E:\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-<<<<<<< HEAD
-          "C:\\Users\\ducdu\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 3387f95733f177cd29397d65a7fda891b8e40e36
+          "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -88,7 +67,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.204\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
