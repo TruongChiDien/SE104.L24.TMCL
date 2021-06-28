@@ -42,10 +42,6 @@ namespace QuanLyNhaSach.UserControls
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.txtSTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.containedButton1 = new MaterialSurface.ContainedButton();
             this.txtTongcong = new System.Windows.Forms.TextBox();
@@ -75,6 +71,10 @@ namespace QuanLyNhaSach.UserControls
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.prtDoc = new System.Drawing.Printing.PrintDocument();
             this.prtprvDoc = new System.Windows.Forms.PrintPreviewDialog();
+            this.txtSTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tensach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel4.SuspendLayout();
@@ -179,8 +179,8 @@ namespace QuanLyNhaSach.UserControls
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.txtSTT,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn1,
+            this.Tensach,
+            this.SL,
             this.dataGridViewTextBoxColumn2});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -206,32 +206,6 @@ namespace QuanLyNhaSach.UserControls
             this.dataGridView2.TabIndex = 19;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             this.dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellDoubleClick);
-            // 
-            // txtSTT
-            // 
-            this.txtSTT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.txtSTT.HeaderText = "STT";
-            this.txtSTT.MinimumWidth = 4;
-            this.txtSTT.Name = "txtSTT";
-            this.txtSTT.Width = 55;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Tên Sách";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "SL";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Giá tiền";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // panel4
             // 
@@ -588,6 +562,32 @@ namespace QuanLyNhaSach.UserControls
             this.prtprvDoc.Name = "prtprvDoc";
             this.prtprvDoc.Visible = false;
             // 
+            // txtSTT
+            // 
+            this.txtSTT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.txtSTT.HeaderText = "STT";
+            this.txtSTT.MinimumWidth = 4;
+            this.txtSTT.Name = "txtSTT";
+            this.txtSTT.Width = 55;
+            // 
+            // Tensach
+            // 
+            this.Tensach.HeaderText = "Tên Sách";
+            this.Tensach.MinimumWidth = 6;
+            this.Tensach.Name = "Tensach";
+            // 
+            // SL
+            // 
+            this.SL.HeaderText = "SL";
+            this.SL.MinimumWidth = 6;
+            this.SL.Name = "SL";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Giá tiền";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
             // UC_BanSach
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -671,5 +671,7 @@ namespace QuanLyNhaSach.UserControls
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Drawing.Printing.PrintDocument prtDoc;
         private System.Windows.Forms.PrintPreviewDialog prtprvDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tensach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SL;
     }
 }
