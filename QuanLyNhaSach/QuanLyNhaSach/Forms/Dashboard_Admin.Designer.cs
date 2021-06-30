@@ -32,6 +32,7 @@ namespace QuanLyNhaSach.Forms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard_Admin));
             this.panelLeft = new System.Windows.Forms.Panel();
+            this.btnBaoMat = new System.Windows.Forms.Button();
             this.BtPhieuNhap = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnKhoSach = new System.Windows.Forms.Button();
@@ -64,6 +65,7 @@ namespace QuanLyNhaSach.Forms
             // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
+            this.panelLeft.Controls.Add(this.btnBaoMat);
             this.panelLeft.Controls.Add(this.BtPhieuNhap);
             this.panelLeft.Controls.Add(this.button2);
             this.panelLeft.Controls.Add(this.btnKhoSach);
@@ -75,6 +77,22 @@ namespace QuanLyNhaSach.Forms
             this.panelLeft.Name = "panelLeft";
             this.panelLeft.Size = new System.Drawing.Size(350, 927);
             this.panelLeft.TabIndex = 0;
+            // 
+            // btnBaoMat
+            // 
+            this.btnBaoMat.FlatAppearance.BorderSize = 0;
+            this.btnBaoMat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBaoMat.Font = new System.Drawing.Font("Century Gothic", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnBaoMat.ForeColor = System.Drawing.Color.White;
+            this.btnBaoMat.Image = ((System.Drawing.Image)(resources.GetObject("btnBaoMat.Image")));
+            this.btnBaoMat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBaoMat.Location = new System.Drawing.Point(3, 698);
+            this.btnBaoMat.Name = "btnBaoMat";
+            this.btnBaoMat.Size = new System.Drawing.Size(340, 140);
+            this.btnBaoMat.TabIndex = 6;
+            this.btnBaoMat.Text = "Bảo mật";
+            this.btnBaoMat.UseVisualStyleBackColor = true;
+            this.btnBaoMat.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // BtPhieuNhap
             // 
@@ -88,7 +106,7 @@ namespace QuanLyNhaSach.Forms
             this.BtPhieuNhap.Name = "BtPhieuNhap";
             this.BtPhieuNhap.Size = new System.Drawing.Size(340, 140);
             this.BtPhieuNhap.TabIndex = 5;
-            this.BtPhieuNhap.Text = "Tra cứu phiếu nhập";
+            this.BtPhieuNhap.Text = "Tra phiếu nhập";
             this.BtPhieuNhap.UseVisualStyleBackColor = true;
             this.BtPhieuNhap.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -191,7 +209,7 @@ namespace QuanLyNhaSach.Forms
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(98, 158);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 23);
+            this.label1.Size = new System.Drawing.Size(166, 36);
             this.label1.TabIndex = 3;
             this.label1.Text = "Book Store";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -213,7 +231,7 @@ namespace QuanLyNhaSach.Forms
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
             this.label8.Location = new System.Drawing.Point(117, 18);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(153, 32);
+            this.label8.Size = new System.Drawing.Size(245, 49);
             this.label8.TabIndex = 8;
             this.label8.Text = "Book Store";
             // 
@@ -253,7 +271,7 @@ namespace QuanLyNhaSach.Forms
             this.labelRealTime.ForeColor = System.Drawing.Color.White;
             this.labelRealTime.Location = new System.Drawing.Point(1019, 62);
             this.labelRealTime.Name = "labelRealTime";
-            this.labelRealTime.Size = new System.Drawing.Size(90, 23);
+            this.labelRealTime.Size = new System.Drawing.Size(144, 38);
             this.labelRealTime.TabIndex = 3;
             this.labelRealTime.Text = "realtime";
             this.labelRealTime.Click += new System.EventHandler(this.labelRealTime_Click);
@@ -265,7 +283,7 @@ namespace QuanLyNhaSach.Forms
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(327, 92);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 23);
+            this.label6.Size = new System.Drawing.Size(119, 38);
             this.label6.TabIndex = 7;
             this.label6.Text = "Admin";
             // 
@@ -276,7 +294,7 @@ namespace QuanLyNhaSach.Forms
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(190, 92);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 23);
+            this.label5.Size = new System.Drawing.Size(106, 38);
             this.label5.TabIndex = 6;
             this.label5.Text = "Rules:";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -288,7 +306,7 @@ namespace QuanLyNhaSach.Forms
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(316, 34);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 23);
+            this.label4.Size = new System.Drawing.Size(145, 38);
             this.label4.TabIndex = 5;
             this.label4.Text = "<name>";
             // 
@@ -297,7 +315,7 @@ namespace QuanLyNhaSach.Forms
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(619, 62);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 23);
+            this.label3.Size = new System.Drawing.Size(0, 39);
             this.label3.TabIndex = 5;
             // 
             // label2
@@ -307,7 +325,7 @@ namespace QuanLyNhaSach.Forms
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(117, 34);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 23);
+            this.label2.Size = new System.Drawing.Size(173, 38);
             this.label2.TabIndex = 4;
             this.label2.Text = "Welcome:";
             // 
@@ -378,5 +396,6 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button BtPhieuNhap;
+        private System.Windows.Forms.Button btnBaoMat;
     }
 }

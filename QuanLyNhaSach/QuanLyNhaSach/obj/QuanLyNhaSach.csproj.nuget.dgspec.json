@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj": {}
+    "C:\\Users\\anhnh\\Documents\\GitHub\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj": {}
   },
   "projects": {
-    "E:\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj": {
+    "C:\\Users\\anhnh\\Documents\\GitHub\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj",
+        "projectUniqueName": "C:\\Users\\anhnh\\Documents\\GitHub\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj",
         "projectName": "QuanLyNhaSach",
-        "projectPath": "E:\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj",
-        "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "E:\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach\\obj\\",
+        "projectPath": "C:\\Users\\anhnh\\Documents\\GitHub\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj",
+        "packagesPath": "C:\\Users\\anhnh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\anhnh\\Documents\\GitHub\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\anhnh\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -67,7 +67,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

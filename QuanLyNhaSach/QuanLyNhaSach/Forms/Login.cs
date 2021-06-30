@@ -64,10 +64,10 @@ namespace QuanLyNhaSach.Forms
                 //string query = @"INSERT INTO PHIEUNHAP VALUES((SELECT CONVERT(DATETIME, GETDATE())))";
                 //SqlDataReader dta = DataProvider.Instance.ExecuteNonQuery(query);
                 string query = "select * from NHANVIEN where Username='" + txtuser.Text + "' and Password='" + txtpassword.Text + "' and Type='nhanvien'";
-                DataTable dta= DataProvider.Instance.ExecuteQuery(query);
-                if (dta.Rows.Count>0)
+                DataTable dta = DataProvider.Instance.ExecuteQuery(query);
+                if (dta.Rows.Count > 0)
                 {
-                   
+
 
                     MessageBox.Show("Thanh cong dang nhap user");
                     Dashboard_NhanVien da = new Dashboard_NhanVien();
@@ -85,7 +85,9 @@ namespace QuanLyNhaSach.Forms
             {
                 MessageBox.Show(ex.ToString());
             }
-
+            Dashboard_NhanVien da = new Dashboard_NhanVien();
+            da.Show();
+            this.Hide();
 
         }
 
@@ -95,7 +97,7 @@ namespace QuanLyNhaSach.Forms
             {
            
                 la.Show();
-                this.Hide();               
+                //this.Hide();               
             }
         }
     }
