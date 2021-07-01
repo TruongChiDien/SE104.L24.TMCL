@@ -106,7 +106,6 @@ namespace QuanLyNhaSach.Forms
             this.label2.Size = new System.Drawing.Size(161, 51);
             this.label2.TabIndex = 1;
             this.label2.Text = "Sign in";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -206,7 +205,7 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtuser;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        //private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox1;

@@ -233,3 +233,5 @@ C:\Users\anhnh\Documents\GitHub\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\De
 C:\Users\anhnh\Documents\GitHub\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.UserControls.UC_BaoMat.resources
 C:\Users\anhnh\Documents\GitHub\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.UserControls.UC_BaoMatNV.resources
 C:\Users\anhnh\Documents\GitHub\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.UserControls.UC_BaoMatAdmin.resources
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.UserControls.UC_BaoMatAdmin.resources
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.UserControls.UC_BaoMatNV.resources

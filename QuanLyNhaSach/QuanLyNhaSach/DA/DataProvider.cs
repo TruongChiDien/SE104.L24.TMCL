@@ -18,7 +18,7 @@ namespace QuanLyNhaSach.DA
 
         private DataProvider() { }
         
-        private string stringconnection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\anhnh\Documents\GitHub\QuanLyNhaSach\QLNS.mdf;Integrated Security=True;Connect Timeout=30";
+        private string stringconnection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\CNPM\Quan ly nha sach\QLNS.mdf;Integrated Security=True;Connect Timeout=30";
 
         public DataTable ExecuteQuery(string query, object[] paramater =null)
         {

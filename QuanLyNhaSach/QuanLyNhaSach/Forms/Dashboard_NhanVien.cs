@@ -179,10 +179,10 @@ namespace QuanLyNhaSach.Forms
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnBaoMat_Click(object sender, EventArgs e)
         {
             movePanelTicked(btnBaoMat);
-            UC_BaoMatNV ubmNV = new UC_BaoMatNV();
+            UC_BaoMatAdmin ubmNV = new UC_BaoMatAdmin();
             AddControlToPanel(ubmNV);
         }
     }

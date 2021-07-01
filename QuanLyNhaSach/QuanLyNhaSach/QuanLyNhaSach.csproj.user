@@ -40,9 +40,6 @@
     <Compile Update="UserControls\UC_BaoMatAdmin.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="UserControls\UC_BaoMatNV.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="UserControls\UC_KhachHang.cs">
       <SubType>UserControl</SubType>
     </Compile>

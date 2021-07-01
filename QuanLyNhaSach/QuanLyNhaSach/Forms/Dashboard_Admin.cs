@@ -1,4 +1,5 @@
-﻿using QuanLyNhaSach.UserControls;
+﻿using QuanLyNhaSach.DA;
+using QuanLyNhaSach.UserControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace QuanLyNhaSach.Forms
     {
         int PanelWidth;
         bool isCollapsed;
+        string query;
         public Dashboard_Admin()
         {
             InitializeComponent();
@@ -23,20 +25,6 @@ namespace QuanLyNhaSach.Forms
             AddControlToPanel(unv);
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
         private void AddControlToPanel(Control c)
         {
             c.Dock = DockStyle.Fill;
@@ -56,11 +44,6 @@ namespace QuanLyNhaSach.Forms
             //shutdown app
             Application.Exit();
             //this.Dispose();
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -88,8 +71,6 @@ namespace QuanLyNhaSach.Forms
             }
         }
 
-       
-        
         private void moveTickedPanel(Control btn)
         {
             panelTicked.Top = btn.Top;
@@ -110,22 +91,12 @@ namespace QuanLyNhaSach.Forms
             labelRealTime.Text = dt.ToString("HH:mm:ss");
         }
 
-        private void panelTicked_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void labelRealTime_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click_1(object sender, EventArgs e)
         {
             timer1.Start();
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
+        private void btnKhoSach_Click(object sender, EventArgs e)
         {
 
             // btn KhoSach
@@ -134,14 +105,14 @@ namespace QuanLyNhaSach.Forms
             AddControlToPanel(uks);
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnPhieuNhap_Click(object sender, EventArgs e)
         {
-            moveTickedPanel(BtPhieuNhap);
-            UC_PhieuNhap uks = new UC_PhieuNhap();
-            AddControlToPanel(uks);
+            moveTickedPanel(btnPhieuNhap);
+            UC_PhieuNhap upn = new UC_PhieuNhap();
+            AddControlToPanel(upn);
         }
 
-        private void button3_Click_1(object sender, EventArgs e)
+        private void btnBaoMat_Click(object sender, EventArgs e)
         {
             moveTickedPanel(btnBaoMat);
             UC_BaoMatAdmin ubmAdmin = new UC_BaoMatAdmin();

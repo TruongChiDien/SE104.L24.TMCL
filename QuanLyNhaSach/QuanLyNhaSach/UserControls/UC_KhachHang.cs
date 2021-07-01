@@ -323,6 +323,8 @@ namespace QuanLyNhaSach.UserControls
             txbNo.Text = dtgvKH.Rows[e.RowIndex].Cells["Nợ"].FormattedValue.ToString();
             
         }
+
+
     }
     #endregion
 
