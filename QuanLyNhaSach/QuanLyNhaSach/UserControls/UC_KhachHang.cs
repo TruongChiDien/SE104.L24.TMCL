@@ -15,13 +15,6 @@ namespace QuanLyNhaSach.UserControls
     public partial class UC_KhachHang : UserControl
     {
 
-        public UC_KhachHang()
-        {
-            InitializeComponent();
-            dtgvKH.ColumnHeadersHeight = 28;
-            Grid_Load();
-            if (CheckNo() == false) this.UpdateCongNo();
-        }
 
         #region Properties
         YesNo msb = new YesNo();
@@ -29,6 +22,13 @@ namespace QuanLyNhaSach.UserControls
         #endregion
 
         #region Method
+        public UC_KhachHang()
+        {
+            InitializeComponent();
+            dtgvKH.ColumnHeadersHeight = 28;
+            Grid_Load();
+            if (CheckNo() == false) this.UpdateCongNo();
+        }
 
         private void Grid_Load()
         {
@@ -324,8 +324,8 @@ namespace QuanLyNhaSach.UserControls
             
         }
 
-
+        #endregion
     }
-    #endregion
+
 
 }

@@ -13,7 +13,6 @@ namespace QuanLyNhaSach.UserControls
     public partial class UC_BanSach : UserControl
     {
         #region Properties
-        int n = 0;
         YesNo msb = new YesNo();
         int tienthu;
         int total = 0;
@@ -78,13 +77,17 @@ namespace QuanLyNhaSach.UserControls
                 msb.Messageshow("Nhập mã khách hàng!");
                 return;
             }
-            string query = string.Format("select HoTenKH from khachhang where MaKH = {0}", txtMaKH.Text);
-            string tenKH = DataProvider.Instance.ExecuteScalar(query).ToString();
-            if (tenKH == "")
+            int cnt = 0;
+            string query = string.Format("select count(*) from khachhang where MaKH = {0}", txtMaKH.Text);
+            cnt = Convert.ToInt32(DataProvider.Instance.ExecuteScalar(query));
+            
+            if (cnt == 0)
             {
                 msb.Messageshow("Khách hàng không tồn tại!");
                 return;
             }
+            query = string.Format("select HoTenKH from khachhang where MaKH = {0}", txtMaKH.Text);
+            string tenKH = DataProvider.Instance.ExecuteScalar(query).ToString();
 
             query = string.Format("update ctcongno set PhatSinh += {0}, NoCuoi += {1} where MaKH = {2} and month(Thoigian) = {3} and year(ThoiGian) = {4}", txtTongcong.Text, txtTongcong.Text, txtMaKH.Text, DateTime.Now.Month, DateTime.Now.Year);
             DataProvider.Instance.ExecuteNonQuery(query);
@@ -105,9 +108,23 @@ namespace QuanLyNhaSach.UserControls
 
         public void PrintPhieuThu()
         {
+            if (txtMaKH.Text == "")
+            {
+                return;
+            }
+
+            int cnt = 0;
+            string query = string.Format("select count(*) from khachhang where MaKH = {0}", txtMaKH.Text);
+            cnt = Convert.ToInt32(DataProvider.Instance.ExecuteScalar(query));
+
+            if (cnt == 0)
+            {
+                return;
+            }
+
 
             tienthu = Convert.ToInt32(txtTongcong.Text);
-            string query = string.Format("select * from ctcongno where MaKH = {0} and month(ThoiGian) = {1} and year(ThoiGian) = {2}", Convert.ToInt32(txtMaKH.Text), DateTime.Now.Month, DateTime.Now.Year);
+            query = string.Format("select * from ctcongno where MaKH = {0} and month(ThoiGian) = {1} and year(ThoiGian) = {2}", Convert.ToInt32(txtMaKH.Text), DateTime.Now.Month, DateTime.Now.Year);
             DataTable dtt = DataProvider.Instance.ExecuteQuery(query);
             int NoCuoi = Convert.ToInt32(dtt.Rows[0]["NoCuoi"]);
             int PhatSinh = Convert.ToInt32(dtt.Rows[0]["PhatSinh"]);
@@ -140,14 +157,17 @@ namespace QuanLyNhaSach.UserControls
         void showTotal()
         {
             int total = 0;
-            for (int i = 0; i < dtgvHoaDon.Rows.Count; i++)
+            for (int i = 0; i < dtgvHoaDon.Rows.Count-1; i++)
             {
-                total += Convert.ToInt32(dtgvHoaDon.Rows[i].Cells[2].Value);
+                total += Convert.ToInt32(dtgvHoaDon.Rows[i].Cells[2].Value) * Convert.ToInt32(dtgvHoaDon.Rows[i].Cells[1].Value);
             }
             txtTongcong.Text = total.ToString();
+            if(total != 0)
+            {
+                btnThanhToan.Enabled = true;
+                btnInHoaDon.Enabled = true;
+            }
         }
-
-
 
         #endregion
 
@@ -174,13 +194,13 @@ namespace QuanLyNhaSach.UserControls
             else
             {
                 int qty = 0;
-
-                foreach (DataGridViewRow row in dtgvHoaDon.Rows)
+                int n = dtgvHoaDon.Rows.Count - 1;
+                for (int i = 0; i < n; i++)
                 {
-                    qty = Convert.ToInt32((row.Cells["SL"].Value).ToString());
-                    string t_sach = (row.Cells["Tensach"].Value).ToString();
+                    qty = Convert.ToInt32((dtgvHoaDon.Rows[i].Cells[1].Value).ToString());
+                    string t_sach = (dtgvHoaDon.Rows[i].Cells[0].Value).ToString();
                     
-                    string query = string.Format("update SACH set SoLuong= SoLuong-{0} where TenSach={1}", qty, t_sach);
+                    string query = string.Format("update SACH set SoLuong -= {0} where TenSach = '{1}'", qty, t_sach);
                     DataProvider.Instance.ExecuteNonQuery(query);
                 }
 
@@ -199,14 +219,43 @@ namespace QuanLyNhaSach.UserControls
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            if (txtGiatien.Text == "")
+            {
+                msb.Messageshow("Vui lòng chọn sách!");
+                return;
+            }
+            
             if (txbSoluong.Text == "")
             {
                 MessageBox.Show("Nhập số lượng");
                 return;
             }
+
+            int tsl = Convert.ToInt32(txbSoluong.Text);
+            if(dtgvHoaDon.Rows.Count == 1)
+            {
+                DataGridViewRow newRow = new DataGridViewRow();
+                newRow.CreateCells(dtgvHoaDon);
+                newRow.Cells[0].Value = txtTensach.Text;
+                newRow.Cells[1].Value = txbSoluong.Text;
+                newRow.Cells[2].Value = txtGiatien.Text;
+
+                dtgvHoaDon.Rows.Add(newRow);
+                showTotal();
+            }
             else
             {
-                try
+                int n = dtgvHoaDon.Rows.Count;
+                int id = -1;
+                for(int i = 0; i<n-1; i++)
+                {
+                    if (txtTensach.Text == dtgvHoaDon.Rows[i].Cells[0].Value.ToString())
+                    {
+                        tsl += Convert.ToInt32(dtgvHoaDon.Rows[i].Cells[1].Value);
+                        id = i;
+                    }
+                }
+                if(tsl == Convert.ToInt32(txbSoluong.Text))
                 {
                     DataGridViewRow newRow = new DataGridViewRow();
                     newRow.CreateCells(dtgvHoaDon);
@@ -217,32 +266,28 @@ namespace QuanLyNhaSach.UserControls
                     dtgvHoaDon.Rows.Add(newRow);
                     showTotal();
                 }
-                catch { }
+                else if (tsl > soluong)
+                {
+                    msb.Messageshow("Số lượng sách không đủ!");
+                    return;
+                }
+                else if(id != -1)
+                {
+                    dtgvHoaDon.Rows[id].Cells[1].Value = Convert.ToInt32(dtgvHoaDon.Rows[id].Cells[1].Value) + Convert.ToInt32(txbSoluong.Text);
+                }
+                
+                showTotal();
             }
-            //dataGridView2.Rows.Add(newRow);
-         
         }
 
         private void dtgvSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-   
-            int num_row = 0;
-            for (int i = 1; i < dtgvSach.Rows.Count; i++)
+            dtgvSach.CurrentRow.Selected = true;
+            if (e.RowIndex != -1)
             {
-                num_row=num_row+1;
-            }
-            if (e.RowIndex == 0)
-            {
-                return;
-            }
-            if (e.RowIndex > 0&& e.RowIndex<num_row)
-            {
-                dtgvSach.CurrentRow.Selected = true;
                 txtTensach.Text = dtgvSach.Rows[e.RowIndex].Cells["Tên sách"].FormattedValue.ToString();
-                txtTacgia.Text = dtgvSach.Rows[e.RowIndex].Cells["Tác giả"].FormattedValue.ToString();
-                txtTheloai.Text = dtgvSach.Rows[e.RowIndex].Cells["Thể loại"].FormattedValue.ToString();
                 txtGiatien.Text = dtgvSach.Rows[e.RowIndex].Cells["DG bán"].FormattedValue.ToString();
-                soluong = Convert.ToInt32(dtgvSach.Rows[e.RowIndex].Cells["DG bán"].FormattedValue.ToString());
+                soluong = Convert.ToInt32(dtgvSach.Rows[e.RowIndex].Cells["Số lượng"].FormattedValue.ToString());
                 if (txbSoluong.Text == "")
                 {
                     return;
@@ -250,16 +295,18 @@ namespace QuanLyNhaSach.UserControls
                 total = Convert.ToInt32(txbSoluong.Text) * Convert.ToInt32(txtGiatien.Text);
                 txtTongtien.Text = Convert.ToString(total);
             }
-            else
-            {
-                return;
-            }
+            
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
             int rowIndex = dtgvHoaDon.CurrentCell.RowIndex;
             dtgvHoaDon.Rows.RemoveAt(rowIndex);
+            if(dtgvHoaDon.Rows.Count == 1)
+            {
+                btnInHoaDon.Enabled = false;
+                btnThanhToan.Enabled = false;
+            }
         }
 
         private void txbSoluong_TextChanged(object sender, EventArgs e)
@@ -334,7 +381,10 @@ namespace QuanLyNhaSach.UserControls
         private void btnHuy_Click(object sender, EventArgs e)
         {
             dtgvHoaDon.Rows.Clear();
-        }
+            this.showTotal();
+            btnInHoaDon.Enabled = false;
+            btnThanhToan.Enabled = false;
+        }        
     }
     #endregion
 

@@ -30,8 +30,6 @@ namespace QuanLyNhaSach.UserControls
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_KhachHang));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnThutien = new System.Windows.Forms.Button();
             this.btnBaoCao = new System.Windows.Forms.Button();
@@ -407,40 +405,27 @@ namespace QuanLyNhaSach.UserControls
             // 
             // dtgvKH
             // 
-            this.dtgvKH.AllowUserToResizeRows = false;
+            this.dtgvKH.AllowUserToAddRows = false;
+            this.dtgvKH.AllowUserToDeleteRows = false;
+            this.dtgvKH.AllowUserToResizeColumns = false;
             this.dtgvKH.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvKH.BackgroundColor = System.Drawing.Color.White;
-            this.dtgvKH.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dtgvKH.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvKH.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dtgvKH.ColumnHeadersHeight = 29;
-            this.dtgvKH.Cursor = System.Windows.Forms.Cursors.Arrow;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvKH.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dtgvKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvKH.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgvKH.GridColor = System.Drawing.Color.Coral;
+            this.dtgvKH.GridColor = System.Drawing.Color.White;
             this.dtgvKH.Location = new System.Drawing.Point(0, 201);
-            this.dtgvKH.Margin = new System.Windows.Forms.Padding(0);
+            this.dtgvKH.Margin = new System.Windows.Forms.Padding(2);
             this.dtgvKH.Name = "dtgvKH";
             this.dtgvKH.ReadOnly = true;
-            this.dtgvKH.RowHeadersWidth = 51;
+            this.dtgvKH.RowHeadersVisible = false;
+            this.dtgvKH.RowHeadersWidth = 82;
             this.dtgvKH.RowTemplate.Height = 29;
             this.dtgvKH.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvKH.ShowRowErrors = false;
             this.dtgvKH.Size = new System.Drawing.Size(1570, 639);
-            this.dtgvKH.TabIndex = 32;
+            this.dtgvKH.TabIndex = 52;
+            this.dtgvKH.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvKH_CellClick);
+            this.dtgvKH.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvKH_CellContentClick);
             // 
             // UC_KhachHang
             // 

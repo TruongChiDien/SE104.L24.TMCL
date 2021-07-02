@@ -29,20 +29,20 @@ namespace QuanLyNhaSach.UserControls
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txbTimKiem = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.Grid_PhieuNhap = new System.Windows.Forms.DataGridView();
+            this.dtgvPhieuNhap = new System.Windows.Forms.DataGridView();
             this.Deletebook = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Grid_PhieuNhap)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvPhieuNhap)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txbTimKiem);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -51,13 +51,13 @@ namespace QuanLyNhaSach.UserControls
             this.panel1.Size = new System.Drawing.Size(1570, 76);
             this.panel1.TabIndex = 0;
             // 
-            // textBox1
+            // txbTimKiem
             // 
-            this.textBox1.Location = new System.Drawing.Point(1277, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(250, 27);
-            this.textBox1.TabIndex = 21;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            this.txbTimKiem.Location = new System.Drawing.Point(1277, 27);
+            this.txbTimKiem.Name = "txbTimKiem";
+            this.txbTimKiem.Size = new System.Drawing.Size(250, 27);
+            this.txbTimKiem.TabIndex = 21;
+            this.txbTimKiem.TextChanged += new System.EventHandler(this.txbTimKiem_TextChanged);
             // 
             // label1
             // 
@@ -71,35 +71,34 @@ namespace QuanLyNhaSach.UserControls
             this.label1.TabIndex = 20;
             this.label1.Text = "Tìm kiếm phiếu nhâp:";
             // 
-            // Grid_PhieuNhap
+            // dtgvPhieuNhap
             // 
-            this.Grid_PhieuNhap.AllowUserToAddRows = false;
-            this.Grid_PhieuNhap.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.Grid_PhieuNhap.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.Grid_PhieuNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Grid_PhieuNhap.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgvPhieuNhap.AllowUserToAddRows = false;
+            this.dtgvPhieuNhap.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvPhieuNhap.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dtgvPhieuNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvPhieuNhap.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Deletebook});
-            this.Grid_PhieuNhap.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Grid_PhieuNhap.Location = new System.Drawing.Point(0, 76);
-            this.Grid_PhieuNhap.Margin = new System.Windows.Forms.Padding(2);
-            this.Grid_PhieuNhap.Name = "Grid_PhieuNhap";
-            this.Grid_PhieuNhap.ReadOnly = true;
-            this.Grid_PhieuNhap.RowHeadersVisible = false;
-            this.Grid_PhieuNhap.RowHeadersWidth = 82;
-            this.Grid_PhieuNhap.RowTemplate.Height = 41;
-            this.Grid_PhieuNhap.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grid_PhieuNhap.Size = new System.Drawing.Size(1570, 764);
-            this.Grid_PhieuNhap.TabIndex = 1;
-            this.Grid_PhieuNhap.AllowUserToDeleteRowsChanged += new System.EventHandler(this.Grid_tb_books_AllowUserToDeleteRowsChanged);
-            this.Grid_PhieuNhap.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dtgvPhieuNhap.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgvPhieuNhap.Location = new System.Drawing.Point(0, 76);
+            this.dtgvPhieuNhap.Margin = new System.Windows.Forms.Padding(2);
+            this.dtgvPhieuNhap.Name = "dtgvPhieuNhap";
+            this.dtgvPhieuNhap.ReadOnly = true;
+            this.dtgvPhieuNhap.RowHeadersVisible = false;
+            this.dtgvPhieuNhap.RowHeadersWidth = 82;
+            this.dtgvPhieuNhap.RowTemplate.Height = 41;
+            this.dtgvPhieuNhap.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvPhieuNhap.Size = new System.Drawing.Size(1570, 764);
+            this.dtgvPhieuNhap.TabIndex = 1;
+            this.dtgvPhieuNhap.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvPhieuNhap_CellContentClick);
             // 
             // Deletebook
             // 
             this.Deletebook.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.Deletebook.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.Deletebook.DefaultCellStyle = dataGridViewCellStyle2;
             this.Deletebook.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Deletebook.HeaderText = "Hiện phiếu";
             this.Deletebook.MinimumWidth = 6;
@@ -113,14 +112,14 @@ namespace QuanLyNhaSach.UserControls
             // UC_PhieuNhap
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.Controls.Add(this.Grid_PhieuNhap);
+            this.Controls.Add(this.dtgvPhieuNhap);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UC_PhieuNhap";
             this.Size = new System.Drawing.Size(1570, 840);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Grid_PhieuNhap)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvPhieuNhap)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -135,9 +134,9 @@ namespace QuanLyNhaSach.UserControls
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridView Grid_PhieuNhap;
+        private System.Windows.Forms.DataGridView dtgvPhieuNhap;
         private System.Windows.Forms.DataGridViewButtonColumn Xoa;
         private System.Windows.Forms.DataGridViewButtonColumn Deletebook;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txbTimKiem;
     }
 }

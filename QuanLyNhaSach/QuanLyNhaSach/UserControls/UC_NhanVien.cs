@@ -12,37 +12,44 @@ namespace QuanLyNhaSach.UserControls
 {
     public partial class UC_NhanVien : UserControl
     {
+
+        #region Properties
+
+        #endregion
+
+
+        #region Methods
         public UC_NhanVien()
         {
             InitializeComponent();
-            Grid_nhanvien_load();
-            this.Grid_nhanvien.Columns["CDelete"].DisplayIndex = 9;
+            dtgvNhanVien_load();
+            this.dtgvNhanVien.Columns["CDelete"].DisplayIndex = 9;
 
         }
-
-        private void Grid_nhanvien_load()
+        private void dtgvNhanVien_load()
         {
             string query = @"SELECT MaNV [Mã nhân viên], HoTenNV [Họ tên nhân viên], DiaChi [Địa chỉ], DienThoai [Điện thoại], Email [Email], NgayVaoLam [Ngày vào làm], Username [Tên đăng nhập], Password [Mật khẩu], type [Chứ vụ] FROM NHANVIEN";
-            Grid_nhanvien.DataSource = DataProvider.Instance.ExecuteQuery(query);
+            dtgvNhanVien.DataSource = DataProvider.Instance.ExecuteQuery(query);
         }
-        private void button1_Click(object sender, EventArgs e)
+
+        #endregion
+
+
+        #region Events
+
+        private void btnThem_Click(object sender, EventArgs e)
         {
             using (ThemNhanVien tnv = new ThemNhanVien())
             {
                 tnv.ShowDialog();
             }
-            this.Grid_nhanvien_load();
+            this.dtgvNhanVien_load();
         }
 
-        private void UC_NhanVien_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Grid_nhanvien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dtgvNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int a = e.RowIndex;
-            string ID = Grid_nhanvien.Rows[a].Cells[1].FormattedValue.ToString();
+            string ID = dtgvNhanVien.Rows[a].Cells[1].FormattedValue.ToString();
             YesNo Messagebox = new Forms.YesNo();
             bool Yes = Messagebox.Messageshow("Bạn có muốn xóa nhân viên?");
             Messagebox.Dispose();
@@ -53,8 +60,10 @@ namespace QuanLyNhaSach.UserControls
 
                 DataProvider.Instance.ExecuteNonQuery(query);
 
-                Grid_nhanvien_load();
+                dtgvNhanVien_load();
             }
         }
+
+        #endregion
     }
 }
