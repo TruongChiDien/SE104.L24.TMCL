@@ -183,9 +183,7 @@ E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSa
 >>>>>>> 626aea6b0c0e0b50f4a73f3eba8b1c12c9000db8
 E:\C#\QLNS2\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.Dialog_ThuTien.resources
 >>>>>>> 3387f95733f177cd29397d65a7fda891b8e40e36
-<<<<<<< HEAD
 E:\CNPM\Quan ly nha sach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.Dialog_ThuTien.resources
-=======
 E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.PhieuNhap.resources
 E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.TaoPhieuNhap.resources
 E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.UserControls.UC_PhieuNhap.resources
@@ -239,3 +237,45 @@ C:\Users\anhnh\Documents\GitHub\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\De
 E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.UserControls.UC_BaoMatAdmin.resources
 E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.UserControls.UC_BaoMatNV.resources
 >>>>>>> 1bca9750bc6606aba7e8f6623a668868123af1da
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.DialogBaoMat.resources
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.csproj.AssemblyReference.cache
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.Dashboard_Admin.resources
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.Dashboard_NhanVien.resources
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.DialogBaoMat.resources
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.Dialog_BaoCaoCongNo.resources
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.Dialog_ThuTien.resources
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.FormTempForPrint.resources
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.Login.resources
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.PhieuNhap.resources
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.TaoPhieuNhap.resources
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.ThemNhanVien.resources
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.ThemSach.resources
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.YesNo.resources
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Properties.Resources.resources
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.UserControls.UC_BanSach.resources
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.UserControls.UC_BaoMatAdmin.resources
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.UserControls.UC_KhachHang.resources
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.UserControls.UC_KhoSach.resources
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.UserControls.UC_NhanVien.resources
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.UserControls.UC_PhieuNhap.resources
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.csproj.GenerateResource.cache
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.AssemblyInfoInputs.cache
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.AssemblyInfo.cs
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.dll
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.pdb
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\netcoreapp3.1\QuanLyNhaSach.exe
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\netcoreapp3.1\QuanLyNhaSach.deps.json
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\netcoreapp3.1\QuanLyNhaSach.runtimeconfig.json
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\netcoreapp3.1\QuanLyNhaSach.runtimeconfig.dev.json
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\netcoreapp3.1\QuanLyNhaSach.dll
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\netcoreapp3.1\QuanLyNhaSach.pdb
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\netcoreapp3.1\MaterialSurface.dll
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.csproj.CopyComplete
+C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.genruntimeconfig.cache

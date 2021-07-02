@@ -45,7 +45,7 @@ namespace QuanLyNhaSach.UserControls
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1087, 76);
+            this.panel1.Size = new System.Drawing.Size(1570, 76);
             this.panel1.TabIndex = 19;
             // 
             // button1
@@ -86,7 +86,7 @@ namespace QuanLyNhaSach.UserControls
             this.Grid_nhanvien.RowTemplate.Height = 29;
             this.Grid_nhanvien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Grid_nhanvien.ShowRowErrors = false;
-            this.Grid_nhanvien.Size = new System.Drawing.Size(1087, 498);
+            this.Grid_nhanvien.Size = new System.Drawing.Size(1570, 764);
             this.Grid_nhanvien.TabIndex = 20;
             this.Grid_nhanvien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_nhanvien_CellContentClick);
             // 
@@ -104,13 +104,12 @@ namespace QuanLyNhaSach.UserControls
             // 
             // UC_NhanVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.Controls.Add(this.Grid_nhanvien);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UC_NhanVien";
-            this.Size = new System.Drawing.Size(1087, 574);
+            this.Size = new System.Drawing.Size(1570, 840);
             this.Load += new System.EventHandler(this.UC_NhanVien_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Grid_nhanvien)).EndInit();

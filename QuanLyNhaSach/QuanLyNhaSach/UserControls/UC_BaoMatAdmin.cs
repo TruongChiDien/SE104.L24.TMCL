@@ -48,5 +48,15 @@ namespace QuanLyNhaSach.UserControls
                 }
             }
         }
+
+        private void BtHuy_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void btnQuit_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

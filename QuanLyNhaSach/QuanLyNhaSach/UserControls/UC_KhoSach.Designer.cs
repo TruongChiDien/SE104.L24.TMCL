@@ -52,7 +52,7 @@ namespace QuanLyNhaSach.UserControls
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1087, 76);
+            this.panel1.Size = new System.Drawing.Size(1570, 76);
             this.panel1.TabIndex = 0;
             // 
             // TxTimkiem
@@ -60,10 +60,10 @@ namespace QuanLyNhaSach.UserControls
             this.TxTimkiem.AcceptsReturn = true;
             this.TxTimkiem.BackColor = System.Drawing.Color.White;
             this.TxTimkiem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxTimkiem.Location = new System.Drawing.Point(682, 25);
+            this.TxTimkiem.Location = new System.Drawing.Point(1253, 29);
             this.TxTimkiem.Margin = new System.Windows.Forms.Padding(2);
             this.TxTimkiem.Name = "TxTimkiem";
-            this.TxTimkiem.Size = new System.Drawing.Size(226, 30);
+            this.TxTimkiem.Size = new System.Drawing.Size(286, 30);
             this.TxTimkiem.TabIndex = 21;
             this.TxTimkiem.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -78,7 +78,7 @@ namespace QuanLyNhaSach.UserControls
             "Tên sách",
             "Thể loại",
             "Tác giả"});
-            this.CbChude.Location = new System.Drawing.Point(510, 25);
+            this.CbChude.Location = new System.Drawing.Point(1038, 29);
             this.CbChude.Margin = new System.Windows.Forms.Padding(2);
             this.CbChude.Name = "CbChude";
             this.CbChude.Size = new System.Drawing.Size(170, 31);
@@ -91,7 +91,7 @@ namespace QuanLyNhaSach.UserControls
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(401, 28);
+            this.label1.Location = new System.Drawing.Point(883, 31);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 28);
@@ -134,7 +134,7 @@ namespace QuanLyNhaSach.UserControls
             this.Grid_tb_books.RowHeadersWidth = 82;
             this.Grid_tb_books.RowTemplate.Height = 41;
             this.Grid_tb_books.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grid_tb_books.Size = new System.Drawing.Size(1087, 498);
+            this.Grid_tb_books.Size = new System.Drawing.Size(1570, 764);
             this.Grid_tb_books.TabIndex = 1;
             this.Grid_tb_books.AllowUserToDeleteRowsChanged += new System.EventHandler(this.Grid_tb_books_AllowUserToDeleteRowsChanged);
             this.Grid_tb_books.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -158,13 +158,12 @@ namespace QuanLyNhaSach.UserControls
             // 
             // UC_KhoSach
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.Controls.Add(this.Grid_tb_books);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UC_KhoSach";
-            this.Size = new System.Drawing.Size(1087, 574);
+            this.Size = new System.Drawing.Size(1570, 840);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_tb_books)).EndInit();

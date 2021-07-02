@@ -65,7 +65,7 @@
         Z1YZd+3MKgMAAOCdPsWsMu7amVXGXTuzyrhrZ1YZAAAA8PM8XwEw93m/NI3QAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="button4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnQuit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAABGdBTUEAALGPC/xhBQAABYxJREFUaEPt
         mllvHEUQx424Je77vgRPEMQ3IE9AOAK2pyd2EBJnIInXM4NJgkACPyDEjfgK8ECQ4C1CWDyhgEQSCwkh

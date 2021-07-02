@@ -32,7 +32,7 @@ namespace QuanLyNhaSach.UserControls
 
         private void Grid_Load()
         {
-            string query = "SELECT MaKH AS [Mã Khách hàng], HoTenKH AS [Họ tên], NoKH AS [Nợ],  DiaChi AS [Địa Chỉ], DienThoai AS [Điện thoại], Email  FROM KHACHHANG";
+            string query = "SELECT MaKH AS 'Mã Khách hàng', HoTenKH AS 'Họ tên', NoKH AS 'Nợ',  DiaChi AS 'Địa Chỉ', DienThoai AS 'Điện thoại', Email  FROM KHACHHANG";
             dtgvKH.DataSource = DataProvider.Instance.ExecuteQuery(query);
         }
 

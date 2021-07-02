@@ -10,26 +10,22 @@ namespace QuanLyNhaSach.Forms
 {
     public partial class YesNo : Form
     {
+        #region Properties
         public bool yes;
+
+        #endregion
+
+
+        #region Methods
         public YesNo()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
+        #endregion
 
-        }
 
-        private void containedButton6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BtNo_Click(object sender, EventArgs e)
-        {
-        }
-
+        #region Events
         private void BtYes_Click(object sender, EventArgs e)
         {
             this.yes = true;
@@ -41,5 +37,8 @@ namespace QuanLyNhaSach.Forms
             this.yes = false;
             this.Hide();
         }
+
+        #endregion
+
     }
 }

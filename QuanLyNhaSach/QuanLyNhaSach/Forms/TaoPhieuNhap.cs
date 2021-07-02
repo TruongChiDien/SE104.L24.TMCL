@@ -13,6 +13,13 @@ namespace QuanLyNhaSach.Forms
 {
     public partial class TaoPhieuNhap : Form
     {
+
+        #region Properties
+
+        #endregion
+
+
+        #region Methods
         public TaoPhieuNhap()
         {
             InitializeComponent();
@@ -28,21 +35,11 @@ namespace QuanLyNhaSach.Forms
                                 where MaPN=(select max(MaPN) from PHIEUNHAP) and a.MaSach=b.MaSach";
             Grid_TaoPhieuNhap.DataSource = DataProvider.Instance.ExecuteQuery(query);
         }
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
 
-        }
+        #endregion
 
-        private void label2_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-
+        #region Events
         private void button1_Click(object sender, EventArgs e)
         {
             string query = @"delete from SACH";
@@ -55,16 +52,6 @@ namespace QuanLyNhaSach.Forms
                     delete from PHIEUNHAP where MaPN = (select max(MaPN) from PHIEUNHAP)";
             DataProvider.Instance.ExecuteNonQuery(query);
             this.Dispose();
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void BtThemSach_Click(object sender, EventArgs e)
@@ -104,29 +91,8 @@ namespace QuanLyNhaSach.Forms
             this.Dispose();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
+        #endregion
 
-        }
 
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Grid_TaoPhieuNhap_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

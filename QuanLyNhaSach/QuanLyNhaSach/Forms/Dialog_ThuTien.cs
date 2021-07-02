@@ -10,9 +10,16 @@ namespace QuanLyNhaSach.Forms
 {
     public partial class Dialog_ThuTien : Form
     {
+
+        #region Properties
         private int tienthu;
         private bool ok;
+        YesNo msb = new YesNo();
 
+        #endregion
+
+
+        #region Methods
         public int Tienthu
         {
             set { tienthu = value; }
@@ -29,11 +36,15 @@ namespace QuanLyNhaSach.Forms
         {
             InitializeComponent();
         }
-        YesNo msb = new YesNo();
+
+        #endregion
+
+
+        #region Events
         private void btnLapphieuthu_Click(object sender, EventArgs e)
         {
             if (txbTienthu.Text == "" || txbTienthu.Text == "0")
-            {               
+            {
                 msb.Messageshow("Số tiền thu không hợp lệ!");
                 return;
             }
@@ -61,5 +72,7 @@ namespace QuanLyNhaSach.Forms
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
                 e.Handled = true;
         }
+        #endregion
+
     }
 }

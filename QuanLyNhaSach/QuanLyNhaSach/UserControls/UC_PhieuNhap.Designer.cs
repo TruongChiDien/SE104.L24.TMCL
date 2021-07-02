@@ -48,12 +48,12 @@ namespace QuanLyNhaSach.UserControls
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1087, 76);
+            this.panel1.Size = new System.Drawing.Size(1570, 76);
             this.panel1.TabIndex = 0;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(657, 28);
+            this.textBox1.Location = new System.Drawing.Point(1277, 27);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(250, 27);
             this.textBox1.TabIndex = 21;
@@ -64,7 +64,7 @@ namespace QuanLyNhaSach.UserControls
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(435, 27);
+            this.label1.Location = new System.Drawing.Point(969, 27);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(217, 28);
@@ -88,7 +88,7 @@ namespace QuanLyNhaSach.UserControls
             this.Grid_PhieuNhap.RowHeadersWidth = 82;
             this.Grid_PhieuNhap.RowTemplate.Height = 41;
             this.Grid_PhieuNhap.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grid_PhieuNhap.Size = new System.Drawing.Size(1087, 498);
+            this.Grid_PhieuNhap.Size = new System.Drawing.Size(1570, 764);
             this.Grid_PhieuNhap.TabIndex = 1;
             this.Grid_PhieuNhap.AllowUserToDeleteRowsChanged += new System.EventHandler(this.Grid_tb_books_AllowUserToDeleteRowsChanged);
             this.Grid_PhieuNhap.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -112,13 +112,12 @@ namespace QuanLyNhaSach.UserControls
             // 
             // UC_PhieuNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.Controls.Add(this.Grid_PhieuNhap);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UC_PhieuNhap";
-            this.Size = new System.Drawing.Size(1087, 574);
+            this.Size = new System.Drawing.Size(1570, 840);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_PhieuNhap)).EndInit();

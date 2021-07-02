@@ -12,6 +12,16 @@ namespace QuanLyNhaSach.UserControls
 {
     public partial class UC_BanSach : UserControl
     {
+        #region Properties
+        int n = 0;
+        YesNo msb = new YesNo();
+        int tienthu;
+        int total = 0;
+        int soluong;
+
+        #endregion
+
+        #region Method
         public UC_BanSach()
         {
             InitializeComponent();
@@ -19,18 +29,11 @@ namespace QuanLyNhaSach.UserControls
 
         }
 
-        #region Properties
-        int n = 0;
-        YesNo msb = new YesNo();
-        int tienthu;
-        #endregion
-
-        #region Method
         private void Grid_tb_loadData()
         {
             string query = "SELECT MaSach as 'Mã sách', TenSach as 'Tên sách',TheLoai as 'Thể loại',TacGia as 'Tác giả',DGBan as 'DG bán',SoLuong as 'Số lượng' FROM SACH";
 
-            dataGridView1.DataSource = DataProvider.Instance.ExecuteQuery(query);
+            dtgvSach.DataSource = DataProvider.Instance.ExecuteQuery(query);
         }
 
         private void Search_book()
@@ -60,7 +63,7 @@ namespace QuanLyNhaSach.UserControls
 
                 string query = "SELECT * FROM SACH WHERE + " + chude + " like '" + TxTimkiem.Text + "%'";
 
-                dataGridView1.DataSource = DataProvider.Instance.ExecuteQuery(query);
+                dtgvSach.DataSource = DataProvider.Instance.ExecuteQuery(query);
             }
             catch (Exception)
             {
@@ -97,7 +100,7 @@ namespace QuanLyNhaSach.UserControls
             printer.PageNumberInHeader = false;
             printer.PorportionalColumns = true;
             printer.HeaderCellAlignment = StringAlignment.Near;
-            printer.PrintPreviewDataGridView(dataGridView2);
+            printer.PrintPreviewDataGridView(dtgvHoaDon);
         }
 
         public void PrintPhieuThu()
@@ -127,19 +130,33 @@ namespace QuanLyNhaSach.UserControls
                 this.prtDoc.Print();
         }
 
+        private void SetFontAndColors()
+        {
+            dtgvSach.Font = new Font("Tahoma", 15);
+            dtgvSach.ForeColor = Color.Blue;
+            dtgvSach.BackColor = Color.Beige;
+
+        }
+        void showTotal()
+        {
+            int total = 0;
+            for (int i = 0; i < dtgvHoaDon.Rows.Count; i++)
+            {
+                total += Convert.ToInt32(dtgvHoaDon.Rows[i].Cells[2].Value);
+            }
+            txtTongcong.Text = total.ToString();
+        }
+
+
 
         #endregion
 
         #region Event
 
-        private void UC_BanSach_Load(object sender, EventArgs e)
-        {
-            //Search_book();       
-        }
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void txbTimKiem_TextChanged(object sender, EventArgs e)
         {
             Search_book();
-            if (String.IsNullOrEmpty(txtSoluong.Text))
+            if (String.IsNullOrEmpty(txbSoluong.Text))
             {
                 MessageBox.Show("Nhập số lượng sách", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 //dataGridView1.Rows.Clear();
@@ -147,10 +164,10 @@ namespace QuanLyNhaSach.UserControls
 
         }
 
-        private void containedButton5_Click(object sender, EventArgs e)
+        private void btnInHoaDon_Click(object sender, EventArgs e)
         {
             
-            if (dataGridView2.Rows.Count == 0)
+            if (dtgvHoaDon.Rows.Count == 0)
             {
                 MessageBox.Show("Chưa có sản phẩm nào được chọn");
             }
@@ -158,16 +175,7 @@ namespace QuanLyNhaSach.UserControls
             {
                 int qty = 0;
 
-
-                //foreach(DataRow dr in dataGridView2.Rows  )
-                //{
-                //    string t_sach = dr["Tên sách"].ToString();
-                //    qty = Convert.ToInt32(dr["SL"].ToString());
-                //    string query = string.Format("update SACH set SoLuong= SoLuong-{0} where TenSach={1}",qty,t_sach);
-                //    DataProvider.Instance.ExecuteNonQuery(query);
-
-                //}
-                foreach (DataGridViewRow row in dataGridView2.Rows)
+                foreach (DataGridViewRow row in dtgvHoaDon.Rows)
                 {
                     qty = Convert.ToInt32((row.Cells["SL"].Value).ToString());
                     string t_sach = (row.Cells["Tensach"].Value).ToString();
@@ -176,21 +184,11 @@ namespace QuanLyNhaSach.UserControls
                     DataProvider.Instance.ExecuteNonQuery(query);
                 }
 
-                
-
                 this.Print_HoaDon();
             }
         }
 
-        private void SetFontAndColors()
-        {
-            dataGridView1.Font = new Font("Tahoma", 15);
-            dataGridView1.ForeColor = Color.Blue;
-            dataGridView1.BackColor = Color.Beige;
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dtgvHoaDon_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //dataGridView1.CurrentRow.Selected = true;
             //txtTensach.Text = dataGridView1.Rows[e.RowIndex].Cells["TenSach"].FormattedValue.ToString();
@@ -199,9 +197,9 @@ namespace QuanLyNhaSach.UserControls
 
         }
 
-        private void containedButton6_Click(object sender, EventArgs e)
+        private void btnThem_Click(object sender, EventArgs e)
         {
-            if (txtSoluong.Text == "")
+            if (txbSoluong.Text == "")
             {
                 MessageBox.Show("Nhập số lượng");
                 return;
@@ -211,14 +209,12 @@ namespace QuanLyNhaSach.UserControls
                 try
                 {
                     DataGridViewRow newRow = new DataGridViewRow();
-                    newRow.CreateCells(dataGridView2);
-                    newRow.Cells[0].Value = n + 1;
-                    newRow.Cells[1].Value = txtTensach.Text;
-                    newRow.Cells[2].Value = txtSoluong.Text;
-                    newRow.Cells[3].Value = txtGiatien.Text;
+                    newRow.CreateCells(dtgvHoaDon);
+                    newRow.Cells[0].Value = txtTensach.Text;
+                    newRow.Cells[1].Value = txbSoluong.Text;
+                    newRow.Cells[2].Value = txtGiatien.Text;
 
-                    dataGridView2.Rows.Add(newRow);
-                    n++;
+                    dtgvHoaDon.Rows.Add(newRow);
                     showTotal();
                 }
                 catch { }
@@ -227,13 +223,11 @@ namespace QuanLyNhaSach.UserControls
          
         }
 
-        int total = 0;
-        int soluong;
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dtgvSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
    
             int num_row = 0;
-            for (int i = 1; i < dataGridView1.Rows.Count; i++)
+            for (int i = 1; i < dtgvSach.Rows.Count; i++)
             {
                 num_row=num_row+1;
             }
@@ -243,17 +237,17 @@ namespace QuanLyNhaSach.UserControls
             }
             if (e.RowIndex > 0&& e.RowIndex<num_row)
             {
-                dataGridView1.CurrentRow.Selected = true;
-                txtTensach.Text = dataGridView1.Rows[e.RowIndex].Cells["Tên sách"].FormattedValue.ToString();
-                txtTacgia.Text = dataGridView1.Rows[e.RowIndex].Cells["Tác giả"].FormattedValue.ToString();
-                txtTheloai.Text = dataGridView1.Rows[e.RowIndex].Cells["Thể loại"].FormattedValue.ToString();
-                txtGiatien.Text = dataGridView1.Rows[e.RowIndex].Cells["DG bán"].FormattedValue.ToString();
-                soluong = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["DG bán"].FormattedValue.ToString());
-                if (txtSoluong.Text == "")
+                dtgvSach.CurrentRow.Selected = true;
+                txtTensach.Text = dtgvSach.Rows[e.RowIndex].Cells["Tên sách"].FormattedValue.ToString();
+                txtTacgia.Text = dtgvSach.Rows[e.RowIndex].Cells["Tác giả"].FormattedValue.ToString();
+                txtTheloai.Text = dtgvSach.Rows[e.RowIndex].Cells["Thể loại"].FormattedValue.ToString();
+                txtGiatien.Text = dtgvSach.Rows[e.RowIndex].Cells["DG bán"].FormattedValue.ToString();
+                soluong = Convert.ToInt32(dtgvSach.Rows[e.RowIndex].Cells["DG bán"].FormattedValue.ToString());
+                if (txbSoluong.Text == "")
                 {
                     return;
                 }
-                total = Convert.ToInt32(txtSoluong.Text) * Convert.ToInt32(txtGiatien.Text);
+                total = Convert.ToInt32(txbSoluong.Text) * Convert.ToInt32(txtGiatien.Text);
                 txtTongtien.Text = Convert.ToString(total);
             }
             else
@@ -262,38 +256,23 @@ namespace QuanLyNhaSach.UserControls
             }
         }
 
-        private void containedButton2_Click(object sender, EventArgs e)
+        private void btnXoa_Click(object sender, EventArgs e)
         {
-            int rowIndex = dataGridView2.CurrentCell.RowIndex;
-            dataGridView2.Rows.RemoveAt(rowIndex);
+            int rowIndex = dtgvHoaDon.CurrentCell.RowIndex;
+            dtgvHoaDon.Rows.RemoveAt(rowIndex);
         }
 
-        private void Quantity_book()
+        private void txbSoluong_TextChanged(object sender, EventArgs e)
         {
-
-            if (txtSoluong.Text ==null)
+            if (txbSoluong.Text != "")
             {
-                MessageBox.Show("Nhập số lượng");
-                return;
-            }
-        }
-
-        private void txtSoluong_TextChanged(object sender, EventArgs e)
-        {
-            if (txtSoluong.Text == null)
-            {
-                return;
-            }
-
-            if (txtSoluong.Text != "")
-            {
-                if (Convert.ToInt32(txtSoluong.Text) > soluong)
+                if (Convert.ToInt32(txbSoluong.Text) > soluong)
                 {
                     MessageBox.Show("Số lượng hàng không đủ");
                 }
                 else
                 {
-                    total = Convert.ToInt32(txtSoluong.Text) * Convert.ToInt32(txtGiatien.Text);
+                    total = Convert.ToInt32(txbSoluong.Text) * Convert.ToInt32(txtGiatien.Text);
                 }
             }
           
@@ -309,28 +288,18 @@ namespace QuanLyNhaSach.UserControls
             }
         }
 
-        private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dtgvHoaDon_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            foreach (DataGridViewCell oneCell in dataGridView2.SelectedCells)
+            foreach (DataGridViewCell oneCell in dtgvHoaDon.SelectedCells)
             {
                 if (oneCell.Selected)
-                    dataGridView2.Rows.RemoveAt(oneCell.RowIndex);
+                    dtgvHoaDon.Rows.RemoveAt(oneCell.RowIndex);
             }
         }
 
-        void showTotal()
+        private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            int total = 0;
-            for (int i = 0; i < dataGridView2.Rows.Count; i++)
-            {
-                total += Convert.ToInt32(dataGridView2.Rows[i].Cells[3].Value);
-            }
-            txtTongcong.Text = total.ToString();
-        }
-
-        private void containedButton1_Click_1(object sender, EventArgs e)
-        {
-            if (dataGridView2.Rows.Count == 0)
+            if (dtgvHoaDon.Rows.Count == 0)
             {
                 MessageBox.Show("Chưa có sản phẩm nào được chọn");
             }
@@ -362,17 +331,11 @@ namespace QuanLyNhaSach.UserControls
 
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnHuy_Click(object sender, EventArgs e)
         {
-
+            dtgvHoaDon.Rows.Clear();
         }
     }
     #endregion
 
-    public class sach
-    {
-        public string Tensach { get; set; }
-        public int SL { get; set; }
-        public int Giatien { get; set; }
-    }
 }

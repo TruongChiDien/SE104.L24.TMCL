@@ -1,7 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyNhaSach
@@ -19,9 +16,7 @@ namespace QuanLyNhaSach
             Application.SetCompatibleTextRenderingDefault(false);
 
             Application.Run(new Forms.Login());
-            //Application.Run(new Forms.Dashboard_Admin()) ;
             // Application.Run(new Forms.YesNo());
-            //Application.Run(new Forms.Dashboard_Admin()) ;
             //Application.Run(new Forms.Dashboard_NhanVien());
 
         }

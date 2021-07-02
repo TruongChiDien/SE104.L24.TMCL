@@ -10,19 +10,15 @@ namespace QuanLyNhaSach.Forms
 {
     public partial class ThemNhanVien : Form
     {
+        #region Properties
+
+        #endregion
+
+
+        #region Methods
         public ThemNhanVien()
         {
             InitializeComponent();
-        }
-
-        private void ThemNhanVien_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void containedButton1_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
         }
 
         private bool isTrueTxt()
@@ -66,7 +62,19 @@ namespace QuanLyNhaSach.Forms
 
             return isAlltrue;
         }
-        private void containedButton6_Click(object sender, EventArgs e)
+
+
+        #endregion
+
+
+        #region Events
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void btnXong_Click(object sender, EventArgs e)
         {
             if (!isTrueTxt())
                 return;
@@ -87,24 +95,12 @@ namespace QuanLyNhaSach.Forms
             }
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
+        private void btnQuit_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        #endregion
 
-        }
-
-        private void TxDiachi_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
