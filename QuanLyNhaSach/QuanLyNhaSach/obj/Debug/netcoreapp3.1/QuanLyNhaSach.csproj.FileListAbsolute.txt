@@ -141,7 +141,6 @@ E:\CNPM\Quan ly nha sach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\Qua
 E:\CNPM\Quan ly nha sach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.UserControls.UC_PhieuNhap.resources
 E:\CNPM\Quan ly nha sach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.PhieuNhap.resources
 =======
-<<<<<<< HEAD
 E:\C#\QLNS2\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\netcoreapp3.1\QuanLyNhaSach.exe
 E:\C#\QLNS2\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\netcoreapp3.1\QuanLyNhaSach.deps.json
 E:\C#\QLNS2\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\netcoreapp3.1\QuanLyNhaSach.runtimeconfig.json
@@ -179,9 +178,9 @@ E:\C#\QLNS2\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.cs
 E:\C#\QLNS2\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.dll
 E:\C#\QLNS2\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.pdb
 E:\C#\QLNS2\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.genruntimeconfig.cache
-=======
 E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.Dialog_ThuTien.resources
 E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.PhieuThuTien.resources
 >>>>>>> 626aea6b0c0e0b50f4a73f3eba8b1c12c9000db8
 E:\C#\QLNS2\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.Dialog_ThuTien.resources
 >>>>>>> 3387f95733f177cd29397d65a7fda891b8e40e36
+E:\CNPM\Quan ly nha sach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.Dialog_ThuTien.resources

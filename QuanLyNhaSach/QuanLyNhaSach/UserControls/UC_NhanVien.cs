@@ -22,7 +22,7 @@ namespace QuanLyNhaSach.UserControls
 
         private void Grid_nhanvien_load()
         {
-            string query = @"SELECT * FROM NHANVIEN";
+            string query = @"SELECT MaNV [Mã nhân viên], HoTenNV [Họ tên nhân viên], DiaChi [Địa chỉ], DienThoai [Điện thoại], Email [Email], NgayVaoLam [Ngày vào làm], Username [Tên đăng nhập], Password [Mật khẩu], type [Chứ vụ] FROM NHANVIEN";
             Grid_nhanvien.DataSource = DataProvider.Instance.ExecuteQuery(query);
         }
         private void button1_Click(object sender, EventArgs e)

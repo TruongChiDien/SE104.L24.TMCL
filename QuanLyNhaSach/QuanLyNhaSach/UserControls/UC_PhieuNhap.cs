@@ -43,15 +43,19 @@ namespace QuanLyNhaSach.UserControls
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int a = e.RowIndex;
-            string ID = Grid_PhieuNhap.Rows[a].Cells[1].FormattedValue.ToString();
-
+            try
+            {
+                string ID = Grid_PhieuNhap.Rows[a].Cells[1].FormattedValue.ToString();
+            
             PhieuNhap PN = new PhieuNhap(ID);
             PN.Show();
+            }
+            catch { }
         }
 
         private void Grid_tb_loadData()
         {
-            string query = "SELECT * FROM PHIEUNHAP";
+            string query = "SELECT MaPN [Mã phiếu nhập], NgayNhap [Ngày nhập] FROM PHIEUNHAP";
 
             Grid_PhieuNhap.DataSource = DataProvider.Instance.ExecuteQuery(query);
         }

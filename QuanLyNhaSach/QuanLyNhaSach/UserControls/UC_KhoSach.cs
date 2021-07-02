@@ -61,7 +61,7 @@ namespace QuanLyNhaSach.UserControls
 
         private void Grid_tb_loadData()
         {
-            string query = "SELECT * FROM SACH";
+            string query = "select MaSach [Mã Sách], TenSach [Tên Sách], TheLoai [Thể Loại], TacGia [Tác Giả], DGNhap [Đơn giá nhập], DGBan [Đơn giá bán], SoLuong [Số lượng] from SACH";
 
             Grid_tb_books.DataSource = DataProvider.Instance.ExecuteQuery(query);
         }
@@ -117,7 +117,7 @@ namespace QuanLyNhaSach.UserControls
             }
             try
             {
-                string query = "SELECT * FROM SACH WHERE + " + chude + " like '" + TxTimkiem.Text + "%'";
+                string query = "select MaSach [Mã Sách], TenSach [Tên Sách], TheLoai [Thể Loại], TacGia [Tác Giả], DGNhap [Đơn giá nhập], DGBan [Đơn giá bán], SoLuong [Số lượng] from SACH WHERE + " + chude + " like '%" + TxTimkiem.Text + "%'";
 
                 Grid_tb_books.DataSource = DataProvider.Instance.ExecuteQuery(query);
             }

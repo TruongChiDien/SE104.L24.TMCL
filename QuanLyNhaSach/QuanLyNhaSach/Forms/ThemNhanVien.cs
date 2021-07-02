@@ -70,11 +70,21 @@ namespace QuanLyNhaSach.Forms
         {
             if (!isTrueTxt())
                 return;
-            string query = string.Format("insert into NHANVIEN values({0},{1},{2},{3},N'{4}',{5},{6},{7})"
-                            ,TxTenNV.Text,TxDiachi.Text,TxSDT.Text,TxEmail.Text,DtNgayvaolam.Value.ToString("yyyy-MM-dd"),
-                            TxUsername.Text,TxPassword.Text,CbType.Text);
-            DataProvider.Instance.ExecuteNonQuery(query);
-            this.Dispose();
+            string query = @"select count(1) from NHANVIEN where Username = N'" + TxUsername.Text +"'";
+            int i = DataProvider.Instance.ExecuteNonQuery(query);
+            if (i == 0) 
+            {
+                query = string.Format("insert into NHANVIEN values(N'{0}',N'{1}',N'{2}',N'{3}',N'{4}',N'{5}',N'{6}',N'{7}')"
+                                , TxTenNV.Text, TxDiachi.Text, TxSDT.Text, TxEmail.Text, DtNgayvaolam.Value.ToString("yyyy-MM-dd"),
+                                TxUsername.Text, TxPassword.Text, CbType.Text);
+                DataProvider.Instance.ExecuteNonQuery(query);
+                this.Dispose();
+            }
+            else
+            {
+                YesNo Noti = new YesNo();
+                Noti.Messageshow("Tên đăng nhập đã tồn tại!");
+            }
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)

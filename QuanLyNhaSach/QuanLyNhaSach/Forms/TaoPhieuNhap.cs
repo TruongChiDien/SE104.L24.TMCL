@@ -23,7 +23,7 @@ namespace QuanLyNhaSach.Forms
 
         private void Load_grid_phieu_nhap()
         {
-            string query = @"select a.MaSach, a.SL, DGNhap, DGBan 
+            string query = @"select a.MaSach [Mã sách], a.SL [Số lượng], DGNhap [Đơn giá nhập], DGBan [Đơn giá bán]
                                 from CTPHIEUNHAP a, SACH b
                                 where MaPN=(select max(MaPN) from PHIEUNHAP) and a.MaSach=b.MaSach";
             Grid_TaoPhieuNhap.DataSource = DataProvider.Instance.ExecuteQuery(query);
@@ -76,7 +76,7 @@ namespace QuanLyNhaSach.Forms
 
         private void BtXuatPhieu_Click(object sender, EventArgs e)
         {
-            string query = @"select a.MaSach, a.SL, DGNhap, DGBan 
+            string query = @"select a.MaSach [Mã sách], a.SL [Số lượng], DGNhap [Đơn giá nhập], DGBan [Đơn giá bán]
                                 from CTPHIEUNHAP a, SACH b
                                 where MaPN=(select max(MaPN) from PHIEUNHAP) and a.MaSach=b.MaSach";
 
@@ -90,7 +90,8 @@ namespace QuanLyNhaSach.Forms
             object Thoigian = DataProvider.Instance.ExecuteScalar(query);
             printer.SubTitle = "Thời gian: " + Thoigian.ToString();
             printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
-            query = "select sum(DGNhap) from SACH";
+            query = "select sum(SL * DGNhap) from SACH a, CTPHIEUNHAP b"
+                    + " where MaPN = (select max(MaPN) from PHIEUNHAP) and a.MaSach = b.MaSach";
             object tong = DataProvider.Instance.ExecuteScalar(query);
             printer.Footer = "Tổng tiền nhập là: " + tong.ToString();
             printer.FooterAlignment = StringAlignment.Near;

@@ -15,8 +15,20 @@ namespace QuanLyNhaSach.Forms
         public ThemSach()
         {
             InitializeComponent();
+            Binding_the_loai();
         }
 
+        private void Binding_the_loai()
+        {
+            string query = @"select TheLoai from SACH";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            List<string> ls = new List<string>();
+            foreach (DataRow i in dt.Rows)
+            {
+                ls.Add(i[0].ToString());
+            }
+            CbTheLoai.DataSource = ls;
+        }
         private void containedButton1_Click(object sender, EventArgs e)
         {
             this.Dispose();
@@ -83,10 +95,11 @@ namespace QuanLyNhaSach.Forms
             try
             {
                 //Check if a book existed
-                query = " SELECT COUNT(1) FROM SACH WHERE MaSach = " + TxMasach.Text;
+                query = " SELECT COUNT(1) FROM SACH WHERE MaSach = N'" + TxMasach.Text+"'";
                 int i = 0;
                 i = DataProvider.Instance.ExecuteNonQuery(query);
                 //add book
+                MessageBox.Show(i.ToString());
                 if (i == -1 ) 
                 {
                     query = @"INSERT INTO SACH " +
@@ -123,6 +136,10 @@ namespace QuanLyNhaSach.Forms
                                              + TxGiaban.Text + ","
                                              + TxSoluong.Text + ")";
                         DataProvider.Instance.ExecuteNonQuery(query);
+                        query = @"insert into CTPHIEUNHAP values((select max(MaPN) from PHIEUNHAP),"
+                                + TxMasach.Text + ", "
+                                + TxSoluong.Text + ")";
+                        DataProvider.Instance.ExecuteNonQuery(query);
                     }
                 }
             }
@@ -133,6 +150,7 @@ namespace QuanLyNhaSach.Forms
             if (!isTextConstraintTypeSatisfied())
                 return;
             add_new_books();
+            Binding_the_loai();
             this.Dispose();
 
         }

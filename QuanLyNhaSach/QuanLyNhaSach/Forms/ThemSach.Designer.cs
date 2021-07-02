@@ -301,6 +301,9 @@ namespace QuanLyNhaSach.Forms
             // CbTheLoai
             // 
             this.CbTheLoai.FormattingEnabled = true;
+            this.CbTheLoai.Items.AddRange(new object[] {
+            "1",
+            "2"});
             this.CbTheLoai.Location = new System.Drawing.Point(335, 171);
             this.CbTheLoai.Margin = new System.Windows.Forms.Padding(2);
             this.CbTheLoai.Name = "CbTheLoai";
