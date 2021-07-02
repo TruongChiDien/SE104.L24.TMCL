@@ -40,7 +40,6 @@ namespace QuanLyNhaSach.Forms
             this.label4 = new System.Windows.Forms.Label();
             this.txtpassword = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -93,7 +92,7 @@ namespace QuanLyNhaSach.Forms
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(104, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 25);
+            this.label1.Size = new System.Drawing.Size(185, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "Book Store";
             // 
@@ -104,10 +103,9 @@ namespace QuanLyNhaSach.Forms
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
             this.label2.Location = new System.Drawing.Point(551, 250);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 31);
+            this.label2.Size = new System.Drawing.Size(161, 51);
             this.label2.TabIndex = 1;
             this.label2.Text = "Sign in";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -115,7 +113,7 @@ namespace QuanLyNhaSach.Forms
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
             this.label3.Location = new System.Drawing.Point(366, 332);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 25);
+            this.label3.Size = new System.Drawing.Size(164, 37);
             this.label3.TabIndex = 4;
             this.label3.Text = "Username";
             // 
@@ -123,7 +121,7 @@ namespace QuanLyNhaSach.Forms
             // 
             this.txtuser.Location = new System.Drawing.Point(366, 384);
             this.txtuser.Name = "txtuser";
-            this.txtuser.Size = new System.Drawing.Size(534, 30);
+            this.txtuser.Size = new System.Drawing.Size(534, 44);
             this.txtuser.TabIndex = 5;
             // 
             // label4
@@ -132,7 +130,7 @@ namespace QuanLyNhaSach.Forms
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
             this.label4.Location = new System.Drawing.Point(366, 452);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 25);
+            this.label4.Size = new System.Drawing.Size(158, 37);
             this.label4.TabIndex = 6;
             this.label4.Text = "Password";
             // 
@@ -141,7 +139,7 @@ namespace QuanLyNhaSach.Forms
             this.txtpassword.Location = new System.Drawing.Point(366, 503);
             this.txtpassword.Name = "txtpassword";
             this.txtpassword.PasswordChar = '*';
-            this.txtpassword.Size = new System.Drawing.Size(534, 30);
+            this.txtpassword.Size = new System.Drawing.Size(534, 44);
             this.txtpassword.TabIndex = 7;
             this.txtpassword.UseWaitCursor = true;
             // 
@@ -159,19 +157,6 @@ namespace QuanLyNhaSach.Forms
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            this.label5.Location = new System.Drawing.Point(579, 710);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 25);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Admin";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
@@ -185,12 +170,11 @@ namespace QuanLyNhaSach.Forms
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1200, 820);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtpassword);
             this.Controls.Add(this.label4);
@@ -221,10 +205,9 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtuser;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        //private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TextBox txtpassword;

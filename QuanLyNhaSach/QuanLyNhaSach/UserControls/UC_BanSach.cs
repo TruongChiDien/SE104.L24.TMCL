@@ -28,7 +28,7 @@ namespace QuanLyNhaSach.UserControls
         #region Method
         private void Grid_tb_loadData()
         {
-            string query = "SELECT MaSach, TenSach,TheLoai,TacGia,DGBan FROM SACH";
+            string query = "SELECT MaSach as 'Mã sách', TenSach as 'Tên sách',TheLoai as 'Thể loại',TacGia as 'Tác giả',DGBan as 'DG bán',SoLuong as 'Số lượng' FROM SACH";
 
             dataGridView1.DataSource = DataProvider.Instance.ExecuteQuery(query);
         }
@@ -149,12 +149,35 @@ namespace QuanLyNhaSach.UserControls
 
         private void containedButton5_Click(object sender, EventArgs e)
         {
+            
             if (dataGridView2.Rows.Count == 0)
             {
                 MessageBox.Show("Chưa có sản phẩm nào được chọn");
             }
             else
             {
+                int qty = 0;
+
+
+                //foreach(DataRow dr in dataGridView2.Rows  )
+                //{
+                //    string t_sach = dr["Tên sách"].ToString();
+                //    qty = Convert.ToInt32(dr["SL"].ToString());
+                //    string query = string.Format("update SACH set SoLuong= SoLuong-{0} where TenSach={1}",qty,t_sach);
+                //    DataProvider.Instance.ExecuteNonQuery(query);
+
+                //}
+                foreach (DataGridViewRow row in dataGridView2.Rows)
+                {
+                    qty = Convert.ToInt32((row.Cells["SL"].Value).ToString());
+                    string t_sach = (row.Cells["Tensach"].Value).ToString();
+                    
+                    string query = string.Format("update SACH set SoLuong= SoLuong-{0} where TenSach={1}", qty, t_sach);
+                    DataProvider.Instance.ExecuteNonQuery(query);
+                }
+
+                
+
                 this.Print_HoaDon();
             }
         }
@@ -169,40 +192,74 @@ namespace QuanLyNhaSach.UserControls
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            dataGridView1.CurrentRow.Selected = true;
-            txtTensach.Text = dataGridView1.Rows[e.RowIndex].Cells["TenSach"].FormattedValue.ToString();
-            txtTacgia.Text = dataGridView1.Rows[e.RowIndex].Cells["TacGia"].FormattedValue.ToString();
+            //dataGridView1.CurrentRow.Selected = true;
+            //txtTensach.Text = dataGridView1.Rows[e.RowIndex].Cells["TenSach"].FormattedValue.ToString();
+            //txtTacgia.Text = dataGridView1.Rows[e.RowIndex].Cells["TacGia"].FormattedValue.ToString();
+
 
         }
 
         private void containedButton6_Click(object sender, EventArgs e)
         {
-            try
+            if (txtSoluong.Text == "")
             {
-                DataGridViewRow newRow = new DataGridViewRow();
-                newRow.CreateCells(dataGridView2);
-                newRow.Cells[0].Value = n + 1;
-                newRow.Cells[1].Value = txtTensach.Text;
-                newRow.Cells[2].Value = txtSoluong.Text;
-                newRow.Cells[3].Value = txtGiatien.Text;
-
-                dataGridView2.Rows.Add(newRow);
-                n++;
-                showTotal();
+                MessageBox.Show("Nhập số lượng");
+                return;
             }
-            catch { }
+            else
+            {
+                try
+                {
+                    DataGridViewRow newRow = new DataGridViewRow();
+                    newRow.CreateCells(dataGridView2);
+                    newRow.Cells[0].Value = n + 1;
+                    newRow.Cells[1].Value = txtTensach.Text;
+                    newRow.Cells[2].Value = txtSoluong.Text;
+                    newRow.Cells[3].Value = txtGiatien.Text;
+
+                    dataGridView2.Rows.Add(newRow);
+                    n++;
+                    showTotal();
+                }
+                catch { }
+            }
             //dataGridView2.Rows.Add(newRow);
          
         }
+
+        int total = 0;
+        int soluong;
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            dataGridView1.CurrentRow.Selected = true;
-            txtTensach.Text = dataGridView1.Rows[e.RowIndex].Cells["TenSach"].FormattedValue.ToString();
-            txtTacgia.Text = dataGridView1.Rows[e.RowIndex].Cells["TacGia"].FormattedValue.ToString();
-            txtTheloai.Text = dataGridView1.Rows[e.RowIndex].Cells["TheLoai"].FormattedValue.ToString();
-            txtGiatien.Text = dataGridView1.Rows[e.RowIndex].Cells["DGBan"].FormattedValue.ToString();
-            int total = Convert.ToInt32(txtSoluong.Text) * Convert.ToInt32(txtGiatien.Text);
-            txtTongtien.Text = Convert.ToString(total);
+   
+            int num_row = 0;
+            for (int i = 1; i < dataGridView1.Rows.Count; i++)
+            {
+                num_row=num_row+1;
+            }
+            if (e.RowIndex == 0)
+            {
+                return;
+            }
+            if (e.RowIndex > 0&& e.RowIndex<num_row)
+            {
+                dataGridView1.CurrentRow.Selected = true;
+                txtTensach.Text = dataGridView1.Rows[e.RowIndex].Cells["Tên sách"].FormattedValue.ToString();
+                txtTacgia.Text = dataGridView1.Rows[e.RowIndex].Cells["Tác giả"].FormattedValue.ToString();
+                txtTheloai.Text = dataGridView1.Rows[e.RowIndex].Cells["Thể loại"].FormattedValue.ToString();
+                txtGiatien.Text = dataGridView1.Rows[e.RowIndex].Cells["DG bán"].FormattedValue.ToString();
+                soluong = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["DG bán"].FormattedValue.ToString());
+                if (txtSoluong.Text == "")
+                {
+                    return;
+                }
+                total = Convert.ToInt32(txtSoluong.Text) * Convert.ToInt32(txtGiatien.Text);
+                txtTongtien.Text = Convert.ToString(total);
+            }
+            else
+            {
+                return;
+            }
         }
 
         private void containedButton2_Click(object sender, EventArgs e)
@@ -225,9 +282,23 @@ namespace QuanLyNhaSach.UserControls
         {
             if (txtSoluong.Text == null)
             {
-                MessageBox.Show("Nhập số lượng");
                 return;
             }
+
+            if (txtSoluong.Text != "")
+            {
+                if (Convert.ToInt32(txtSoluong.Text) > soluong)
+                {
+                    MessageBox.Show("Số lượng hàng không đủ");
+                }
+                else
+                {
+                    total = Convert.ToInt32(txtSoluong.Text) * Convert.ToInt32(txtGiatien.Text);
+                }
+            }
+          
+            txtTongtien.Text = Convert.ToString(total);
+
         }
 
         private void txtSoluong_KeyPress(object sender, KeyPressEventArgs e)

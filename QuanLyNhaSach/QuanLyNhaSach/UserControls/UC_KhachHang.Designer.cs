@@ -170,10 +170,10 @@ namespace QuanLyNhaSach.UserControls
             this.txbTimkiem.AcceptsReturn = true;
             this.txbTimkiem.BackColor = System.Drawing.Color.White;
             this.txbTimkiem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txbTimkiem.Location = new System.Drawing.Point(1005, 18);
+            this.txbTimkiem.Location = new System.Drawing.Point(859, 16);
             this.txbTimkiem.Margin = new System.Windows.Forms.Padding(2);
             this.txbTimkiem.Name = "txbTimkiem";
-            this.txbTimkiem.Size = new System.Drawing.Size(211, 30);
+            this.txbTimkiem.Size = new System.Drawing.Size(155, 30);
             this.txbTimkiem.TabIndex = 22;
             this.txbTimkiem.TextChanged += new System.EventHandler(this.txbTimkiem_TextChanged);
             // 
@@ -189,7 +189,7 @@ namespace QuanLyNhaSach.UserControls
             "Mã Khách hàng",
             "Họ tên",
             "Số điện thoại"});
-            this.cbChuDe.Location = new System.Drawing.Point(808, 18);
+            this.cbChuDe.Location = new System.Drawing.Point(672, 16);
             this.cbChuDe.Margin = new System.Windows.Forms.Padding(2);
             this.cbChuDe.Name = "cbChuDe";
             this.cbChuDe.Size = new System.Drawing.Size(170, 29);
@@ -202,7 +202,7 @@ namespace QuanLyNhaSach.UserControls
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(699, 18);
+            this.label1.Location = new System.Drawing.Point(563, 17);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 28);
@@ -230,10 +230,10 @@ namespace QuanLyNhaSach.UserControls
             this.txbEmail.AcceptsReturn = true;
             this.txbEmail.BackColor = System.Drawing.Color.White;
             this.txbEmail.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txbEmail.Location = new System.Drawing.Point(1037, 64);
+            this.txbEmail.Location = new System.Drawing.Point(816, 64);
             this.txbEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txbEmail.Name = "txbEmail";
-            this.txbEmail.Size = new System.Drawing.Size(223, 30);
+            this.txbEmail.Size = new System.Drawing.Size(174, 30);
             this.txbEmail.TabIndex = 5;
             // 
             // txbNo
@@ -241,10 +241,10 @@ namespace QuanLyNhaSach.UserControls
             this.txbNo.AcceptsReturn = true;
             this.txbNo.BackColor = System.Drawing.Color.White;
             this.txbNo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txbNo.Location = new System.Drawing.Point(853, 64);
+            this.txbNo.Location = new System.Drawing.Point(689, 64);
             this.txbNo.Margin = new System.Windows.Forms.Padding(2);
             this.txbNo.Name = "txbNo";
-            this.txbNo.Size = new System.Drawing.Size(157, 30);
+            this.txbNo.Size = new System.Drawing.Size(103, 30);
             this.txbNo.TabIndex = 4;
             this.txbNo.Text = "0";
             // 
@@ -253,10 +253,10 @@ namespace QuanLyNhaSach.UserControls
             this.txbDienThoai.AcceptsReturn = true;
             this.txbDienThoai.BackColor = System.Drawing.Color.White;
             this.txbDienThoai.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txbDienThoai.Location = new System.Drawing.Point(644, 64);
+            this.txbDienThoai.Location = new System.Drawing.Point(509, 64);
             this.txbDienThoai.Margin = new System.Windows.Forms.Padding(2);
             this.txbDienThoai.Name = "txbDienThoai";
-            this.txbDienThoai.Size = new System.Drawing.Size(177, 30);
+            this.txbDienThoai.Size = new System.Drawing.Size(159, 30);
             this.txbDienThoai.TabIndex = 3;
             // 
             // txbDiaChi
@@ -264,10 +264,10 @@ namespace QuanLyNhaSach.UserControls
             this.txbDiaChi.AcceptsReturn = true;
             this.txbDiaChi.BackColor = System.Drawing.Color.White;
             this.txbDiaChi.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txbDiaChi.Location = new System.Drawing.Point(449, 64);
+            this.txbDiaChi.Location = new System.Drawing.Point(350, 64);
             this.txbDiaChi.Margin = new System.Windows.Forms.Padding(2);
             this.txbDiaChi.Name = "txbDiaChi";
-            this.txbDiaChi.Size = new System.Drawing.Size(171, 30);
+            this.txbDiaChi.Size = new System.Drawing.Size(139, 30);
             this.txbDiaChi.TabIndex = 2;
             // 
             // txbTenKH
@@ -275,10 +275,10 @@ namespace QuanLyNhaSach.UserControls
             this.txbTenKH.AcceptsReturn = true;
             this.txbTenKH.BackColor = System.Drawing.Color.White;
             this.txbTenKH.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txbTenKH.Location = new System.Drawing.Point(182, 64);
+            this.txbTenKH.Location = new System.Drawing.Point(140, 64);
             this.txbTenKH.Margin = new System.Windows.Forms.Padding(2);
             this.txbTenKH.Name = "txbTenKH";
-            this.txbTenKH.Size = new System.Drawing.Size(240, 30);
+            this.txbTenKH.Size = new System.Drawing.Size(188, 30);
             this.txbTenKH.TabIndex = 1;
             // 
             // label2
@@ -287,7 +287,7 @@ namespace QuanLyNhaSach.UserControls
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            this.label2.Location = new System.Drawing.Point(261, 16);
+            this.label2.Location = new System.Drawing.Point(193, 16);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 28);
@@ -300,7 +300,7 @@ namespace QuanLyNhaSach.UserControls
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            this.label3.Location = new System.Drawing.Point(505, 16);
+            this.label3.Location = new System.Drawing.Point(395, 16);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 28);
@@ -313,7 +313,7 @@ namespace QuanLyNhaSach.UserControls
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            this.label4.Location = new System.Drawing.Point(666, 16);
+            this.label4.Location = new System.Drawing.Point(531, 16);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 28);
@@ -326,7 +326,7 @@ namespace QuanLyNhaSach.UserControls
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            this.label5.Location = new System.Drawing.Point(1120, 16);
+            this.label5.Location = new System.Drawing.Point(869, 16);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 28);
@@ -339,7 +339,7 @@ namespace QuanLyNhaSach.UserControls
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            this.label6.Location = new System.Drawing.Point(918, 16);
+            this.label6.Location = new System.Drawing.Point(716, 16);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 28);
@@ -352,7 +352,7 @@ namespace QuanLyNhaSach.UserControls
             this.txbMaKH.BackColor = System.Drawing.Color.White;
             this.txbMaKH.Enabled = false;
             this.txbMaKH.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txbMaKH.Location = new System.Drawing.Point(43, 64);
+            this.txbMaKH.Location = new System.Drawing.Point(16, 64);
             this.txbMaKH.Margin = new System.Windows.Forms.Padding(2);
             this.txbMaKH.Name = "txbMaKH";
             this.txbMaKH.Size = new System.Drawing.Size(107, 30);
@@ -364,7 +364,7 @@ namespace QuanLyNhaSach.UserControls
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            this.label7.Location = new System.Drawing.Point(58, 16);
+            this.label7.Location = new System.Drawing.Point(27, 16);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(76, 28);
@@ -446,6 +446,7 @@ namespace QuanLyNhaSach.UserControls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.dtgvKH);
             this.Controls.Add(this.panel2);

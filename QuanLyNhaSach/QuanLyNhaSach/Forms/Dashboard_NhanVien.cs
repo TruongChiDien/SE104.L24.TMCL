@@ -31,7 +31,8 @@ namespace QuanLyNhaSach.Forms
 
         private void button4_Click_1(object sender, EventArgs e)
         {
-            this.Dispose();
+            Application.Exit();
+            //this.Dispose();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -176,6 +177,13 @@ namespace QuanLyNhaSach.Forms
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnBaoMat_Click(object sender, EventArgs e)
+        {
+            movePanelTicked(btnBaoMat);
+            UC_BaoMatAdmin ubmNV = new UC_BaoMatAdmin();
+            AddControlToPanel(ubmNV);
         }
     }
 }

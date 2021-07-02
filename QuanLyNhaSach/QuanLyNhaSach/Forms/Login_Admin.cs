@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using QuanLyNhaSach.DA;
 
 namespace QuanLyNhaSach.Forms
 {
@@ -20,16 +21,16 @@ namespace QuanLyNhaSach.Forms
         {
             try
             {
-                SqlConnection conn = new SqlConnection("Data Source=MSI\\ANHDUNGSQL;Initial Catalog=E:\\CNPM\\QLNS\\QLNS.MDF;Integrated Security=True");
+                //SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\C#\QLNS2\QLNS.mdf;Integrated Security=True;Connect Timeout=30");
 
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("select * from NHANVIEN where Username='" + txtuser.Text + "' and Password='" + txtpassword.Text + "' and Type='admin'", conn);
-                SqlDataReader dta = cmd.ExecuteReader();
-
-                if (dta.HasRows)
+                //conn.Open();
+                //SqlCommand cmd = new SqlCommand("select * from NHANVIEN where Username='" + txtuser.Text + "' and Password='" + txtpassword.Text + "' and Type='admin'", conn);
+                //SqlDataReader dta = cmd.ExecuteReader();
+                string query = "select * from NHANVIEN where Username='" + txtuser.Text + "' and Password='" + txtpassword.Text + "' and Type='admin'";
+                DataTable dta = DataProvider.Instance.ExecuteQuery(query);
+                if (dta.Rows.Count > 0)    
                 {
-                    dta.Read();
-
+   
                     MessageBox.Show("Thanh cong dang nhap Admin");
                     Dashboard_Admin da = new Dashboard_Admin();
                     da.Show();

@@ -3,9 +3,12 @@
     "",
     "\\QuanLyNhaSach",
     "\\QuanLyNhaSach\\QuanLyNhaSach",
-    "\\QuanLyNhaSach\\QuanLyNhaSach\\Forms",
     "\\QuanLyNhaSach\\QuanLyNhaSach\\UserControls"
   ],
+<<<<<<< HEAD
   "SelectedNode": "\\QuanLyNhaSach\\QuanLyNhaSach\\UserControls\\UC_PhieuNhap.cs",
+=======
+  "SelectedNode": "\\QuanLyNhaSach\\QuanLyNhaSach\\UserControls\\UC_KhachHang.cs",
+>>>>>>> 1bca9750bc6606aba7e8f6623a668868123af1da
   "PreviewInSolutionExplorer": false
 }

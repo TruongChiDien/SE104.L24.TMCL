@@ -36,6 +36,7 @@ namespace QuanLyNhaSach.Forms
             this.label8 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.panelLeft = new System.Windows.Forms.Panel();
+            this.btnBaoMat = new System.Windows.Forms.Button();
             this.btnKhachHang = new System.Windows.Forms.Button();
             this.panelTicked = new System.Windows.Forms.Panel();
             this.btnBanSach = new System.Windows.Forms.Button();
@@ -96,7 +97,7 @@ namespace QuanLyNhaSach.Forms
             this.label8.Location = new System.Drawing.Point(63, 15);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(194, 40);
+            this.label8.Size = new System.Drawing.Size(186, 39);
             this.label8.TabIndex = 8;
             this.label8.Text = "Book Store";
             this.label8.Click += new System.EventHandler(this.label8_Click);
@@ -118,6 +119,7 @@ namespace QuanLyNhaSach.Forms
             // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
+            this.panelLeft.Controls.Add(this.btnBaoMat);
             this.panelLeft.Controls.Add(this.btnKhachHang);
             this.panelLeft.Controls.Add(this.panelTicked);
             this.panelLeft.Controls.Add(this.btnBanSach);
@@ -129,6 +131,23 @@ namespace QuanLyNhaSach.Forms
             this.panelLeft.Size = new System.Drawing.Size(350, 927);
             this.panelLeft.TabIndex = 3;
             this.panelLeft.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLeft_Paint);
+            // 
+            // btnBaoMat
+            // 
+            this.btnBaoMat.FlatAppearance.BorderSize = 0;
+            this.btnBaoMat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBaoMat.Font = new System.Drawing.Font("Century Gothic", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnBaoMat.ForeColor = System.Drawing.Color.White;
+            this.btnBaoMat.Image = ((System.Drawing.Image)(resources.GetObject("btnBaoMat.Image")));
+            this.btnBaoMat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBaoMat.Location = new System.Drawing.Point(10, 524);
+            this.btnBaoMat.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBaoMat.Name = "btnBaoMat";
+            this.btnBaoMat.Size = new System.Drawing.Size(340, 140);
+            this.btnBaoMat.TabIndex = 4;
+            this.btnBaoMat.Text = "Bảo mật";
+            this.btnBaoMat.UseVisualStyleBackColor = true;
+            this.btnBaoMat.Click += new System.EventHandler(this.btnBaoMat_Click);
             // 
             // btnKhachHang
             // 
@@ -262,7 +281,7 @@ namespace QuanLyNhaSach.Forms
             this.labelRealTime.AutoSize = true;
             this.labelRealTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelRealTime.ForeColor = System.Drawing.Color.White;
-            this.labelRealTime.Location = new System.Drawing.Point(1019, 62);
+            this.labelRealTime.Location = new System.Drawing.Point(1018, 62);
             this.labelRealTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelRealTime.Name = "labelRealTime";
             this.labelRealTime.Size = new System.Drawing.Size(90, 23);
@@ -335,11 +354,11 @@ namespace QuanLyNhaSach.Forms
             // panelControl
             // 
             this.panelControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panelControl.Location = new System.Drawing.Point(350, 243);
-            this.panelControl.Margin = new System.Windows.Forms.Padding(2);
             this.panelControl.Name = "panelControl";
             this.panelControl.Size = new System.Drawing.Size(1260, 684);
-            this.panelControl.TabIndex = 6;
+            this.panelControl.TabIndex = 3;
             // 
             // Dashboard_NhanVien
             // 
@@ -391,5 +410,6 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.Panel panelControl;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBaoMat;
     }
 }

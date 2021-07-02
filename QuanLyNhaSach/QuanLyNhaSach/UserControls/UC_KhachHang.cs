@@ -98,7 +98,7 @@ namespace QuanLyNhaSach.UserControls
             query = string.Format("select MaKH from khachhang where DienThoai = {0}", txbDienThoai.Text);
             int MaKH = Convert.ToInt32(DataProvider.Instance.ExecuteScalar(query));
 
-            query = string.Format("insert into ctcongno values('{0}/{1}/{5}', {2}, {3}, 0, {4})", DateTime.Now.Month, DateTime.Now.Year, MaKH, txbNo.Text, txbNo.Text, DateTime.Now.Day);
+            query = string.Format("insert into ctcongno values('{0}/{5}/{1}', {2}, {3}, 0, {4})", DateTime.Now.Month, DateTime.Now.Year, MaKH, txbNo.Text, txbNo.Text, DateTime.Now.Day);
             DataProvider.Instance.ExecuteNonQuery(query);
 
             Clear();
@@ -197,24 +197,15 @@ namespace QuanLyNhaSach.UserControls
 
         private void UpdateCongNo()
         {
-            int month, year;
-            month = DateTime.Now.Month;
-            year = DateTime.Now.Year;
-            if (month == 1)
-            {
-                month = 12;
-                year -= 1;
-            }
-            else
-            {
-                month -= 1;
-            }
-            string query = "select count(*) from ctcongno where month(ThoiGian) = " + month.ToString() + " and year(ThoiGian) = " + year.ToString();
+            string query = "select * from khachhang";
             DataTable t_dtt = DataProvider.Instance.ExecuteQuery(query);
-            foreach (DataRow item in t_dtt.Rows)
+            if (t_dtt.Columns.Count > 1)
             {
-                query = string.Format("insert into ctcongno values('{0}/{1}', {2}, {3}, 0, {4})", DateTime.Now.Month, DateTime.Now.Year, Convert.ToInt32(item["MaKH"]), Convert.ToInt32(item["NoDau"]), Convert.ToInt32(item["NoCuoi"]));
-                DataProvider.Instance.ExecuteNonQuery(query);
+                foreach (DataRow item in t_dtt.Rows)
+                {
+                    query = string.Format("insert into ctcongno values('{0}/1/{1}', {2}, {3}, 0, {4})", DateTime.Now.Month, DateTime.Now.Year, Convert.ToInt32(item["MaKH"]), Convert.ToInt32(item["NoKH"]), Convert.ToInt32(item["NoKH"]));
+                    DataProvider.Instance.ExecuteNonQuery(query);
+                }
             }
 
         }
@@ -332,6 +323,8 @@ namespace QuanLyNhaSach.UserControls
             txbNo.Text = dtgvKH.Rows[e.RowIndex].Cells["Nợ"].FormattedValue.ToString();
             
         }
+
+
     }
     #endregion
 

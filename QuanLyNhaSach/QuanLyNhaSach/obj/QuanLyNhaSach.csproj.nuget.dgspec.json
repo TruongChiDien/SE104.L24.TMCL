@@ -1,20 +1,33 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "E:\\CNPM\\Quan ly nha sach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj": {}
+=======
+    "E:\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj": {}
+>>>>>>> 1bca9750bc6606aba7e8f6623a668868123af1da
   },
   "projects": {
-    "E:\\CNPM\\Quan ly nha sach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj": {
+    "E:\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\CNPM\\Quan ly nha sach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj",
+        "projectUniqueName": "E:\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj",
         "projectName": "QuanLyNhaSach",
+<<<<<<< HEAD
         "projectPath": "E:\\CNPM\\Quan ly nha sach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj",
         "packagesPath": "C:\\Users\\ducdu\\.nuget\\packages\\",
         "outputPath": "E:\\CNPM\\Quan ly nha sach\\QuanLyNhaSach\\QuanLyNhaSach\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ducdu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "projectPath": "E:\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj",
+        "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
+        "outputPath": "E:\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 1bca9750bc6606aba7e8f6623a668868123af1da
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
