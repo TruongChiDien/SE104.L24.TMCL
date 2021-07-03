@@ -17,6 +17,7 @@ namespace QuanLyNhaSach.UserControls
         int tienthu;
         int total = 0;
         int soluong;
+        string query;
 
         #endregion
 
@@ -25,7 +26,6 @@ namespace QuanLyNhaSach.UserControls
         {
             InitializeComponent();
             Grid_tb_loadData();
-
         }
 
         private void Grid_tb_loadData()
@@ -70,21 +70,20 @@ namespace QuanLyNhaSach.UserControls
             }
         }
 
-        private void Print_HoaDon()
+        private bool Print_HoaDon()
         {
             if(txtMaKH.Text == "")
             {
                 msb.Messageshow("Nhập mã khách hàng!");
-                return;
+                return false;
             }
             int cnt = 0;
-            string query = string.Format("select count(*) from khachhang where MaKH = {0}", txtMaKH.Text);
+            query = string.Format("select count(*) from khachhang where MaKH = {0}", txtMaKH.Text);
             cnt = Convert.ToInt32(DataProvider.Instance.ExecuteScalar(query));
-            
             if (cnt == 0)
             {
                 msb.Messageshow("Khách hàng không tồn tại!");
-                return;
+                return false;
             }
             query = string.Format("select HoTenKH from khachhang where MaKH = {0}", txtMaKH.Text);
             string tenKH = DataProvider.Instance.ExecuteScalar(query).ToString();
@@ -104,56 +103,25 @@ namespace QuanLyNhaSach.UserControls
             printer.PorportionalColumns = true;
             printer.HeaderCellAlignment = StringAlignment.Near;
             printer.PrintPreviewDataGridView(dtgvHoaDon);
+
+            this.Clear();
+            return true;
         }
 
-        public void PrintPhieuThu()
+        public void PrintPhieuThu(int total, bool allow)
         {
-            if (txtMaKH.Text == "")
-            {
+            if (allow == false)
                 return;
-            }
 
-            int cnt = 0;
-            string query = string.Format("select count(*) from khachhang where MaKH = {0}", txtMaKH.Text);
-            cnt = Convert.ToInt32(DataProvider.Instance.ExecuteScalar(query));
-
-            if (cnt == 0)
-            {
-                return;
-            }
-
-
-            tienthu = Convert.ToInt32(txtTongcong.Text);
-            query = string.Format("select * from ctcongno where MaKH = {0} and month(ThoiGian) = {1} and year(ThoiGian) = {2}", Convert.ToInt32(txtMaKH.Text), DateTime.Now.Month, DateTime.Now.Year);
-            DataTable dtt = DataProvider.Instance.ExecuteQuery(query);
-            int NoCuoi = Convert.ToInt32(dtt.Rows[0]["NoCuoi"]);
-            int PhatSinh = Convert.ToInt32(dtt.Rows[0]["PhatSinh"]);
-            while (tienthu > NoCuoi)
-            {
-                msb.Messageshow("Số tiền thu không được phép lớn hơn số tiền nợ!");
-                Dialog_ThuTien t_thutien1 = new Dialog_ThuTien();
-                t_thutien1.ShowDialog();
-                if (t_thutien1.Ok == false) return;
-                tienthu = t_thutien1.Tienthu;
-            }
-            query = string.Format("update ctcongno set PhatSinh = {0}, NoCuoi = {1} where MaKH = {2} and month(ThoiGian) = {3} and year(ThoiGian) = {4}", PhatSinh - tienthu, NoCuoi - tienthu, Convert.ToInt32(txtMaKH.Text), DateTime.Now.Month, DateTime.Now.Year);
-            DataProvider.Instance.ExecuteNonQuery(query);
-            query = string.Format("update khachhang set NoKH = {0} where MaKH = {1}", NoCuoi - tienthu, Convert.ToInt32(txtMaKH.Text));
-            DataProvider.Instance.ExecuteNonQuery(query);
+            this.tienthu = total;
 
             this.prtDoc.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("custom", 970, 234);
             this.prtprvDoc.Document = this.prtDoc;
             if (this.prtprvDoc.ShowDialog() == DialogResult.OK)
                 this.prtDoc.Print();
+            this.Clear();
         }
 
-        private void SetFontAndColors()
-        {
-            dtgvSach.Font = new Font("Tahoma", 15);
-            dtgvSach.ForeColor = Color.Blue;
-            dtgvSach.BackColor = Color.Beige;
-
-        }
         void showTotal()
         {
             int total = 0;
@@ -169,6 +137,13 @@ namespace QuanLyNhaSach.UserControls
             }
         }
 
+        private void Clear()
+        {
+            dtgvHoaDon.Rows.Clear();
+            this.showTotal();
+            btnInHoaDon.Enabled = false;
+            btnThanhToan.Enabled = false;
+        }
         #endregion
 
         #region Event
@@ -176,12 +151,6 @@ namespace QuanLyNhaSach.UserControls
         private void txbTimKiem_TextChanged(object sender, EventArgs e)
         {
             Search_book();
-            if (String.IsNullOrEmpty(txbSoluong.Text))
-            {
-                MessageBox.Show("Nhập số lượng sách", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                //dataGridView1.Rows.Clear();
-            }
-
         }
 
         private void btnInHoaDon_Click(object sender, EventArgs e)
@@ -352,8 +321,9 @@ namespace QuanLyNhaSach.UserControls
             }
             else
             {
-                this.Print_HoaDon();
-                this.PrintPhieuThu();
+                int total = Convert.ToInt32(txtTongtien.Text);
+                bool allow = this.Print_HoaDon();
+                this.PrintPhieuThu(total, allow);
             }
             
         }
@@ -380,10 +350,7 @@ namespace QuanLyNhaSach.UserControls
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            dtgvHoaDon.Rows.Clear();
-            this.showTotal();
-            btnInHoaDon.Enabled = false;
-            btnThanhToan.Enabled = false;
+            this.Clear();
         }        
     }
     #endregion

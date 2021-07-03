@@ -30,8 +30,10 @@ namespace QuanLyNhaSach.UserControls
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_BanSach));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_BanSach));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnXoa = new MaterialSurface.ContainedButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtgvHoaDon = new System.Windows.Forms.DataGridView();
@@ -117,15 +119,23 @@ namespace QuanLyNhaSach.UserControls
             this.TenSach,
             this.SL,
             this.GiaTien});
-            this.dtgvHoaDon.GridColor = System.Drawing.Color.White;
+            this.dtgvHoaDon.GridColor = System.Drawing.Color.Gray;
             this.dtgvHoaDon.Location = new System.Drawing.Point(10, 2);
             this.dtgvHoaDon.Margin = new System.Windows.Forms.Padding(2);
             this.dtgvHoaDon.Name = "dtgvHoaDon";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvHoaDon.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvHoaDon.RowHeadersVisible = false;
             this.dtgvHoaDon.RowHeadersWidth = 82;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dtgvHoaDon.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.dtgvHoaDon.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dtgvHoaDon.RowTemplate.Height = 29;
             this.dtgvHoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvHoaDon.ShowRowErrors = false;
@@ -309,16 +319,24 @@ namespace QuanLyNhaSach.UserControls
             this.dtgvSach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvSach.BackgroundColor = System.Drawing.Color.White;
             this.dtgvSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvSach.GridColor = System.Drawing.Color.White;
+            this.dtgvSach.GridColor = System.Drawing.Color.Gray;
             this.dtgvSach.Location = new System.Drawing.Point(16, 361);
             this.dtgvSach.Margin = new System.Windows.Forms.Padding(2);
             this.dtgvSach.Name = "dtgvSach";
             this.dtgvSach.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvSach.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dtgvSach.RowHeadersVisible = false;
             this.dtgvSach.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.dtgvSach.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.dtgvSach.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dtgvSach.RowTemplate.Height = 29;
             this.dtgvSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvSach.ShowRowErrors = false;
@@ -492,6 +510,7 @@ namespace QuanLyNhaSach.UserControls
             this.TxTimkiem.Name = "TxTimkiem";
             this.TxTimkiem.Size = new System.Drawing.Size(297, 30);
             this.TxTimkiem.TabIndex = 33;
+            this.TxTimkiem.TextChanged += new System.EventHandler(this.txbTimKiem_TextChanged);
             // 
             // label5
             // 

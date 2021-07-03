@@ -30,6 +30,7 @@ namespace QuanLyNhaSach.UserControls
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_KhachHang));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnThutien = new System.Windows.Forms.Button();
             this.btnBaoCao = new System.Windows.Forms.Button();
@@ -408,15 +409,24 @@ namespace QuanLyNhaSach.UserControls
             this.dtgvKH.AllowUserToAddRows = false;
             this.dtgvKH.AllowUserToDeleteRows = false;
             this.dtgvKH.AllowUserToResizeColumns = false;
+            this.dtgvKH.AllowUserToResizeRows = false;
             this.dtgvKH.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvKH.BackgroundColor = System.Drawing.Color.White;
+            this.dtgvKH.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dtgvKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvKH.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgvKH.GridColor = System.Drawing.Color.White;
+            this.dtgvKH.GridColor = System.Drawing.Color.Gray;
             this.dtgvKH.Location = new System.Drawing.Point(0, 201);
             this.dtgvKH.Margin = new System.Windows.Forms.Padding(2);
             this.dtgvKH.Name = "dtgvKH";
             this.dtgvKH.ReadOnly = true;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvKH.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvKH.RowHeadersVisible = false;
             this.dtgvKH.RowHeadersWidth = 82;
             this.dtgvKH.RowTemplate.Height = 29;
