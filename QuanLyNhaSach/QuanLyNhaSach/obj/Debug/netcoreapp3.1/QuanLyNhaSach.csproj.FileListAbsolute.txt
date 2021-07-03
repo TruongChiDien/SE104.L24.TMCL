@@ -279,3 +279,5 @@ C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\netcor
 C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.csproj.CopyComplete
 C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.genruntimeconfig.cache
+E:\C#\QLNS2\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.DialogBaoMat.resources
+E:\C#\QLNS2\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.Dialog_Thaydoithamso.resources
