@@ -132,6 +132,7 @@ namespace QuanLyNhaSach.Forms
             this.BtHuy.TabIndex = 12;
             this.BtHuy.Text = "Hủy";
             this.BtHuy.UseVisualStyleBackColor = false;
+            this.BtHuy.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel3
             // 
@@ -184,6 +185,7 @@ namespace QuanLyNhaSach.Forms
             // 
             // TaoPhieuNhap
             // 
+            this.AcceptButton = this.BtXuatPhieu;
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aqua;

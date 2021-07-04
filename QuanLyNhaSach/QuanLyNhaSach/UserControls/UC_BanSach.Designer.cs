@@ -141,7 +141,6 @@ namespace QuanLyNhaSach.UserControls
             this.dtgvHoaDon.ShowRowErrors = false;
             this.dtgvHoaDon.Size = new System.Drawing.Size(523, 423);
             this.dtgvHoaDon.TabIndex = 52;
-            this.dtgvHoaDon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvHoaDon_CellContentClick);
             this.dtgvHoaDon.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvHoaDon_CellDoubleClick);
             // 
             // TenSach
@@ -350,6 +349,7 @@ namespace QuanLyNhaSach.UserControls
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(711, 136);
             this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.ShowUpDown = true;
             this.dateTimePicker1.Size = new System.Drawing.Size(297, 30);
             this.dateTimePicker1.TabIndex = 50;
             // 
@@ -418,6 +418,7 @@ namespace QuanLyNhaSach.UserControls
             // 
             this.txbSoluong.AccessibleName = "";
             this.txbSoluong.Location = new System.Drawing.Point(711, 250);
+            this.txbSoluong.MaxLength = 9;
             this.txbSoluong.Name = "txbSoluong";
             this.txbSoluong.Size = new System.Drawing.Size(297, 30);
             this.txbSoluong.TabIndex = 39;
@@ -554,12 +555,10 @@ namespace QuanLyNhaSach.UserControls
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-<<<<<<< HEAD
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.TextBox txtSoluong;
         private System.Windows.Forms.TextBox txtGiatien;
-=======
->>>>>>> 583d3710025f256b1edb0e76d267414c5f0c4b91
+
 
         private System.Windows.Forms.TextBox txtTongcong;
         private MaterialSurface.ContainedButton btnThanhToan;
@@ -576,7 +575,6 @@ namespace QuanLyNhaSach.UserControls
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txbSoluong;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtGiatien;
         private MaterialSurface.ContainedButton btnThem;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox CbChude;

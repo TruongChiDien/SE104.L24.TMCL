@@ -50,7 +50,7 @@ namespace QuanLyNhaSach.Forms
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(513, 364);
+            this.panel1.Size = new System.Drawing.Size(513, 281);
             this.panel1.TabIndex = 1;
             // 
             // btnHuy
@@ -96,6 +96,7 @@ namespace QuanLyNhaSach.Forms
             // txtNoToiDa
             // 
             this.txtNoToiDa.Location = new System.Drawing.Point(266, 101);
+            this.txtNoToiDa.MaxLength = 9;
             this.txtNoToiDa.Name = "txtNoToiDa";
             this.txtNoToiDa.Size = new System.Drawing.Size(173, 27);
             this.txtNoToiDa.TabIndex = 21;
@@ -104,6 +105,7 @@ namespace QuanLyNhaSach.Forms
             // txbTonKhoToiDa
             // 
             this.txbTonKhoToiDa.Location = new System.Drawing.Point(266, 55);
+            this.txbTonKhoToiDa.MaxLength = 9;
             this.txbTonKhoToiDa.Name = "txbTonKhoToiDa";
             this.txbTonKhoToiDa.Size = new System.Drawing.Size(173, 27);
             this.txbTonKhoToiDa.TabIndex = 21;
@@ -133,9 +135,11 @@ namespace QuanLyNhaSach.Forms
             // 
             // Dialog_Thaydoithamso
             // 
+            this.AcceptButton = this.btnLuu;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(537, 388);
+            this.BackColor = System.Drawing.Color.Red;
+            this.ClientSize = new System.Drawing.Size(537, 303);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Dialog_Thaydoithamso";

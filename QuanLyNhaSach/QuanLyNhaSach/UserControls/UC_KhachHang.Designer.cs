@@ -231,9 +231,11 @@ namespace QuanLyNhaSach.UserControls
             this.txbEmail.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txbEmail.Location = new System.Drawing.Point(1249, 64);
             this.txbEmail.Margin = new System.Windows.Forms.Padding(2);
+            this.txbEmail.MaxLength = 50;
             this.txbEmail.Name = "txbEmail";
             this.txbEmail.Size = new System.Drawing.Size(260, 30);
             this.txbEmail.TabIndex = 5;
+            this.txbEmail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbDiaChi_KeyDown);
             // 
             // txbNo
             // 
@@ -242,10 +244,12 @@ namespace QuanLyNhaSach.UserControls
             this.txbNo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txbNo.Location = new System.Drawing.Point(1049, 64);
             this.txbNo.Margin = new System.Windows.Forms.Padding(2);
+            this.txbNo.MaxLength = 9;
             this.txbNo.Name = "txbNo";
             this.txbNo.Size = new System.Drawing.Size(131, 30);
             this.txbNo.TabIndex = 4;
             this.txbNo.Text = "0";
+            this.txbNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbDiaChi_KeyDown);
             // 
             // txbDienThoai
             // 
@@ -254,9 +258,12 @@ namespace QuanLyNhaSach.UserControls
             this.txbDienThoai.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txbDienThoai.Location = new System.Drawing.Point(785, 64);
             this.txbDienThoai.Margin = new System.Windows.Forms.Padding(2);
+            this.txbDienThoai.MaxLength = 12;
             this.txbDienThoai.Name = "txbDienThoai";
             this.txbDienThoai.Size = new System.Drawing.Size(190, 30);
             this.txbDienThoai.TabIndex = 3;
+            this.txbDienThoai.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbDiaChi_KeyDown);
+            this.txbDienThoai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbDienThoai_KeyPress);
             // 
             // txbDiaChi
             // 
@@ -268,6 +275,7 @@ namespace QuanLyNhaSach.UserControls
             this.txbDiaChi.Name = "txbDiaChi";
             this.txbDiaChi.Size = new System.Drawing.Size(218, 30);
             this.txbDiaChi.TabIndex = 2;
+            this.txbDiaChi.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbDiaChi_KeyDown);
             // 
             // txbTenKH
             // 
@@ -279,6 +287,7 @@ namespace QuanLyNhaSach.UserControls
             this.txbTenKH.Name = "txbTenKH";
             this.txbTenKH.Size = new System.Drawing.Size(219, 30);
             this.txbTenKH.TabIndex = 1;
+            this.txbTenKH.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbDiaChi_KeyDown);
             // 
             // label2
             // 

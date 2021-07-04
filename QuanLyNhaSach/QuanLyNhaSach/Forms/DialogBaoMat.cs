@@ -52,7 +52,7 @@ namespace QuanLyNhaSach.Forms
                         msb.Messageshow("Cập nhật mật khẩu thành công!");
                 }
             }
-
+            this.Dispose();
         }
 
         private void BtHuy_Click(object sender, EventArgs e)

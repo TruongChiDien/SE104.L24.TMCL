@@ -77,7 +77,7 @@ namespace QuanLyNhaSach.UserControls
                 msb.Messageshow("Nhập mã khách hàng!");
                 return false;
             }
-            int cnt = 0;
+            int cnt;
             query = string.Format("select count(*) from khachhang where MaKH = {0}", txtMaKH.Text);
             cnt = Convert.ToInt32(DataProvider.Instance.ExecuteScalar(query));
             if (cnt == 0)
@@ -88,22 +88,7 @@ namespace QuanLyNhaSach.UserControls
 
             //Khách hàng vượt quá sô nợ quy định
 
-            //string query1 = string.Format("select NoKH from KHACHHANG where MaKH='{0}'", txtMaKH.Text);
 
-            //int noKH = (Int32)DataProvider.Instance.ExecuteScalar(query1);
-            //string query2 = string.Format("select GiaTri from THAMSO where TenTS='notoida'");
-            //int notoida = (Int32)DataProvider.Instance.ExecuteScalar(query2);
-            //if (noKH > notoida)
-            //{
-            //    msb.Messageshow("Khách hàng đang nợ quá số tiền quy định. Bạn có muốn thay đổi số tiền nợ?");
-            //    if (msb.yes == true)
-            //    {
-            //        Dialog_Thaydoithamso d = new Dialog_Thaydoithamso();
-            //        d.ShowDialog();
-            //    }
-            //    else { return; }
-            //}
-            //================
             query = string.Format("select HoTenKH from khachhang where MaKH = {0}", txtMaKH.Text);
             string tenKH = DataProvider.Instance.ExecuteScalar(query).ToString();
 
@@ -180,7 +165,7 @@ namespace QuanLyNhaSach.UserControls
                 msb.Messageshow("Nhập mã khách hàng!");
                 return;
             }
-            int cnt = 0;
+            int cnt=0;
             query = string.Format("select count(*) from khachhang where MaKH = {0}", txtMaKH.Text);
             cnt = Convert.ToInt32(DataProvider.Instance.ExecuteScalar(query));
             if (cnt == 0)
@@ -193,7 +178,7 @@ namespace QuanLyNhaSach.UserControls
             string query1 = string.Format("select NoKH from KHACHHANG where MaKH='{0}'", txtMaKH.Text);
 
             int noKH = (Int32)DataProvider.Instance.ExecuteScalar(query1);
-            string query2 = string.Format("select GiaTri from THAMSO where TenTS='notoida'");
+            string query2 = string.Format("select GiaTri from THAMSO where TenTS='MaxNo'");
             int notoida = (Int32)DataProvider.Instance.ExecuteScalar(query2);
             if (noKH > notoida)
             {
@@ -211,17 +196,9 @@ namespace QuanLyNhaSach.UserControls
                 {
                     MessageBox.Show("Chưa có sản phẩm nào được chọn");
                 }
-                //else if ()
-                //{
-
-                //}
                 else
                 {
-                   
-
-
-
-                    int qty = 0;
+                    int qty;
                     int n = dtgvHoaDon.Rows.Count - 1;
                     for (int i = 0; i < n; i++)
                     {
@@ -237,18 +214,9 @@ namespace QuanLyNhaSach.UserControls
             
         }
 
-        private void dtgvHoaDon_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //dataGridView1.CurrentRow.Selected = true;
-            //txtTensach.Text = dataGridView1.Rows[e.RowIndex].Cells["TenSach"].FormattedValue.ToString();
-            //txtTacgia.Text = dataGridView1.Rows[e.RowIndex].Cells["TacGia"].FormattedValue.ToString();
-
-
-        }
-
         private void btnThem_Click(object sender, EventArgs e)
         {
-            string query = string.Format("select GiaTri from THAMSO where TenTS='tonkho'");
+            string query = string.Format("select GiaTri from THAMSO where TenTS='MinTon'");
             int tonkhotoithieu=(Int32)DataProvider.Instance.ExecuteScalar(query);
 
             if (txtGiatien.Text == "")
@@ -384,7 +352,7 @@ namespace QuanLyNhaSach.UserControls
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            bool inHD = true;
+            bool inHD;
             if (txtMaKH.Text == "")
             {
                 msb.Messageshow("Nhập mã khách hàng!");

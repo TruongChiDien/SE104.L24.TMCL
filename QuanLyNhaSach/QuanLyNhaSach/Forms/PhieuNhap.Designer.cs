@@ -37,7 +37,7 @@ namespace QuanLyNhaSach.Forms
             this.panel3 = new System.Windows.Forms.Panel();
             this.Grid_TaoPhieuNhap = new System.Windows.Forms.DataGridView();
             this.BtXuatPhieu = new System.Windows.Forms.Button();
-            this.BtHuy = new System.Windows.Forms.Button();
+            this.btnHuy = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -51,7 +51,7 @@ namespace QuanLyNhaSach.Forms
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.BtXuatPhieu);
-            this.panel1.Controls.Add(this.BtHuy);
+            this.panel1.Controls.Add(this.btnHuy);
             this.panel1.Location = new System.Drawing.Point(8, 9);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1184, 803);
@@ -132,22 +132,23 @@ namespace QuanLyNhaSach.Forms
             this.BtXuatPhieu.UseVisualStyleBackColor = false;
             this.BtXuatPhieu.Click += new System.EventHandler(this.BtXuatPhieu_Click);
             // 
-            // BtHuy
+            // btnHuy
             // 
-            this.BtHuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
-            this.BtHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtHuy.ForeColor = System.Drawing.Color.White;
-            this.BtHuy.Location = new System.Drawing.Point(-8, 739);
-            this.BtHuy.Name = "BtHuy";
-            this.BtHuy.Size = new System.Drawing.Size(618, 71);
-            this.BtHuy.TabIndex = 12;
-            this.BtHuy.Text = "Hủy";
-            this.BtHuy.UseVisualStyleBackColor = false;
-            this.BtHuy.Click += new System.EventHandler(this.BtHuy_Click);
+            this.btnHuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnHuy.ForeColor = System.Drawing.Color.White;
+            this.btnHuy.Location = new System.Drawing.Point(-8, 739);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(618, 71);
+            this.btnHuy.TabIndex = 12;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseVisualStyleBackColor = false;
+            this.btnHuy.Click += new System.EventHandler(this.BtHuy_Click);
             // 
             // PhieuNhap
             // 
+            this.AcceptButton = this.BtXuatPhieu;
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aqua;
@@ -180,6 +181,6 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView Grid_TaoPhieuNhap;
         private System.Windows.Forms.Button BtXuatPhieu;
-        private System.Windows.Forms.Button BtHuy;
+        private System.Windows.Forms.Button btnHuy;
     }
 }

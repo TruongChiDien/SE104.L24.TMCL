@@ -237,10 +237,8 @@ C:\Users\anhnh\Documents\GitHub\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\De
 E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.UserControls.UC_BaoMatAdmin.resources
 E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.UserControls.UC_BaoMatNV.resources
 >>>>>>> 1bca9750bc6606aba7e8f6623a668868123af1da
-<<<<<<< HEAD
 E:\CNPM\Quan ly nha sach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.UserControls.UC_BaoMatAdmin.resources
 E:\CNPM\Quan ly nha sach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.ThamSo.resources
-=======
 E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.DialogBaoMat.resources
 C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.csproj.AssemblyReference.cache
 C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.Dashboard_Admin.resources
@@ -286,3 +284,5 @@ C:\Users\Asus\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcor
 E:\C#\QLNS2\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.DialogBaoMat.resources
 E:\C#\QLNS2\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.Dialog_Thaydoithamso.resources
 >>>>>>> 583d3710025f256b1edb0e76d267414c5f0c4b91
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.Dialog_Thaydoithamso.resources
+E:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Forms.ThamSo.resources

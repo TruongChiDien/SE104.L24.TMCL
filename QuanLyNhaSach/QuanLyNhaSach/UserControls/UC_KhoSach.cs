@@ -148,14 +148,12 @@ namespace QuanLyNhaSach.UserControls
             Search_book();
         }
 
-<<<<<<< HEAD
-        private void button2_Click(object sender, EventArgs e)
+        private void btnThamSo_Click(object sender, EventArgs e)
         {
             ThamSo TS = new ThamSo();
             TS.ShowDialog();
         }
-=======
+
         #endregion
->>>>>>> 583d3710025f256b1edb0e76d267414c5f0c4b91
     }
 }

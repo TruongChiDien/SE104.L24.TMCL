@@ -325,6 +325,22 @@ namespace QuanLyNhaSach.UserControls
         }
 
         #endregion
+
+        private void txbDiaChi_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                btnThem_Click(this, new EventArgs());
+            }
+        }
+
+        private void txbDienThoai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
     }
 
 

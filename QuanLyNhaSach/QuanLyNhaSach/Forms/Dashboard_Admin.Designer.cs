@@ -47,7 +47,6 @@ namespace QuanLyNhaSach.Forms
             this.labelRealTime = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.lbTen = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -219,7 +218,6 @@ namespace QuanLyNhaSach.Forms
             this.panel5.Controls.Add(this.labelRealTime);
             this.panel5.Controls.Add(this.label6);
             this.panel5.Controls.Add(this.label5);
-            this.panel5.Controls.Add(this.lbTen);
             this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.label2);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
@@ -261,17 +259,6 @@ namespace QuanLyNhaSach.Forms
             this.label5.Size = new System.Drawing.Size(67, 23);
             this.label5.TabIndex = 6;
             this.label5.Text = "Rules:";
-            // 
-            // lbTen
-            // 
-            this.lbTen.AutoSize = true;
-            this.lbTen.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbTen.ForeColor = System.Drawing.Color.White;
-            this.lbTen.Location = new System.Drawing.Point(316, 34);
-            this.lbTen.Name = "lbTen";
-            this.lbTen.Size = new System.Drawing.Size(91, 23);
-            this.lbTen.TabIndex = 5;
-            this.lbTen.Text = "<name>";
             // 
             // label3
             // 
@@ -342,7 +329,6 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.Button btnQuit;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lbTen;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label labelRealTime;
         private System.Windows.Forms.Label label8;

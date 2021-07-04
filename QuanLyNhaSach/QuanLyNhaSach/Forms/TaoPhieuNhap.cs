@@ -78,7 +78,7 @@ namespace QuanLyNhaSach.Forms
         private void update_TonKho(string MaPN)
         {
             string query = @"select MaSach, SL from CTPHIEUNHAP where MaPN = " + MaPN;
-            DataTable dt = new DataTable();
+            DataTable dt;
             dt = DataProvider.Instance.ExecuteQuery(query);
             foreach ( DataRow dr in dt.Rows )
             {

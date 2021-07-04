@@ -78,8 +78,8 @@ namespace QuanLyNhaSach.Forms
         {
             if (!isTrueTxt())
                 return;
-            string query = @"select count(1) from NHANVIEN where Username = N'" + TxUsername.Text +"'";
-            int i = DataProvider.Instance.ExecuteNonQuery(query);
+            string query = @"select count(*) from NHANVIEN where Username = N'" + TxUsername.Text +"'";
+            int i = Convert.ToInt32(DataProvider.Instance.ExecuteScalar(query));
             if (i == 0) 
             {
                 query = string.Format("insert into NHANVIEN values(N'{0}',N'{1}',N'{2}',N'{3}',N'{4}',N'{5}',N'{6}',N'{7}')"

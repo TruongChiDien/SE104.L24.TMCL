@@ -16,9 +16,9 @@ namespace QuanLyNhaSach.Forms
         public Dialog_Thaydoithamso()
         {
             InitializeComponent();
-            string query3 = string.Format("select Giatri from THAMSO where TenTS='notoida'");
+            string query3 = string.Format("select Giatri from THAMSO where TenTS = 'MaxNo'");
 
-            string query4 = string.Format("select Giatri from THAMSO where TenTS='tonkho'");
+            string query4 = string.Format("select Giatri from THAMSO where TenTS = 'MinTon'");
             int notoida_default = (Int32)DataProvider.Instance.ExecuteScalar(query3);
             int tonkho_default = (Int32)DataProvider.Instance.ExecuteScalar(query4);
 

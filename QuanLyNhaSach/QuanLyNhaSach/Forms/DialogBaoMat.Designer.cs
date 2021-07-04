@@ -89,16 +89,16 @@ namespace QuanLyNhaSach.Forms
             this.txbOldPass.Name = "txbOldPass";
             this.txbOldPass.PasswordChar = '*';
             this.txbOldPass.Size = new System.Drawing.Size(299, 27);
-            this.txbOldPass.TabIndex = 115;
+            this.txbOldPass.TabIndex = 2;
             // 
             // txbUsername
             // 
             this.txbUsername.Location = new System.Drawing.Point(342, 148);
             this.txbUsername.Margin = new System.Windows.Forms.Padding(2);
+            this.txbUsername.MaxLength = 20;
             this.txbUsername.Name = "txbUsername";
-            this.txbUsername.PasswordChar = '*';
             this.txbUsername.Size = new System.Drawing.Size(299, 27);
-            this.txbUsername.TabIndex = 114;
+            this.txbUsername.TabIndex = 1;
             // 
             // btnLuuThayDoi
             // 
@@ -115,7 +115,7 @@ namespace QuanLyNhaSach.Forms
             this.btnLuuThayDoi.ShawdowDepth = 3;
             this.btnLuuThayDoi.ShawdowOpacity = 50;
             this.btnLuuThayDoi.Size = new System.Drawing.Size(167, 50);
-            this.btnLuuThayDoi.TabIndex = 117;
+            this.btnLuuThayDoi.TabIndex = 5;
             this.btnLuuThayDoi.Text = "Lưu thay đổi";
             this.btnLuuThayDoi.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btnLuuThayDoi.UseVisualStyleBackColor = true;
@@ -140,7 +140,7 @@ namespace QuanLyNhaSach.Forms
             this.txbPassword.Name = "txbPassword";
             this.txbPassword.PasswordChar = '*';
             this.txbPassword.Size = new System.Drawing.Size(299, 27);
-            this.txbPassword.TabIndex = 116;
+            this.txbPassword.TabIndex = 3;
             // 
             // label3
             // 
@@ -161,7 +161,7 @@ namespace QuanLyNhaSach.Forms
             this.txbXacNhan.Name = "txbXacNhan";
             this.txbXacNhan.PasswordChar = '*';
             this.txbXacNhan.Size = new System.Drawing.Size(299, 27);
-            this.txbXacNhan.TabIndex = 122;
+            this.txbXacNhan.TabIndex = 4;
             // 
             // BtHuy
             // 
@@ -178,7 +178,7 @@ namespace QuanLyNhaSach.Forms
             this.BtHuy.ShawdowDepth = 3;
             this.BtHuy.ShawdowOpacity = 50;
             this.BtHuy.Size = new System.Drawing.Size(178, 50);
-            this.BtHuy.TabIndex = 124;
+            this.BtHuy.TabIndex = 6;
             this.BtHuy.Text = "Hủy";
             this.BtHuy.TextAlignment = System.Drawing.StringAlignment.Center;
             this.BtHuy.UseVisualStyleBackColor = true;
@@ -219,6 +219,7 @@ namespace QuanLyNhaSach.Forms
             // 
             // DialogBaoMat
             // 
+            this.AcceptButton = this.btnLuuThayDoi;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aqua;

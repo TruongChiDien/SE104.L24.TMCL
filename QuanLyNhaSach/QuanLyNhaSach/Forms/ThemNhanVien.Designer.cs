@@ -87,6 +87,8 @@ namespace QuanLyNhaSach.Forms
             // 
             // CbType
             // 
+            this.CbType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.CbType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CbType.FormattingEnabled = true;
             this.CbType.Items.AddRange(new object[] {
             "nhanvien",
@@ -162,6 +164,7 @@ namespace QuanLyNhaSach.Forms
             this.DtNgayvaolam.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.DtNgayvaolam.Location = new System.Drawing.Point(351, 136);
             this.DtNgayvaolam.Name = "DtNgayvaolam";
+            this.DtNgayvaolam.ShowUpDown = true;
             this.DtNgayvaolam.Size = new System.Drawing.Size(265, 27);
             this.DtNgayvaolam.TabIndex = 85;
             // 
@@ -245,6 +248,7 @@ namespace QuanLyNhaSach.Forms
             // 
             this.TxSDT.Location = new System.Drawing.Point(351, 173);
             this.TxSDT.Margin = new System.Windows.Forms.Padding(2);
+            this.TxSDT.MaxLength = 12;
             this.TxSDT.Name = "TxSDT";
             this.TxSDT.Size = new System.Drawing.Size(265, 27);
             this.TxSDT.TabIndex = 86;
@@ -332,6 +336,7 @@ namespace QuanLyNhaSach.Forms
             // 
             // ThemNhanVien
             // 
+            this.AcceptButton = this.btnXong;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aqua;

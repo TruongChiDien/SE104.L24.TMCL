@@ -31,12 +31,12 @@ namespace QuanLyNhaSach.Forms
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.TxMaxTon = new System.Windows.Forms.TextBox();
+            this.TxMinNhap = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.BtNo = new MaterialSurface.ContainedButton();
             this.BtYes = new MaterialSurface.ContainedButton();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.TxMinNhap = new System.Windows.Forms.TextBox();
-            this.TxMaxTon = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +53,44 @@ namespace QuanLyNhaSach.Forms
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(435, 227);
             this.panel1.TabIndex = 75;
+            // 
+            // TxMaxTon
+            // 
+            this.TxMaxTon.Location = new System.Drawing.Point(332, 105);
+            this.TxMaxTon.MaxLength = 9;
+            this.TxMaxTon.Name = "TxMaxTon";
+            this.TxMaxTon.Size = new System.Drawing.Size(72, 27);
+            this.TxMaxTon.TabIndex = 12;
+            // 
+            // TxMinNhap
+            // 
+            this.TxMinNhap.Location = new System.Drawing.Point(332, 52);
+            this.TxMinNhap.MaxLength = 9;
+            this.TxMinNhap.Name = "TxMinNhap";
+            this.TxMinNhap.Size = new System.Drawing.Size(72, 27);
+            this.TxMinNhap.TabIndex = 11;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
+            this.label1.Location = new System.Drawing.Point(20, 105);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(296, 29);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Số lượng tồn kho tối đa:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
+            this.label8.Location = new System.Drawing.Point(13, 50);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(303, 29);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "Số lượng nhập nhỏ nhất:";
             // 
             // BtNo
             // 
@@ -96,44 +134,9 @@ namespace QuanLyNhaSach.Forms
             this.BtYes.UseVisualStyleBackColor = true;
             this.BtYes.Click += new System.EventHandler(this.BtYes_Click);
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            this.label8.Location = new System.Drawing.Point(13, 50);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(303, 29);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "Số lượng nhập nhỏ nhất:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            this.label1.Location = new System.Drawing.Point(20, 105);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(296, 29);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Số lượng tồn kho tối đa:";
-            // 
-            // TxMinNhap
-            // 
-            this.TxMinNhap.Location = new System.Drawing.Point(332, 52);
-            this.TxMinNhap.Name = "TxMinNhap";
-            this.TxMinNhap.Size = new System.Drawing.Size(72, 27);
-            this.TxMinNhap.TabIndex = 11;
-            // 
-            // TxMaxTon
-            // 
-            this.TxMaxTon.Location = new System.Drawing.Point(332, 105);
-            this.TxMaxTon.Name = "TxMaxTon";
-            this.TxMaxTon.Size = new System.Drawing.Size(72, 27);
-            this.TxMaxTon.TabIndex = 12;
-            // 
             // ThamSo
             // 
+            this.AcceptButton = this.BtYes;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScrollMargin = new System.Drawing.Size(10, 10);

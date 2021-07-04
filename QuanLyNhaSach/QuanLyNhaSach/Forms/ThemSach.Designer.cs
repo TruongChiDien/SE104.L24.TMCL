@@ -97,8 +97,10 @@ namespace QuanLyNhaSach.Forms
             // 
             // TxGiaban
             // 
+            this.TxGiaban.Enabled = false;
             this.TxGiaban.Location = new System.Drawing.Point(355, 329);
             this.TxGiaban.Margin = new System.Windows.Forms.Padding(2);
+            this.TxGiaban.MaxLength = 9;
             this.TxGiaban.Name = "TxGiaban";
             this.TxGiaban.Size = new System.Drawing.Size(214, 27);
             this.TxGiaban.TabIndex = 83;
@@ -119,6 +121,7 @@ namespace QuanLyNhaSach.Forms
             // 
             this.TxMasach.Location = new System.Drawing.Point(355, 106);
             this.TxMasach.Margin = new System.Windows.Forms.Padding(2);
+            this.TxMasach.MaxLength = 13;
             this.TxMasach.Name = "TxMasach";
             this.TxMasach.Size = new System.Drawing.Size(214, 27);
             this.TxMasach.TabIndex = 77;
@@ -213,6 +216,7 @@ namespace QuanLyNhaSach.Forms
             // 
             this.TxSoluong.Location = new System.Drawing.Point(355, 255);
             this.TxSoluong.Margin = new System.Windows.Forms.Padding(2);
+            this.TxSoluong.MaxLength = 9;
             this.TxSoluong.Name = "TxSoluong";
             this.TxSoluong.Size = new System.Drawing.Size(214, 27);
             this.TxSoluong.TabIndex = 81;
@@ -221,9 +225,11 @@ namespace QuanLyNhaSach.Forms
             // 
             this.TxGianhap.Location = new System.Drawing.Point(355, 292);
             this.TxGianhap.Margin = new System.Windows.Forms.Padding(2);
+            this.TxGianhap.MaxLength = 9;
             this.TxGianhap.Name = "TxGianhap";
             this.TxGianhap.Size = new System.Drawing.Size(214, 27);
             this.TxGianhap.TabIndex = 82;
+            this.TxGianhap.TextChanged += new System.EventHandler(this.TxGianhap_TextChanged);
             // 
             // TxTenSach
             // 
@@ -307,6 +313,7 @@ namespace QuanLyNhaSach.Forms
             // 
             // ThemSach
             // 
+            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aqua;
@@ -329,7 +336,6 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox TxGiaban;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox TxMasach;
         private System.Windows.Forms.Label Masach;
         private System.Windows.Forms.ComboBox CbTheLoai;
         private MaterialSurface.ContainedButton btnCancel;
@@ -346,5 +352,6 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnQuit;
+        private System.Windows.Forms.TextBox TxMasach;
     }
 }

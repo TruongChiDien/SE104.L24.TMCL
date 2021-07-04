@@ -122,6 +122,7 @@ namespace QuanLyNhaSach.Forms
             // 
             // YesNo
             // 
+            this.AcceptButton = this.btnYes;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScrollMargin = new System.Drawing.Size(10, 10);

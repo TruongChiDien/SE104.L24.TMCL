@@ -29,16 +29,12 @@ namespace QuanLyNhaSach.UserControls
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_KhoSach));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-<<<<<<< HEAD
-            this.button2 = new System.Windows.Forms.Button();
-            this.TxTimkiem = new System.Windows.Forms.TextBox();
-            this.CbChude = new System.Windows.Forms.ComboBox();
-=======
+            this.btnThamSo = new System.Windows.Forms.Button();
             this.txbChuDe = new System.Windows.Forms.TextBox();
             this.cbChuDe = new System.Windows.Forms.ComboBox();
->>>>>>> 583d3710025f256b1edb0e76d267414c5f0c4b91
             this.label1 = new System.Windows.Forms.Label();
             this.btnTaoPhieu = new System.Windows.Forms.Button();
             this.dtgvSach = new System.Windows.Forms.DataGridView();
@@ -50,14 +46,9 @@ namespace QuanLyNhaSach.UserControls
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-<<<<<<< HEAD
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.TxTimkiem);
-            this.panel1.Controls.Add(this.CbChude);
-=======
+            this.panel1.Controls.Add(this.btnThamSo);
             this.panel1.Controls.Add(this.txbChuDe);
             this.panel1.Controls.Add(this.cbChuDe);
->>>>>>> 583d3710025f256b1edb0e76d267414c5f0c4b91
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnTaoPhieu);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -67,37 +58,22 @@ namespace QuanLyNhaSach.UserControls
             this.panel1.Size = new System.Drawing.Size(1570, 76);
             this.panel1.TabIndex = 0;
             // 
-<<<<<<< HEAD
-            // button2
+            // btnThamSo
             // 
-            this.button2.Location = new System.Drawing.Point(944, 6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(131, 65);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnThamSo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnThamSo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnThamSo.ForeColor = System.Drawing.Color.White;
+            this.btnThamSo.Image = ((System.Drawing.Image)(resources.GetObject("btnThamSo.Image")));
+            this.btnThamSo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThamSo.Location = new System.Drawing.Point(236, 0);
+            this.btnThamSo.Margin = new System.Windows.Forms.Padding(0);
+            this.btnThamSo.Name = "btnThamSo";
+            this.btnThamSo.Size = new System.Drawing.Size(205, 76);
+            this.btnThamSo.TabIndex = 0;
+            this.btnThamSo.Text = "Đổi tham số";
+            this.btnThamSo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThamSo.Click += new System.EventHandler(this.btnThamSo_Click);
             // 
-            // TxTimkiem
-            // 
-            this.TxTimkiem.AcceptsReturn = true;
-            this.TxTimkiem.BackColor = System.Drawing.Color.White;
-            this.TxTimkiem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxTimkiem.Location = new System.Drawing.Point(682, 25);
-            this.TxTimkiem.Margin = new System.Windows.Forms.Padding(2);
-            this.TxTimkiem.Name = "TxTimkiem";
-            this.TxTimkiem.Size = new System.Drawing.Size(226, 30);
-            this.TxTimkiem.TabIndex = 21;
-            this.TxTimkiem.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // CbChude
-            // 
-            this.CbChude.BackColor = System.Drawing.Color.White;
-            this.CbChude.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CbChude.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CbChude.FormattingEnabled = true;
-            this.CbChude.Items.AddRange(new object[] {
-=======
             // txbChuDe
             // 
             this.txbChuDe.AcceptsReturn = true;
@@ -117,7 +93,6 @@ namespace QuanLyNhaSach.UserControls
             this.cbChuDe.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbChuDe.FormattingEnabled = true;
             this.cbChuDe.Items.AddRange(new object[] {
->>>>>>> 583d3710025f256b1edb0e76d267414c5f0c4b91
             "Mã sách",
             "Tên sách",
             "Thể loại",
@@ -147,17 +122,17 @@ namespace QuanLyNhaSach.UserControls
             this.btnTaoPhieu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
             this.btnTaoPhieu.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnTaoPhieu.FlatAppearance.BorderSize = 0;
-            this.btnTaoPhieu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTaoPhieu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnTaoPhieu.ForeColor = System.Drawing.SystemColors.Window;
             this.btnTaoPhieu.Image = global::QuanLyNhaSach.Properties.Resources.Add_to_Collection_60px;
             this.btnTaoPhieu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTaoPhieu.Location = new System.Drawing.Point(0, 0);
-            this.btnTaoPhieu.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTaoPhieu.Margin = new System.Windows.Forms.Padding(0);
             this.btnTaoPhieu.Name = "btnTaoPhieu";
-            this.btnTaoPhieu.Size = new System.Drawing.Size(324, 76);
+            this.btnTaoPhieu.Size = new System.Drawing.Size(236, 76);
             this.btnTaoPhieu.TabIndex = 19;
             this.btnTaoPhieu.Text = "Tạo phiếu nhập";
+            this.btnTaoPhieu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTaoPhieu.UseVisualStyleBackColor = false;
             this.btnTaoPhieu.Click += new System.EventHandler(this.btnTaoPhieu_Click);
             // 
@@ -186,10 +161,10 @@ namespace QuanLyNhaSach.UserControls
             // Deletebook
             // 
             this.Deletebook.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.Deletebook.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.Deletebook.DefaultCellStyle = dataGridViewCellStyle1;
             this.Deletebook.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Deletebook.HeaderText = "Xóa";
             this.Deletebook.MinimumWidth = 6;
@@ -231,6 +206,6 @@ namespace QuanLyNhaSach.UserControls
         private System.Windows.Forms.DataGridView dtgvSach;
         private System.Windows.Forms.DataGridViewButtonColumn Xoa;
         private System.Windows.Forms.DataGridViewButtonColumn Deletebook;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnThamSo;
     }
 }

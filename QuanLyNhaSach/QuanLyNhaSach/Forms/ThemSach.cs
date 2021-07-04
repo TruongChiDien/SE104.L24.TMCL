@@ -36,6 +36,8 @@ namespace QuanLyNhaSach.Forms
             }
             CbTheLoai.DataSource = ls;
         }
+
+
         private bool isAllNumeric(string str)
         {
             bool isNumeric = true;
@@ -97,25 +99,17 @@ namespace QuanLyNhaSach.Forms
             try
             {
                 //Check if a book existed
-<<<<<<< HEAD
                 query = " SELECT COUNT(1) FROM SACH WHERE MaSach = N'" + TxMasach.Text+"'";
                 object i = 0;
                 i = DataProvider.Instance.ExecuteScalar(query);
                 //add book
                 if (int.Parse(i.ToString()) == 0 ) 
-=======
-                query = " SELECT COUNT(1) FROM SACH WHERE MaSach = N'" + TxMasach.Text + "'";
-                int i = 0;
-                i = DataProvider.Instance.ExecuteNonQuery(query);
-                //add book
-                MessageBox.Show(i.ToString());
-                if (i == -1)
->>>>>>> 583d3710025f256b1edb0e76d267414c5f0c4b91
+
                 {
                     query = @"INSERT INTO SACH " +
-                                         "VALUES(" + TxMasach.Text + ",'"
-                                         + TxTenSach.Text + "','"
-                                         + CbTheLoai.Text + "','"
+                                         "VALUES(" + TxMasach.Text + ", N'"
+                                         + TxTenSach.Text + "', N'"
+                                         + CbTheLoai.Text + "', N'"
                                          + TxTacGia.Text + "',"
                                          + TxGianhap.Text + ","
                                          + TxGiaban.Text + ","
@@ -133,14 +127,7 @@ namespace QuanLyNhaSach.Forms
                     bool Yes = MesBox.yes;
                     MesBox.Dispose();
                     if (Yes)
-<<<<<<< HEAD
                     { 
-=======
-                    {
-                        query = @"DELETE FROM SACH WHERE MaSach = " + TxMasach.Text;
-                        DataProvider.Instance.ExecuteNonQuery(query);
->>>>>>> 583d3710025f256b1edb0e76d267414c5f0c4b91
-
                         query = @" update SACH set SoLuong = Soluong + " + TxSoluong.Text + " where Masach = " + TxMasach.Text;
                         DataProvider.Instance.ExecuteNonQuery(query);
                         query = @"insert into CTPHIEUNHAP values((select max(MaPN) from PHIEUNHAP),"
@@ -198,8 +185,18 @@ namespace QuanLyNhaSach.Forms
         {
             this.Dispose();
         }
+
         #endregion
 
-
+        private void TxGianhap_TextChanged(object sender, EventArgs e)
+        {
+            if (TxGianhap.Text == "")
+                return;
+            string query = "Select GiaTri from thamso where TenTS = 'TiGia'";
+            int tigia = Convert.ToInt32(DataProvider.Instance.ExecuteScalar(query));
+            int nhap = Convert.ToInt32(TxGianhap.Text);
+            int ban = nhap * tigia / 100;
+            TxGiaban.Text = ban.ToString();
+        }
     }
 }

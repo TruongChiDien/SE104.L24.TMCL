@@ -96,6 +96,7 @@ namespace QuanLyNhaSach.Forms
             // txbTienthu
             // 
             this.txbTienthu.Location = new System.Drawing.Point(136, 137);
+            this.txbTienthu.MaxLength = 9;
             this.txbTienthu.Name = "txbTienthu";
             this.txbTienthu.Size = new System.Drawing.Size(173, 27);
             this.txbTienthu.TabIndex = 21;
@@ -126,6 +127,7 @@ namespace QuanLyNhaSach.Forms
             // 
             // Dialog_ThuTien
             // 
+            this.AcceptButton = this.btnLapphieuthu;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Red;
