@@ -29,34 +29,45 @@ namespace QuanLyNhaSach.UserControls
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+<<<<<<< HEAD
             this.button2 = new System.Windows.Forms.Button();
             this.TxTimkiem = new System.Windows.Forms.TextBox();
             this.CbChude = new System.Windows.Forms.ComboBox();
+=======
+            this.txbChuDe = new System.Windows.Forms.TextBox();
+            this.cbChuDe = new System.Windows.Forms.ComboBox();
+>>>>>>> 583d3710025f256b1edb0e76d267414c5f0c4b91
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.Grid_tb_books = new System.Windows.Forms.DataGridView();
+            this.btnTaoPhieu = new System.Windows.Forms.Button();
+            this.dtgvSach = new System.Windows.Forms.DataGridView();
             this.Deletebook = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Grid_tb_books)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvSach)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
+<<<<<<< HEAD
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.TxTimkiem);
             this.panel1.Controls.Add(this.CbChude);
+=======
+            this.panel1.Controls.Add(this.txbChuDe);
+            this.panel1.Controls.Add(this.cbChuDe);
+>>>>>>> 583d3710025f256b1edb0e76d267414c5f0c4b91
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnTaoPhieu);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1087, 76);
+            this.panel1.Size = new System.Drawing.Size(1570, 76);
             this.panel1.TabIndex = 0;
             // 
+<<<<<<< HEAD
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(944, 6);
@@ -86,78 +97,99 @@ namespace QuanLyNhaSach.UserControls
             this.CbChude.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CbChude.FormattingEnabled = true;
             this.CbChude.Items.AddRange(new object[] {
+=======
+            // txbChuDe
+            // 
+            this.txbChuDe.AcceptsReturn = true;
+            this.txbChuDe.BackColor = System.Drawing.Color.White;
+            this.txbChuDe.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txbChuDe.Location = new System.Drawing.Point(1253, 29);
+            this.txbChuDe.Margin = new System.Windows.Forms.Padding(2);
+            this.txbChuDe.Name = "txbChuDe";
+            this.txbChuDe.Size = new System.Drawing.Size(286, 30);
+            this.txbChuDe.TabIndex = 21;
+            this.txbChuDe.TextChanged += new System.EventHandler(this.txbChuDe_TextChanged);
+            // 
+            // cbChuDe
+            // 
+            this.cbChuDe.BackColor = System.Drawing.Color.White;
+            this.cbChuDe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbChuDe.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbChuDe.FormattingEnabled = true;
+            this.cbChuDe.Items.AddRange(new object[] {
+>>>>>>> 583d3710025f256b1edb0e76d267414c5f0c4b91
             "Mã sách",
             "Tên sách",
             "Thể loại",
             "Tác giả"});
-            this.CbChude.Location = new System.Drawing.Point(510, 25);
-            this.CbChude.Margin = new System.Windows.Forms.Padding(2);
-            this.CbChude.Name = "CbChude";
-            this.CbChude.Size = new System.Drawing.Size(170, 31);
-            this.CbChude.TabIndex = 3;
-            this.CbChude.Text = "Chủ đề tìm kiếm";
-            this.CbChude.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.cbChuDe.Location = new System.Drawing.Point(1038, 29);
+            this.cbChuDe.Margin = new System.Windows.Forms.Padding(2);
+            this.cbChuDe.Name = "cbChuDe";
+            this.cbChuDe.Size = new System.Drawing.Size(170, 31);
+            this.cbChuDe.TabIndex = 3;
+            this.cbChuDe.Text = "Chủ đề tìm kiếm";
+            this.cbChuDe.SelectedIndexChanged += new System.EventHandler(this.cbChuDe_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(401, 28);
+            this.label1.Location = new System.Drawing.Point(883, 31);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 28);
             this.label1.TabIndex = 20;
             this.label1.Text = "Tìm kiếm:";
             // 
-            // button1
+            // btnTaoPhieu
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.SystemColors.Window;
-            this.button1.Image = global::QuanLyNhaSach.Properties.Resources.Add_to_Collection_60px;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(324, 76);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Tạo phiếu nhập";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnTaoPhieu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
+            this.btnTaoPhieu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnTaoPhieu.FlatAppearance.BorderSize = 0;
+            this.btnTaoPhieu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTaoPhieu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnTaoPhieu.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnTaoPhieu.Image = global::QuanLyNhaSach.Properties.Resources.Add_to_Collection_60px;
+            this.btnTaoPhieu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTaoPhieu.Location = new System.Drawing.Point(0, 0);
+            this.btnTaoPhieu.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTaoPhieu.Name = "btnTaoPhieu";
+            this.btnTaoPhieu.Size = new System.Drawing.Size(324, 76);
+            this.btnTaoPhieu.TabIndex = 19;
+            this.btnTaoPhieu.Text = "Tạo phiếu nhập";
+            this.btnTaoPhieu.UseVisualStyleBackColor = false;
+            this.btnTaoPhieu.Click += new System.EventHandler(this.btnTaoPhieu_Click);
             // 
-            // Grid_tb_books
+            // dtgvSach
             // 
-            this.Grid_tb_books.AllowUserToAddRows = false;
-            this.Grid_tb_books.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.Grid_tb_books.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.Grid_tb_books.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Grid_tb_books.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgvSach.AllowUserToAddRows = false;
+            this.dtgvSach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvSach.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dtgvSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvSach.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Deletebook});
-            this.Grid_tb_books.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Grid_tb_books.Location = new System.Drawing.Point(0, 76);
-            this.Grid_tb_books.Margin = new System.Windows.Forms.Padding(2);
-            this.Grid_tb_books.Name = "Grid_tb_books";
-            this.Grid_tb_books.ReadOnly = true;
-            this.Grid_tb_books.RowHeadersVisible = false;
-            this.Grid_tb_books.RowHeadersWidth = 82;
-            this.Grid_tb_books.RowTemplate.Height = 41;
-            this.Grid_tb_books.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grid_tb_books.Size = new System.Drawing.Size(1087, 498);
-            this.Grid_tb_books.TabIndex = 1;
-            this.Grid_tb_books.AllowUserToDeleteRowsChanged += new System.EventHandler(this.Grid_tb_books_AllowUserToDeleteRowsChanged);
-            this.Grid_tb_books.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dtgvSach.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgvSach.Location = new System.Drawing.Point(0, 76);
+            this.dtgvSach.Margin = new System.Windows.Forms.Padding(2);
+            this.dtgvSach.Name = "dtgvSach";
+            this.dtgvSach.ReadOnly = true;
+            this.dtgvSach.RowHeadersVisible = false;
+            this.dtgvSach.RowHeadersWidth = 82;
+            this.dtgvSach.RowTemplate.Height = 41;
+            this.dtgvSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvSach.Size = new System.Drawing.Size(1570, 764);
+            this.dtgvSach.TabIndex = 1;
+            this.dtgvSach.AllowUserToDeleteRowsChanged += new System.EventHandler(this.dtgvSach_AllowUserToDeleteRowsChanged);
+            this.dtgvSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvSach_CellContentClick);
             // 
             // Deletebook
             // 
             this.Deletebook.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.Deletebook.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.Deletebook.DefaultCellStyle = dataGridViewCellStyle2;
             this.Deletebook.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Deletebook.HeaderText = "Xóa";
             this.Deletebook.MinimumWidth = 6;
@@ -170,16 +202,15 @@ namespace QuanLyNhaSach.UserControls
             // 
             // UC_KhoSach
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.Grid_tb_books);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.Controls.Add(this.dtgvSach);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UC_KhoSach";
-            this.Size = new System.Drawing.Size(1087, 574);
+            this.Size = new System.Drawing.Size(1570, 840);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Grid_tb_books)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvSach)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -187,7 +218,7 @@ namespace QuanLyNhaSach.UserControls
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnTaoPhieu;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -195,9 +226,9 @@ namespace QuanLyNhaSach.UserControls
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.TextBox TxTimkiem;
-        private System.Windows.Forms.ComboBox CbChude;
-        private System.Windows.Forms.DataGridView Grid_tb_books;
+        private System.Windows.Forms.TextBox txbChuDe;
+        private System.Windows.Forms.ComboBox cbChuDe;
+        private System.Windows.Forms.DataGridView dtgvSach;
         private System.Windows.Forms.DataGridViewButtonColumn Xoa;
         private System.Windows.Forms.DataGridViewButtonColumn Deletebook;
         private System.Windows.Forms.Button button2;

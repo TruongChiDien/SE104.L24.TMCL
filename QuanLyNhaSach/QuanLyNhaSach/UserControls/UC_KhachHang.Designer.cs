@@ -31,7 +31,6 @@ namespace QuanLyNhaSach.UserControls
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_KhachHang));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnThutien = new System.Windows.Forms.Button();
             this.btnBaoCao = new System.Windows.Forms.Button();
@@ -55,9 +54,9 @@ namespace QuanLyNhaSach.UserControls
             this.txbMaKH = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dtgvKH = new System.Windows.Forms.DataGridView();
             this.prtDoc = new System.Drawing.Printing.PrintDocument();
             this.prtprevDoc = new System.Windows.Forms.PrintPreviewDialog();
+            this.dtgvKH = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvKH)).BeginInit();
@@ -79,7 +78,7 @@ namespace QuanLyNhaSach.UserControls
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1260, 76);
+            this.panel1.Size = new System.Drawing.Size(1570, 76);
             this.panel1.TabIndex = 17;
             // 
             // btnThutien
@@ -170,10 +169,10 @@ namespace QuanLyNhaSach.UserControls
             this.txbTimkiem.AcceptsReturn = true;
             this.txbTimkiem.BackColor = System.Drawing.Color.White;
             this.txbTimkiem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txbTimkiem.Location = new System.Drawing.Point(859, 16);
+            this.txbTimkiem.Location = new System.Drawing.Point(1279, 15);
             this.txbTimkiem.Margin = new System.Windows.Forms.Padding(2);
             this.txbTimkiem.Name = "txbTimkiem";
-            this.txbTimkiem.Size = new System.Drawing.Size(155, 30);
+            this.txbTimkiem.Size = new System.Drawing.Size(268, 30);
             this.txbTimkiem.TabIndex = 22;
             this.txbTimkiem.TextChanged += new System.EventHandler(this.txbTimkiem_TextChanged);
             // 
@@ -189,10 +188,10 @@ namespace QuanLyNhaSach.UserControls
             "Mã Khách hàng",
             "Họ tên",
             "Số điện thoại"});
-            this.cbChuDe.Location = new System.Drawing.Point(672, 16);
+            this.cbChuDe.Location = new System.Drawing.Point(1013, 16);
             this.cbChuDe.Margin = new System.Windows.Forms.Padding(2);
             this.cbChuDe.Name = "cbChuDe";
-            this.cbChuDe.Size = new System.Drawing.Size(170, 29);
+            this.cbChuDe.Size = new System.Drawing.Size(226, 29);
             this.cbChuDe.TabIndex = 19;
             this.cbChuDe.Text = "Tìm kiếm theo";
             this.cbChuDe.SelectedIndexChanged += new System.EventHandler(this.cbChuDe_SelectedIndexChanged);
@@ -202,7 +201,7 @@ namespace QuanLyNhaSach.UserControls
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(563, 17);
+            this.label1.Location = new System.Drawing.Point(869, 17);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 28);
@@ -230,10 +229,10 @@ namespace QuanLyNhaSach.UserControls
             this.txbEmail.AcceptsReturn = true;
             this.txbEmail.BackColor = System.Drawing.Color.White;
             this.txbEmail.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txbEmail.Location = new System.Drawing.Point(816, 64);
+            this.txbEmail.Location = new System.Drawing.Point(1249, 64);
             this.txbEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txbEmail.Name = "txbEmail";
-            this.txbEmail.Size = new System.Drawing.Size(174, 30);
+            this.txbEmail.Size = new System.Drawing.Size(260, 30);
             this.txbEmail.TabIndex = 5;
             // 
             // txbNo
@@ -241,10 +240,10 @@ namespace QuanLyNhaSach.UserControls
             this.txbNo.AcceptsReturn = true;
             this.txbNo.BackColor = System.Drawing.Color.White;
             this.txbNo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txbNo.Location = new System.Drawing.Point(689, 64);
+            this.txbNo.Location = new System.Drawing.Point(1049, 64);
             this.txbNo.Margin = new System.Windows.Forms.Padding(2);
             this.txbNo.Name = "txbNo";
-            this.txbNo.Size = new System.Drawing.Size(103, 30);
+            this.txbNo.Size = new System.Drawing.Size(131, 30);
             this.txbNo.TabIndex = 4;
             this.txbNo.Text = "0";
             // 
@@ -253,10 +252,10 @@ namespace QuanLyNhaSach.UserControls
             this.txbDienThoai.AcceptsReturn = true;
             this.txbDienThoai.BackColor = System.Drawing.Color.White;
             this.txbDienThoai.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txbDienThoai.Location = new System.Drawing.Point(509, 64);
+            this.txbDienThoai.Location = new System.Drawing.Point(785, 64);
             this.txbDienThoai.Margin = new System.Windows.Forms.Padding(2);
             this.txbDienThoai.Name = "txbDienThoai";
-            this.txbDienThoai.Size = new System.Drawing.Size(159, 30);
+            this.txbDienThoai.Size = new System.Drawing.Size(190, 30);
             this.txbDienThoai.TabIndex = 3;
             // 
             // txbDiaChi
@@ -264,10 +263,10 @@ namespace QuanLyNhaSach.UserControls
             this.txbDiaChi.AcceptsReturn = true;
             this.txbDiaChi.BackColor = System.Drawing.Color.White;
             this.txbDiaChi.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txbDiaChi.Location = new System.Drawing.Point(350, 64);
+            this.txbDiaChi.Location = new System.Drawing.Point(491, 64);
             this.txbDiaChi.Margin = new System.Windows.Forms.Padding(2);
             this.txbDiaChi.Name = "txbDiaChi";
-            this.txbDiaChi.Size = new System.Drawing.Size(139, 30);
+            this.txbDiaChi.Size = new System.Drawing.Size(218, 30);
             this.txbDiaChi.TabIndex = 2;
             // 
             // txbTenKH
@@ -275,10 +274,10 @@ namespace QuanLyNhaSach.UserControls
             this.txbTenKH.AcceptsReturn = true;
             this.txbTenKH.BackColor = System.Drawing.Color.White;
             this.txbTenKH.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txbTenKH.Location = new System.Drawing.Point(140, 64);
+            this.txbTenKH.Location = new System.Drawing.Point(206, 64);
             this.txbTenKH.Margin = new System.Windows.Forms.Padding(2);
             this.txbTenKH.Name = "txbTenKH";
-            this.txbTenKH.Size = new System.Drawing.Size(188, 30);
+            this.txbTenKH.Size = new System.Drawing.Size(219, 30);
             this.txbTenKH.TabIndex = 1;
             // 
             // label2
@@ -287,7 +286,7 @@ namespace QuanLyNhaSach.UserControls
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            this.label2.Location = new System.Drawing.Point(193, 16);
+            this.label2.Location = new System.Drawing.Point(281, 16);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 28);
@@ -300,7 +299,7 @@ namespace QuanLyNhaSach.UserControls
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            this.label3.Location = new System.Drawing.Point(395, 16);
+            this.label3.Location = new System.Drawing.Point(554, 16);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 28);
@@ -313,7 +312,7 @@ namespace QuanLyNhaSach.UserControls
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            this.label4.Location = new System.Drawing.Point(531, 16);
+            this.label4.Location = new System.Drawing.Point(812, 16);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 28);
@@ -326,7 +325,7 @@ namespace QuanLyNhaSach.UserControls
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            this.label5.Location = new System.Drawing.Point(869, 16);
+            this.label5.Location = new System.Drawing.Point(1342, 16);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 28);
@@ -339,7 +338,7 @@ namespace QuanLyNhaSach.UserControls
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            this.label6.Location = new System.Drawing.Point(716, 16);
+            this.label6.Location = new System.Drawing.Point(1085, 16);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 28);
@@ -352,7 +351,7 @@ namespace QuanLyNhaSach.UserControls
             this.txbMaKH.BackColor = System.Drawing.Color.White;
             this.txbMaKH.Enabled = false;
             this.txbMaKH.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txbMaKH.Location = new System.Drawing.Point(16, 64);
+            this.txbMaKH.Location = new System.Drawing.Point(27, 64);
             this.txbMaKH.Margin = new System.Windows.Forms.Padding(2);
             this.txbMaKH.Name = "txbMaKH";
             this.txbMaKH.Size = new System.Drawing.Size(107, 30);
@@ -364,7 +363,7 @@ namespace QuanLyNhaSach.UserControls
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            this.label7.Location = new System.Drawing.Point(27, 16);
+            this.label7.Location = new System.Drawing.Point(44, 16);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(76, 28);
@@ -388,45 +387,8 @@ namespace QuanLyNhaSach.UserControls
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 76);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1260, 125);
+            this.panel2.Size = new System.Drawing.Size(1570, 125);
             this.panel2.TabIndex = 23;
-            // 
-            // dtgvKH
-            // 
-            this.dtgvKH.AllowUserToAddRows = false;
-            this.dtgvKH.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvKH.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dtgvKH.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvKH.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dtgvKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvKH.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dtgvKH.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgvKH.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            this.dtgvKH.Location = new System.Drawing.Point(0, 201);
-            this.dtgvKH.Margin = new System.Windows.Forms.Padding(2);
-            this.dtgvKH.Name = "dtgvKH";
-            this.dtgvKH.ReadOnly = true;
-            this.dtgvKH.RowHeadersWidth = 82;
-            this.dtgvKH.RowTemplate.Height = 29;
-            this.dtgvKH.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvKH.Size = new System.Drawing.Size(1260, 483);
-            this.dtgvKH.TabIndex = 24;
-            this.dtgvKH.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvKH_CellClick);
-            this.dtgvKH.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvKH_CellContentClick);
             // 
             // prtDoc
             // 
@@ -442,18 +404,49 @@ namespace QuanLyNhaSach.UserControls
             this.prtprevDoc.Name = "prtprevDoc";
             this.prtprevDoc.Visible = false;
             // 
+            // dtgvKH
+            // 
+            this.dtgvKH.AllowUserToAddRows = false;
+            this.dtgvKH.AllowUserToDeleteRows = false;
+            this.dtgvKH.AllowUserToResizeColumns = false;
+            this.dtgvKH.AllowUserToResizeRows = false;
+            this.dtgvKH.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvKH.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dtgvKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvKH.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgvKH.GridColor = System.Drawing.Color.Gray;
+            this.dtgvKH.Location = new System.Drawing.Point(0, 201);
+            this.dtgvKH.Margin = new System.Windows.Forms.Padding(2);
+            this.dtgvKH.Name = "dtgvKH";
+            this.dtgvKH.ReadOnly = true;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvKH.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtgvKH.RowHeadersVisible = false;
+            this.dtgvKH.RowHeadersWidth = 82;
+            this.dtgvKH.RowTemplate.Height = 29;
+            this.dtgvKH.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvKH.ShowRowErrors = false;
+            this.dtgvKH.Size = new System.Drawing.Size(1570, 639);
+            this.dtgvKH.TabIndex = 52;
+            this.dtgvKH.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvKH_CellClick);
+            this.dtgvKH.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvKH_CellContentClick);
+            // 
             // UC_KhachHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.dtgvKH);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UC_KhachHang";
-            this.Size = new System.Drawing.Size(1260, 684);
+            this.Size = new System.Drawing.Size(1570, 840);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -485,10 +478,10 @@ namespace QuanLyNhaSach.UserControls
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.DataGridView dtgvKH;
         private System.Windows.Forms.Button btnBaoCao;
         private System.Windows.Forms.Button btnThutien;
         private System.Drawing.Printing.PrintDocument prtDoc;
         private System.Windows.Forms.PrintPreviewDialog prtprevDoc;
+        private System.Windows.Forms.DataGridView dtgvKH;
     }
 }

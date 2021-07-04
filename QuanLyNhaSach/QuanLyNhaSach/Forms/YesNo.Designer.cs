@@ -37,8 +37,8 @@ namespace QuanLyNhaSach.Forms
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.BtNo = new MaterialSurface.ContainedButton();
-            this.BtYes = new MaterialSurface.ContainedButton();
+            this.btnNo = new MaterialSurface.ContainedButton();
+            this.btnYes = new MaterialSurface.ContainedButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.TxMessage = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -48,55 +48,55 @@ namespace QuanLyNhaSach.Forms
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.BtNo);
-            this.panel1.Controls.Add(this.BtYes);
+            this.panel1.Controls.Add(this.btnNo);
+            this.panel1.Controls.Add(this.btnYes);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(5, 10);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(435, 227);
             this.panel1.TabIndex = 75;
             // 
-            // BtNo
+            // btnNo
             // 
-            this.BtNo.EffectType = MaterialSurface.ET.Custom;
-            this.BtNo.Font = new System.Drawing.Font("Segoe UI", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtNo.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.BtNo.Icon = null;
-            this.BtNo.Location = new System.Drawing.Point(44, 161);
-            this.BtNo.Margin = new System.Windows.Forms.Padding(2);
-            this.BtNo.MouseState = MaterialSurface.MouseState.OUT;
-            this.BtNo.Name = "BtNo";
-            this.BtNo.PrimaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
-            this.BtNo.Radius = 6;
-            this.BtNo.ShawdowDepth = 3;
-            this.BtNo.ShawdowOpacity = 50;
-            this.BtNo.Size = new System.Drawing.Size(166, 50);
-            this.BtNo.TabIndex = 1;
-            this.BtNo.Text = "Hủy";
-            this.BtNo.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtNo.UseVisualStyleBackColor = true;
-            this.BtNo.Click += new System.EventHandler(this.BtNo_Click_1);
+            this.btnNo.EffectType = MaterialSurface.ET.Custom;
+            this.btnNo.Font = new System.Drawing.Font("Segoe UI", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnNo.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnNo.Icon = null;
+            this.btnNo.Location = new System.Drawing.Point(233, 161);
+            this.btnNo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNo.MouseState = MaterialSurface.MouseState.OUT;
+            this.btnNo.Name = "btnNo";
+            this.btnNo.PrimaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            this.btnNo.Radius = 6;
+            this.btnNo.ShawdowDepth = 3;
+            this.btnNo.ShawdowOpacity = 50;
+            this.btnNo.Size = new System.Drawing.Size(166, 50);
+            this.btnNo.TabIndex = 1;
+            this.btnNo.Text = "Hủy";
+            this.btnNo.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnNo.UseVisualStyleBackColor = true;
+            this.btnNo.Click += new System.EventHandler(this.BtNo_Click_1);
             // 
-            // BtYes
+            // btnYes
             // 
-            this.BtYes.EffectType = MaterialSurface.ET.Custom;
-            this.BtYes.Font = new System.Drawing.Font("Segoe UI", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtYes.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.BtYes.Icon = null;
-            this.BtYes.Location = new System.Drawing.Point(227, 161);
-            this.BtYes.Margin = new System.Windows.Forms.Padding(2);
-            this.BtYes.MouseState = MaterialSurface.MouseState.OUT;
-            this.BtYes.Name = "BtYes";
-            this.BtYes.PrimaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.BtYes.Radius = 6;
-            this.BtYes.ShawdowDepth = 3;
-            this.BtYes.ShawdowOpacity = 50;
-            this.BtYes.Size = new System.Drawing.Size(166, 50);
-            this.BtYes.TabIndex = 0;
-            this.BtYes.Text = "Đồng ý";
-            this.BtYes.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtYes.UseVisualStyleBackColor = true;
-            this.BtYes.Click += new System.EventHandler(this.BtYes_Click);
+            this.btnYes.EffectType = MaterialSurface.ET.Custom;
+            this.btnYes.Font = new System.Drawing.Font("Segoe UI", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnYes.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnYes.Icon = null;
+            this.btnYes.Location = new System.Drawing.Point(32, 161);
+            this.btnYes.Margin = new System.Windows.Forms.Padding(2);
+            this.btnYes.MouseState = MaterialSurface.MouseState.OUT;
+            this.btnYes.Name = "btnYes";
+            this.btnYes.PrimaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnYes.Radius = 6;
+            this.btnYes.ShawdowDepth = 3;
+            this.btnYes.ShawdowOpacity = 50;
+            this.btnYes.Size = new System.Drawing.Size(166, 50);
+            this.btnYes.TabIndex = 0;
+            this.btnYes.Text = "Đồng ý";
+            this.btnYes.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnYes.UseVisualStyleBackColor = true;
+            this.btnYes.Click += new System.EventHandler(this.BtYes_Click);
             // 
             // panel2
             // 
@@ -125,7 +125,7 @@ namespace QuanLyNhaSach.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScrollMargin = new System.Drawing.Size(10, 10);
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
+            this.BackColor = System.Drawing.Color.Red;
             this.ClientSize = new System.Drawing.Size(447, 247);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
@@ -135,7 +135,7 @@ namespace QuanLyNhaSach.Forms
             this.Name = "YesNo";
             this.Padding = new System.Windows.Forms.Padding(100);
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -147,7 +147,7 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label TxMessage;
-        private MaterialSurface.ContainedButton BtNo;
-        private MaterialSurface.ContainedButton BtYes;
+        private MaterialSurface.ContainedButton btnNo;
+        private MaterialSurface.ContainedButton btnYes;
     }
 }

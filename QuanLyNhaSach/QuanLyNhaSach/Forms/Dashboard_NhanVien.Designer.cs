@@ -31,17 +31,15 @@ namespace QuanLyNhaSach.Forms
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard_NhanVien));
-            this.button3 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnQuit = new System.Windows.Forms.Button();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.btnBaoMat = new System.Windows.Forms.Button();
             this.btnKhachHang = new System.Windows.Forms.Button();
             this.panelTicked = new System.Windows.Forms.Panel();
             this.btnBanSach = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -61,33 +59,16 @@ namespace QuanLyNhaSach.Forms
             this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button3
-            // 
-            this.button3.AllowDrop = true;
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(-483, 0);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(58, 51);
-            this.button3.TabIndex = 5;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.label8);
-            this.panel4.Controls.Add(this.button4);
+            this.panel4.Controls.Add(this.btnQuit);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(350, 0);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1260, 80);
+            this.panel4.Size = new System.Drawing.Size(1570, 80);
             this.panel4.TabIndex = 4;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // label8
             // 
@@ -100,21 +81,20 @@ namespace QuanLyNhaSach.Forms
             this.label8.Size = new System.Drawing.Size(186, 39);
             this.label8.TabIndex = 8;
             this.label8.Text = "Book Store";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
-            // button4
+            // btnQuit
             // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(1211, 0);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(49, 80);
-            this.button4.TabIndex = 0;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click_1);
+            this.btnQuit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuit.ForeColor = System.Drawing.Color.White;
+            this.btnQuit.Image = ((System.Drawing.Image)(resources.GetObject("btnQuit.Image")));
+            this.btnQuit.Location = new System.Drawing.Point(1489, 0);
+            this.btnQuit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnQuit.Name = "btnQuit";
+            this.btnQuit.Size = new System.Drawing.Size(81, 80);
+            this.btnQuit.TabIndex = 0;
+            this.btnQuit.UseVisualStyleBackColor = true;
+            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click_1);
             // 
             // panelLeft
             // 
@@ -128,9 +108,8 @@ namespace QuanLyNhaSach.Forms
             this.panelLeft.Location = new System.Drawing.Point(0, 0);
             this.panelLeft.Margin = new System.Windows.Forms.Padding(2);
             this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(350, 927);
+            this.panelLeft.Size = new System.Drawing.Size(350, 1080);
             this.panelLeft.TabIndex = 3;
-            this.panelLeft.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLeft_Paint);
             // 
             // btnBaoMat
             // 
@@ -174,7 +153,6 @@ namespace QuanLyNhaSach.Forms
             this.panelTicked.Name = "panelTicked";
             this.panelTicked.Size = new System.Drawing.Size(8, 140);
             this.panelTicked.TabIndex = 2;
-            this.panelTicked.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTicked_Paint);
             // 
             // btnBanSach
             // 
@@ -197,9 +175,7 @@ namespace QuanLyNhaSach.Forms
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.pictureBox2);
-            this.panel3.Controls.Add(this.button3);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
@@ -207,22 +183,6 @@ namespace QuanLyNhaSach.Forms
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(350, 240);
             this.panel3.TabIndex = 2;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint_1);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(112)))), ((int)(((byte)(85)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::QuanLyNhaSach.Properties.Resources.menu_64px1;
-            this.button1.Location = new System.Drawing.Point(282, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(68, 63);
-            this.button1.TabIndex = 7;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // pictureBox2
             // 
@@ -235,7 +195,6 @@ namespace QuanLyNhaSach.Forms
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // label1
             // 
@@ -248,11 +207,6 @@ namespace QuanLyNhaSach.Forms
             this.label1.Size = new System.Drawing.Size(107, 23);
             this.label1.TabIndex = 3;
             this.label1.Text = "Book Store";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // timerRealTime
             // 
@@ -271,9 +225,8 @@ namespace QuanLyNhaSach.Forms
             this.panel5.Location = new System.Drawing.Point(350, 80);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1260, 163);
+            this.panel5.Size = new System.Drawing.Size(1570, 160);
             this.panel5.TabIndex = 5;
-            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // labelRealTime
             // 
@@ -281,13 +234,12 @@ namespace QuanLyNhaSach.Forms
             this.labelRealTime.AutoSize = true;
             this.labelRealTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelRealTime.ForeColor = System.Drawing.Color.White;
-            this.labelRealTime.Location = new System.Drawing.Point(1018, 62);
+            this.labelRealTime.Location = new System.Drawing.Point(1328, 62);
             this.labelRealTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelRealTime.Name = "labelRealTime";
             this.labelRealTime.Size = new System.Drawing.Size(90, 23);
             this.labelRealTime.TabIndex = 8;
             this.labelRealTime.Text = "realtime";
-            this.labelRealTime.Click += new System.EventHandler(this.labelRealTime_Click);
             // 
             // label6
             // 
@@ -300,7 +252,6 @@ namespace QuanLyNhaSach.Forms
             this.label6.Size = new System.Drawing.Size(109, 23);
             this.label6.TabIndex = 7;
             this.label6.Text = "Nhân viên";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -313,7 +264,6 @@ namespace QuanLyNhaSach.Forms
             this.label5.Size = new System.Drawing.Size(67, 23);
             this.label5.TabIndex = 6;
             this.label5.Text = "Rules:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
@@ -326,7 +276,6 @@ namespace QuanLyNhaSach.Forms
             this.label4.Size = new System.Drawing.Size(91, 23);
             this.label4.TabIndex = 5;
             this.label4.Text = "<name>";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -336,7 +285,6 @@ namespace QuanLyNhaSach.Forms
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 20);
             this.label3.TabIndex = 5;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -349,15 +297,13 @@ namespace QuanLyNhaSach.Forms
             this.label2.Size = new System.Drawing.Size(110, 23);
             this.label2.TabIndex = 4;
             this.label2.Text = "Welcome:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // panelControl
             // 
-            this.panelControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.panelControl.Location = new System.Drawing.Point(350, 243);
+            this.panelControl.Location = new System.Drawing.Point(350, 240);
             this.panelControl.Name = "panelControl";
-            this.panelControl.Size = new System.Drawing.Size(1260, 684);
+            this.panelControl.Size = new System.Drawing.Size(1570, 840);
             this.panelControl.TabIndex = 3;
             // 
             // Dashboard_NhanVien
@@ -365,7 +311,7 @@ namespace QuanLyNhaSach.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1610, 927);
+            this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.panelControl);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -388,9 +334,8 @@ namespace QuanLyNhaSach.Forms
         }
 
         #endregion
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnQuit;
         private System.Windows.Forms.Panel panelLeft;
         private System.Windows.Forms.Button btnKhachHang;
         private System.Windows.Forms.Panel panelTicked;
@@ -409,7 +354,6 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panelControl;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnBaoMat;
     }
 }

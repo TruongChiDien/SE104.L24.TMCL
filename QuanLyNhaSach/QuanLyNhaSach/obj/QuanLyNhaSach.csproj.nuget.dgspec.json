@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "E:\\CNPM\\Quan ly nha sach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj": {}
   },
   "projects": {
@@ -15,6 +16,25 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ducdu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+    "E:\\C#\\QLNS2\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj": {}
+  },
+  "projects": {
+    "E:\\C#\\QLNS2\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\C#\\QLNS2\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj",
+        "projectName": "QuanLyNhaSach",
+        "projectPath": "E:\\C#\\QLNS2\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "E:\\C#\\QLNS2\\QuanLyNhaSach\\QuanLyNhaSach\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 583d3710025f256b1edb0e76d267414c5f0c4b91
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -67,7 +87,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.204\\RuntimeIdentifierGraph.json"
         }
       }
     }

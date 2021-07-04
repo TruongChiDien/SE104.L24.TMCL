@@ -476,11 +476,17 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\ducdu\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\Admin\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+>>>>>>> 583d3710025f256b1edb0e76d267414c5f0c4b91
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "E:\\CNPM\\Quan ly nha sach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj",
       "projectName": "QuanLyNhaSach",
       "projectPath": "E:\\CNPM\\Quan ly nha sach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj",
@@ -489,6 +495,19 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ducdu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+      "projectUniqueName": "E:\\C#\\QLNS2\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj",
+      "projectName": "QuanLyNhaSach",
+      "projectPath": "E:\\C#\\QLNS2\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "E:\\C#\\QLNS2\\QuanLyNhaSach\\QuanLyNhaSach\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 583d3710025f256b1edb0e76d267414c5f0c4b91
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -541,17 +560,11 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.204\\RuntimeIdentifierGraph.json"
       }
     }
   },
   "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file E:\\CNPM\\Quan ly nha sach\\QuanLyNhaSach\\QuanLyNhaSach\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    },
     {
       "code": "NU1701",
       "level": "Warning",

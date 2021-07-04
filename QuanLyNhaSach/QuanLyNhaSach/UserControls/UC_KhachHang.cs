@@ -15,6 +15,13 @@ namespace QuanLyNhaSach.UserControls
     public partial class UC_KhachHang : UserControl
     {
 
+
+        #region Properties
+        YesNo msb = new YesNo();
+        public int tienthu;
+        #endregion
+
+        #region Method
         public UC_KhachHang()
         {
             InitializeComponent();
@@ -23,16 +30,9 @@ namespace QuanLyNhaSach.UserControls
             if (CheckNo() == false) this.UpdateCongNo();
         }
 
-        #region Properties
-        YesNo msb = new YesNo();
-        public int tienthu;
-        #endregion
-
-        #region Method
-
         private void Grid_Load()
         {
-            string query = "SELECT MaKH AS [Mã Khách hàng], HoTenKH AS [Họ tên], NoKH AS [Nợ],  DiaChi AS [Địa Chỉ], DienThoai AS [Điện thoại], Email  FROM KHACHHANG";
+            string query = "SELECT MaKH AS 'Mã Khách hàng', HoTenKH AS 'Họ tên', NoKH AS 'Nợ',  DiaChi AS 'Địa Chỉ', DienThoai AS 'Điện thoại', Email  FROM KHACHHANG";
             dtgvKH.DataSource = DataProvider.Instance.ExecuteQuery(query);
         }
 
@@ -324,8 +324,8 @@ namespace QuanLyNhaSach.UserControls
             
         }
 
-
+        #endregion
     }
-    #endregion
+
 
 }

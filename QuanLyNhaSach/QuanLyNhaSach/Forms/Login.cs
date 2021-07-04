@@ -12,18 +12,13 @@ namespace QuanLyNhaSach.Forms
 {
     public partial class Login : Form
     {
+        #region Properties
         YesNo msb = new YesNo();
-        
-        public Login()
-        {
-            InitializeComponent();
-        }
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+        #endregion
 
-        private void button1_Click(object sender, EventArgs e)
+
+        #region Method
+        private void DangNhap()
         {
             string query = "select * from NHANVIEN where Username='" + txtuser.Text + "' and Password='" + txtpassword.Text + "'";
             DataTable dta = DataProvider.Instance.ExecuteQuery(query);
@@ -33,15 +28,17 @@ namespace QuanLyNhaSach.Forms
                 {
                     msb.Messageshow("Đăng nhập thành công nhân viên");
                     Dashboard_NhanVien dn = new Dashboard_NhanVien();
-                    dn.Show();
                     this.Hide();
+                    dn.ShowDialog();
+                    this.Show();
                 }
                 else
                 {
                     msb.Messageshow("Đăng nhập thành công admin");
                     Dashboard_Admin da = new Dashboard_Admin();
-                    da.Show();
                     this.Hide();
+                    da.ShowDialog();
+                    this.Show();
                 }
             }
             else
@@ -49,6 +46,34 @@ namespace QuanLyNhaSach.Forms
                 msb.Messageshow("Sai tài khoản hoặc mật khẩu!");
             }
         }
+        
+        #endregion
+
+
+        #region Event
+        public Login()
+        {
+            InitializeComponent();
+        }
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            this.DangNhap();
+        }
+
+        private void Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(MessageBox.Show("Bạn có thật sự muốn thoát chương trình?", "Thông báo", MessageBoxButtons.OKCancel) != DialogResult.OK)
+            {
+                e.Cancel = true;
+            }
+        }
+        
+        #endregion
 
     }
 }

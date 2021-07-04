@@ -38,12 +38,11 @@ namespace QuanLyNhaSach.Forms
             this.panelTicked = new System.Windows.Forms.Panel();
             this.btnNhanVien = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnQuit = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.labelRealTime = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -73,7 +72,7 @@ namespace QuanLyNhaSach.Forms
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeft.Location = new System.Drawing.Point(0, 0);
             this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(350, 927);
+            this.panelLeft.Size = new System.Drawing.Size(350, 1055);
             this.panelLeft.TabIndex = 0;
             // 
             // btnBaoMat
@@ -146,11 +145,10 @@ namespace QuanLyNhaSach.Forms
             this.btnNhanVien.TabIndex = 0;
             this.btnNhanVien.Text = "Nhân viên";
             this.btnNhanVien.UseVisualStyleBackColor = true;
-            this.btnNhanVien.Click += new System.EventHandler(this.button1_Click);
+            this.btnNhanVien.Click += new System.EventHandler(this.btnNhanVien_Click);
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -158,19 +156,6 @@ namespace QuanLyNhaSach.Forms
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(350, 240);
             this.panel3.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::QuanLyNhaSach.Properties.Resources.menu_64px1;
-            this.button1.Location = new System.Drawing.Point(261, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 82);
-            this.button1.TabIndex = 4;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // pictureBox1
             // 
@@ -197,11 +182,11 @@ namespace QuanLyNhaSach.Forms
             // panel4
             // 
             this.panel4.Controls.Add(this.label8);
-            this.panel4.Controls.Add(this.button4);
+            this.panel4.Controls.Add(this.btnQuit);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(350, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1260, 80);
+            this.panel4.Size = new System.Drawing.Size(1570, 80);
             this.panel4.TabIndex = 2;
             // 
             // label8
@@ -215,18 +200,18 @@ namespace QuanLyNhaSach.Forms
             this.label8.TabIndex = 8;
             this.label8.Text = "Book Store";
             // 
-            // button4
+            // btnQuit
             // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(1180, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(80, 80);
-            this.button4.TabIndex = 0;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click_1);
+            this.btnQuit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuit.ForeColor = System.Drawing.Color.White;
+            this.btnQuit.Image = ((System.Drawing.Image)(resources.GetObject("btnQuit.Image")));
+            this.btnQuit.Location = new System.Drawing.Point(1490, 0);
+            this.btnQuit.Name = "btnQuit";
+            this.btnQuit.Size = new System.Drawing.Size(80, 80);
+            this.btnQuit.TabIndex = 0;
+            this.btnQuit.UseVisualStyleBackColor = true;
+            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
             // 
             // panel5
             // 
@@ -240,7 +225,7 @@ namespace QuanLyNhaSach.Forms
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(350, 80);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1260, 163);
+            this.panel5.Size = new System.Drawing.Size(1570, 160);
             this.panel5.TabIndex = 2;
             // 
             // labelRealTime
@@ -249,7 +234,7 @@ namespace QuanLyNhaSach.Forms
             this.labelRealTime.AutoSize = true;
             this.labelRealTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelRealTime.ForeColor = System.Drawing.Color.White;
-            this.labelRealTime.Location = new System.Drawing.Point(1019, 62);
+            this.labelRealTime.Location = new System.Drawing.Point(1329, 62);
             this.labelRealTime.Name = "labelRealTime";
             this.labelRealTime.Size = new System.Drawing.Size(90, 23);
             this.labelRealTime.TabIndex = 3;
@@ -307,27 +292,22 @@ namespace QuanLyNhaSach.Forms
             this.label2.TabIndex = 4;
             this.label2.Text = "Welcome:";
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // timerRealTime
             // 
             this.timerRealTime.Tick += new System.EventHandler(this.timerRealTime_Tick);
             // 
             // panelControl
             // 
-            this.panelControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl.Location = new System.Drawing.Point(350, 243);
+            this.panelControl.Location = new System.Drawing.Point(350, 240);
             this.panelControl.Name = "panelControl";
-            this.panelControl.Size = new System.Drawing.Size(1260, 684);
+            this.panelControl.Size = new System.Drawing.Size(1570, 840);
             this.panelControl.TabIndex = 3;
             // 
             // Dashboard_Admin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1610, 927);
+            this.ClientSize = new System.Drawing.Size(1920, 1055);
             this.Controls.Add(this.panelControl);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -359,7 +339,7 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnQuit;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbTen;
@@ -370,7 +350,6 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.Timer timerRealTime;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelControl;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnKhoSach;
         private System.Windows.Forms.Button btnPhieuNhap;
         private System.Windows.Forms.Button btnBaoMat;

@@ -10,6 +10,12 @@ namespace QuanLyNhaSach.Forms
 {
     public partial class FormTempForPrint : Form
     {
+        #region Properties
+
+        #endregion
+
+
+        #region Methods
         public FormTempForPrint()
         {
             InitializeComponent();
@@ -25,9 +31,14 @@ namespace QuanLyNhaSach.Forms
             this.dtgvTemp.DataSource = ds;
         }
 
-        private void dtgvTemp_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
+        #endregion
+
+
+        #region Events
+
+        #endregion
+
+
     }
 }

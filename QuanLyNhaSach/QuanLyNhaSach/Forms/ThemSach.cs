@@ -12,6 +12,13 @@ namespace QuanLyNhaSach.Forms
 {
     public partial class ThemSach : Form
     {
+
+        #region Properties
+
+        #endregion
+
+
+        #region Methods
         public ThemSach()
         {
             InitializeComponent();
@@ -29,11 +36,6 @@ namespace QuanLyNhaSach.Forms
             }
             CbTheLoai.DataSource = ls;
         }
-        private void containedButton1_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-
         private bool isAllNumeric(string str)
         {
             bool isNumeric = true;
@@ -95,11 +97,20 @@ namespace QuanLyNhaSach.Forms
             try
             {
                 //Check if a book existed
+<<<<<<< HEAD
                 query = " SELECT COUNT(1) FROM SACH WHERE MaSach = N'" + TxMasach.Text+"'";
                 object i = 0;
                 i = DataProvider.Instance.ExecuteScalar(query);
                 //add book
                 if (int.Parse(i.ToString()) == 0 ) 
+=======
+                query = " SELECT COUNT(1) FROM SACH WHERE MaSach = N'" + TxMasach.Text + "'";
+                int i = 0;
+                i = DataProvider.Instance.ExecuteNonQuery(query);
+                //add book
+                MessageBox.Show(i.ToString());
+                if (i == -1)
+>>>>>>> 583d3710025f256b1edb0e76d267414c5f0c4b91
                 {
                     query = @"INSERT INTO SACH " +
                                          "VALUES(" + TxMasach.Text + ",'"
@@ -122,7 +133,13 @@ namespace QuanLyNhaSach.Forms
                     bool Yes = MesBox.yes;
                     MesBox.Dispose();
                     if (Yes)
+<<<<<<< HEAD
                     { 
+=======
+                    {
+                        query = @"DELETE FROM SACH WHERE MaSach = " + TxMasach.Text;
+                        DataProvider.Instance.ExecuteNonQuery(query);
+>>>>>>> 583d3710025f256b1edb0e76d267414c5f0c4b91
 
                         query = @" update SACH set SoLuong = Soluong + " + TxSoluong.Text + " where Masach = " + TxMasach.Text;
                         DataProvider.Instance.ExecuteNonQuery(query);
@@ -135,7 +152,19 @@ namespace QuanLyNhaSach.Forms
             }
             catch { }
         }
-        private void containedButton6_Click(object sender, EventArgs e)
+
+
+
+        #endregion
+
+
+        #region Events
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
         {
             if (!isTextConstraintTypeSatisfied())
                 return;
@@ -165,19 +194,12 @@ namespace QuanLyNhaSach.Forms
 
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void btnQuit_Click(object sender, EventArgs e)
         {
-
+            this.Dispose();
         }
+        #endregion
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void CbTheLoai_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

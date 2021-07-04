@@ -10,25 +10,35 @@ namespace QuanLyNhaSach.Forms
 {
     public partial class Dialog_BaoCaoCongNo : Form
     {
+        #region Properties
         private DateTime date;
         private bool ok;
-        
+
+        #endregion
+
+
+        #region Method
         public bool Ok
         {
             get { return ok; }
             set { ok = value; }
         }
+        
         public DateTime Date
         {
             get { return date; }
             set { date = value; }
         }
-
+        
         public Dialog_BaoCaoCongNo()
         {
             InitializeComponent();
         }
 
+        #endregion
+
+
+        #region Event
         private void btnLapbaocao_Click(object sender, EventArgs e)
         {
             if (dtpNgaybaocao.Value == null)
@@ -48,10 +58,8 @@ namespace QuanLyNhaSach.Forms
             this.Ok = false;
             this.Dispose();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Danh trinh");
-        }
+        
+        #endregion
+    
     }
 }

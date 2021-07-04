@@ -1,37 +1,42 @@
-﻿using System;
+﻿using QuanLyNhaSach.DA;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using QuanLyNhaSach.DA;
-using QuanLyNhaSach.Forms;
 
-namespace QuanLyNhaSach.UserControls
+namespace QuanLyNhaSach.Forms
 {
-    public partial class UC_BaoMatAdmin : UserControl
+    public partial class DialogBaoMat : Form
     {
+
+        #region Properties
         YesNo msb = new YesNo();
         string query;
-        public UC_BaoMatAdmin()
+
+        #endregion
+
+
+        #region Methods
+        public DialogBaoMat()
         {
             InitializeComponent();
         }
 
-        private void UC_BaoMatAdmin_Load(object sender, EventArgs e)
-        {
+        #endregion
 
-        }
+
+        #region Events
 
         private void btnLuuThayDoi_Click(object sender, EventArgs e)
         {
-
             if (txbUsername.Text == "" || txbPassword.Text == "" || txbOldPass.Text == "" || txbXacNhan.Text == "")
             {
                 msb.Messageshow("Vui lòng nhập đầy đủ thông tin!");
             }
-            else if(Convert.ToInt32(DataProvider.Instance.ExecuteScalar("select count(*) from nhanvien where Username = '" + txbUsername.Text + "' and Password = '" + txbOldPass.Text + "'")) == 0)
+            else if (Convert.ToInt32(DataProvider.Instance.ExecuteScalar("select count(*) from nhanvien where Username = '" + txbUsername.Text + "' and Password = '" + txbOldPass.Text + "'")) == 0)
             {
                 msb.Messageshow("Sai tên đăng nhập hoặc mật khẩu!");
             }
@@ -47,6 +52,15 @@ namespace QuanLyNhaSach.UserControls
                         msb.Messageshow("Cập nhật mật khẩu thành công!");
                 }
             }
+
         }
+
+        private void BtHuy_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        #endregion
+
     }
 }

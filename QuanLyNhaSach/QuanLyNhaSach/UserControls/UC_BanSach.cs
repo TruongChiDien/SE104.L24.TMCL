@@ -12,25 +12,27 @@ namespace QuanLyNhaSach.UserControls
 {
     public partial class UC_BanSach : UserControl
     {
+        #region Properties
+        YesNo msb = new YesNo();
+        int tienthu;
+        int total = 0;
+        int soluong;
+        string query;
+
+        #endregion
+
+        #region Method
         public UC_BanSach()
         {
             InitializeComponent();
             Grid_tb_loadData();
-
         }
 
-        #region Properties
-        int n = 0;
-        YesNo msb = new YesNo();
-        int tienthu;
-        #endregion
-
-        #region Method
         private void Grid_tb_loadData()
         {
             string query = "SELECT MaSach as 'Mã sách', TenSach as 'Tên sách',TheLoai as 'Thể loại',TacGia as 'Tác giả',DGBan as 'DG bán',SoLuong as 'Số lượng' FROM SACH";
 
-            dataGridView1.DataSource = DataProvider.Instance.ExecuteQuery(query);
+            dtgvSach.DataSource = DataProvider.Instance.ExecuteQuery(query);
         }
 
         private void Search_book()
@@ -60,7 +62,7 @@ namespace QuanLyNhaSach.UserControls
 
                 string query = "SELECT * FROM SACH WHERE + " + chude + " like '" + TxTimkiem.Text + "%'";
 
-                dataGridView1.DataSource = DataProvider.Instance.ExecuteQuery(query);
+                dtgvSach.DataSource = DataProvider.Instance.ExecuteQuery(query);
             }
             catch (Exception)
             {
@@ -68,20 +70,42 @@ namespace QuanLyNhaSach.UserControls
             }
         }
 
-        private void Print_HoaDon()
+        private bool Print_HoaDon()
         {
             if(txtMaKH.Text == "")
             {
                 msb.Messageshow("Nhập mã khách hàng!");
-                return;
+                return false;
             }
-            string query = string.Format("select HoTenKH from khachhang where MaKH = {0}", txtMaKH.Text);
-            string tenKH = DataProvider.Instance.ExecuteScalar(query).ToString();
-            if (tenKH == "")
+            int cnt = 0;
+            query = string.Format("select count(*) from khachhang where MaKH = {0}", txtMaKH.Text);
+            cnt = Convert.ToInt32(DataProvider.Instance.ExecuteScalar(query));
+            if (cnt == 0)
             {
                 msb.Messageshow("Khách hàng không tồn tại!");
-                return;
+                return false;
             }
+
+            //Khách hàng vượt quá sô nợ quy định
+
+            //string query1 = string.Format("select NoKH from KHACHHANG where MaKH='{0}'", txtMaKH.Text);
+
+            //int noKH = (Int32)DataProvider.Instance.ExecuteScalar(query1);
+            //string query2 = string.Format("select GiaTri from THAMSO where TenTS='notoida'");
+            //int notoida = (Int32)DataProvider.Instance.ExecuteScalar(query2);
+            //if (noKH > notoida)
+            //{
+            //    msb.Messageshow("Khách hàng đang nợ quá số tiền quy định. Bạn có muốn thay đổi số tiền nợ?");
+            //    if (msb.yes == true)
+            //    {
+            //        Dialog_Thaydoithamso d = new Dialog_Thaydoithamso();
+            //        d.ShowDialog();
+            //    }
+            //    else { return; }
+            //}
+            //================
+            query = string.Format("select HoTenKH from khachhang where MaKH = {0}", txtMaKH.Text);
+            string tenKH = DataProvider.Instance.ExecuteScalar(query).ToString();
 
             query = string.Format("update ctcongno set PhatSinh += {0}, NoCuoi += {1} where MaKH = {2} and month(Thoigian) = {3} and year(ThoiGian) = {4}", txtTongcong.Text, txtTongcong.Text, txtMaKH.Text, DateTime.Now.Month, DateTime.Now.Year);
             DataProvider.Instance.ExecuteNonQuery(query);
@@ -97,100 +121,123 @@ namespace QuanLyNhaSach.UserControls
             printer.PageNumberInHeader = false;
             printer.PorportionalColumns = true;
             printer.HeaderCellAlignment = StringAlignment.Near;
-            printer.PrintPreviewDataGridView(dataGridView2);
+            printer.PrintPreviewDataGridView(dtgvHoaDon);
+
+            this.Clear();
+            return true;
         }
 
-        public void PrintPhieuThu()
+        public void PrintPhieuThu(int total, bool allow)
         {
+            if (allow == false)
+                return;
 
-            tienthu = Convert.ToInt32(txtTongcong.Text);
-            string query = string.Format("select * from ctcongno where MaKH = {0} and month(ThoiGian) = {1} and year(ThoiGian) = {2}", Convert.ToInt32(txtMaKH.Text), DateTime.Now.Month, DateTime.Now.Year);
-            DataTable dtt = DataProvider.Instance.ExecuteQuery(query);
-            int NoCuoi = Convert.ToInt32(dtt.Rows[0]["NoCuoi"]);
-            int PhatSinh = Convert.ToInt32(dtt.Rows[0]["PhatSinh"]);
-            while (tienthu > NoCuoi)
-            {
-                msb.Messageshow("Số tiền thu không được phép lớn hơn số tiền nợ!");
-                Dialog_ThuTien t_thutien1 = new Dialog_ThuTien();
-                t_thutien1.ShowDialog();
-                if (t_thutien1.Ok == false) return;
-                tienthu = t_thutien1.Tienthu;
-            }
-            query = string.Format("update ctcongno set PhatSinh = {0}, NoCuoi = {1} where MaKH = {2} and month(ThoiGian) = {3} and year(ThoiGian) = {4}", PhatSinh - tienthu, NoCuoi - tienthu, Convert.ToInt32(txtMaKH.Text), DateTime.Now.Month, DateTime.Now.Year);
-            DataProvider.Instance.ExecuteNonQuery(query);
-            query = string.Format("update khachhang set NoKH = {0} where MaKH = {1}", NoCuoi - tienthu, Convert.ToInt32(txtMaKH.Text));
-            DataProvider.Instance.ExecuteNonQuery(query);
+            this.tienthu = total;
 
             this.prtDoc.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("custom", 970, 234);
             this.prtprvDoc.Document = this.prtDoc;
             if (this.prtprvDoc.ShowDialog() == DialogResult.OK)
                 this.prtDoc.Print();
+            this.Clear();
         }
 
+        void showTotal()
+        {
+            int total = 0;
+            for (int i = 0; i < dtgvHoaDon.Rows.Count-1; i++)
+            {
+                total += Convert.ToInt32(dtgvHoaDon.Rows[i].Cells[2].Value) * Convert.ToInt32(dtgvHoaDon.Rows[i].Cells[1].Value);
+            }
+            txtTongcong.Text = total.ToString();
+            if(total != 0)
+            {
+                btnThanhToan.Enabled = true;
+                btnInHoaDon.Enabled = true;
+            }
+        }
 
+        private void Clear()
+        {
+            dtgvHoaDon.Rows.Clear();
+            this.showTotal();
+            btnInHoaDon.Enabled = false;
+            btnThanhToan.Enabled = false;
+        }
         #endregion
 
         #region Event
 
-        private void UC_BanSach_Load(object sender, EventArgs e)
-        {
-            //Search_book();       
-        }
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void txbTimKiem_TextChanged(object sender, EventArgs e)
         {
             Search_book();
-            if (String.IsNullOrEmpty(txtSoluong.Text))
-            {
-                MessageBox.Show("Nhập số lượng sách", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                //dataGridView1.Rows.Clear();
-            }
-
         }
 
-        private void containedButton5_Click(object sender, EventArgs e)
+        private void btnInHoaDon_Click(object sender, EventArgs e)
         {
-            
-            if (dataGridView2.Rows.Count == 0)
+
+            if (txtMaKH.Text == "")
             {
-                MessageBox.Show("Chưa có sản phẩm nào được chọn");
+                msb.Messageshow("Nhập mã khách hàng!");
+                return;
             }
-            else
+            int cnt = 0;
+            query = string.Format("select count(*) from khachhang where MaKH = {0}", txtMaKH.Text);
+            cnt = Convert.ToInt32(DataProvider.Instance.ExecuteScalar(query));
+            if (cnt == 0)
             {
-                int qty = 0;
+                msb.Messageshow("Khách hàng không tồn tại!");
+                return;
+            }
 
+            //Khách hàng vượt quá sô nợ quy định
+            string query1 = string.Format("select NoKH from KHACHHANG where MaKH='{0}'", txtMaKH.Text);
 
-                //foreach(DataRow dr in dataGridView2.Rows  )
+            int noKH = (Int32)DataProvider.Instance.ExecuteScalar(query1);
+            string query2 = string.Format("select GiaTri from THAMSO where TenTS='notoida'");
+            int notoida = (Int32)DataProvider.Instance.ExecuteScalar(query2);
+            if (noKH > notoida)
+            {
+                msb.Messageshow("Khách hàng đang nợ quá số tiền quy định. Bạn có muốn thay đổi số tiền nợ?");
+                if (msb.yes == true)
+                {
+                    Dialog_Thaydoithamso d = new Dialog_Thaydoithamso();
+                    d.ShowDialog();
+                }
+                return;
+
+            }
+
+            if (dtgvHoaDon.Rows.Count == 0)
+                {
+                    MessageBox.Show("Chưa có sản phẩm nào được chọn");
+                }
+                //else if ()
                 //{
-                //    string t_sach = dr["Tên sách"].ToString();
-                //    qty = Convert.ToInt32(dr["SL"].ToString());
-                //    string query = string.Format("update SACH set SoLuong= SoLuong-{0} where TenSach={1}",qty,t_sach);
-                //    DataProvider.Instance.ExecuteNonQuery(query);
 
                 //}
-                foreach (DataGridViewRow row in dataGridView2.Rows)
+                else
                 {
-                    qty = Convert.ToInt32((row.Cells["SL"].Value).ToString());
-                    string t_sach = (row.Cells["Tensach"].Value).ToString();
-                    
-                    string query = string.Format("update SACH set SoLuong= SoLuong-{0} where TenSach={1}", qty, t_sach);
-                    DataProvider.Instance.ExecuteNonQuery(query);
+                   
+
+
+
+                    int qty = 0;
+                    int n = dtgvHoaDon.Rows.Count - 1;
+                    for (int i = 0; i < n; i++)
+                    {
+                        qty = Convert.ToInt32((dtgvHoaDon.Rows[i].Cells[1].Value).ToString());
+                        string t_sach = (dtgvHoaDon.Rows[i].Cells[0].Value).ToString();
+
+                        string query = string.Format("update SACH set SoLuong -= {0} where TenSach = '{1}'", qty, t_sach);
+                        DataProvider.Instance.ExecuteNonQuery(query);
+                    }
+
+                    this.Print_HoaDon();
                 }
-
-                
-
-                this.Print_HoaDon();
-            }
+            
         }
 
-        private void SetFontAndColors()
-        {
-            dataGridView1.Font = new Font("Tahoma", 15);
-            dataGridView1.ForeColor = Color.Blue;
-            dataGridView1.BackColor = Color.Beige;
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dtgvHoaDon_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //dataGridView1.CurrentRow.Selected = true;
             //txtTensach.Text = dataGridView1.Rows[e.RowIndex].Cells["TenSach"].FormattedValue.ToString();
@@ -199,101 +246,118 @@ namespace QuanLyNhaSach.UserControls
 
         }
 
-        private void containedButton6_Click(object sender, EventArgs e)
+        private void btnThem_Click(object sender, EventArgs e)
         {
-            if (txtSoluong.Text == "")
+            string query = string.Format("select GiaTri from THAMSO where TenTS='tonkho'");
+            int tonkhotoithieu=(Int32)DataProvider.Instance.ExecuteScalar(query);
+
+            if (txtGiatien.Text == "")
+            {
+                msb.Messageshow("Vui lòng chọn sách!");
+                if (msb.yes == true)
+                {
+                    Dialog_Thaydoithamso d = new Dialog_Thaydoithamso();
+                    d.ShowDialog();
+                }
+                else { return; }
+                
+            }
+            
+            if (txbSoluong.Text == "")
             {
                 MessageBox.Show("Nhập số lượng");
                 return;
             }
+
+            int tsl = Convert.ToInt32(txbSoluong.Text);
+            if(dtgvHoaDon.Rows.Count == 1)
+            {
+                DataGridViewRow newRow = new DataGridViewRow();
+                newRow.CreateCells(dtgvHoaDon);
+                newRow.Cells[0].Value = txtTensach.Text;
+                newRow.Cells[1].Value = txbSoluong.Text;
+                newRow.Cells[2].Value = txtGiatien.Text;
+
+                dtgvHoaDon.Rows.Add(newRow);
+                showTotal();
+            }
             else
             {
-                try
+                int n = dtgvHoaDon.Rows.Count;
+                int id = -1;
+                for(int i = 0; i<n-1; i++)
+                {
+                    if (txtTensach.Text == dtgvHoaDon.Rows[i].Cells[0].Value.ToString())
+                    {
+                        tsl += Convert.ToInt32(dtgvHoaDon.Rows[i].Cells[1].Value);
+                        id = i;
+                    }
+                }
+                if(tsl == Convert.ToInt32(txbSoluong.Text))
                 {
                     DataGridViewRow newRow = new DataGridViewRow();
-                    newRow.CreateCells(dataGridView2);
-                    newRow.Cells[0].Value = n + 1;
-                    newRow.Cells[1].Value = txtTensach.Text;
-                    newRow.Cells[2].Value = txtSoluong.Text;
-                    newRow.Cells[3].Value = txtGiatien.Text;
+                    newRow.CreateCells(dtgvHoaDon);
+                    newRow.Cells[0].Value = txtTensach.Text;
+                    newRow.Cells[1].Value = txbSoluong.Text;
+                    newRow.Cells[2].Value = txtGiatien.Text;
 
-                    dataGridView2.Rows.Add(newRow);
-                    n++;
+                    dtgvHoaDon.Rows.Add(newRow);
                     showTotal();
                 }
-                catch { }
+                else if (tsl > soluong || (soluong-tsl)<tonkhotoithieu)
+                {
+                    msb.Messageshow("Số lượng sách không đủ!");
+                    return;
+                }
+                else if(id != -1)
+                {
+                    dtgvHoaDon.Rows[id].Cells[1].Value = Convert.ToInt32(dtgvHoaDon.Rows[id].Cells[1].Value) + Convert.ToInt32(txbSoluong.Text);
+                }
+                
+                showTotal();
             }
-            //dataGridView2.Rows.Add(newRow);
-         
         }
 
-        int total = 0;
-        int soluong;
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dtgvSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-   
-            int num_row = 0;
-            for (int i = 1; i < dataGridView1.Rows.Count; i++)
+            dtgvSach.CurrentRow.Selected = true;
+            if (e.RowIndex != -1)
             {
-                num_row=num_row+1;
-            }
-            if (e.RowIndex == 0)
-            {
-                return;
-            }
-            if (e.RowIndex > 0&& e.RowIndex<num_row)
-            {
-                dataGridView1.CurrentRow.Selected = true;
-                txtTensach.Text = dataGridView1.Rows[e.RowIndex].Cells["Tên sách"].FormattedValue.ToString();
-                txtTacgia.Text = dataGridView1.Rows[e.RowIndex].Cells["Tác giả"].FormattedValue.ToString();
-                txtTheloai.Text = dataGridView1.Rows[e.RowIndex].Cells["Thể loại"].FormattedValue.ToString();
-                txtGiatien.Text = dataGridView1.Rows[e.RowIndex].Cells["DG bán"].FormattedValue.ToString();
-                soluong = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["DG bán"].FormattedValue.ToString());
-                if (txtSoluong.Text == "")
+                txtTensach.Text = dtgvSach.Rows[e.RowIndex].Cells["Tên sách"].FormattedValue.ToString();
+                txtGiatien.Text = dtgvSach.Rows[e.RowIndex].Cells["DG bán"].FormattedValue.ToString();
+                soluong = Convert.ToInt32(dtgvSach.Rows[e.RowIndex].Cells["Số lượng"].FormattedValue.ToString());
+                if (txbSoluong.Text == "")
                 {
                     return;
                 }
-                total = Convert.ToInt32(txtSoluong.Text) * Convert.ToInt32(txtGiatien.Text);
+                total = Convert.ToInt32(txbSoluong.Text) * Convert.ToInt32(txtGiatien.Text);
                 txtTongtien.Text = Convert.ToString(total);
             }
-            else
+            
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            int rowIndex = dtgvHoaDon.CurrentCell.RowIndex;
+            dtgvHoaDon.Rows.RemoveAt(rowIndex);
+            if(dtgvHoaDon.Rows.Count == 1)
             {
-                return;
+                btnInHoaDon.Enabled = false;
+                btnThanhToan.Enabled = false;
             }
         }
 
-        private void containedButton2_Click(object sender, EventArgs e)
+        private void txbSoluong_TextChanged(object sender, EventArgs e)
         {
-            int rowIndex = dataGridView2.CurrentCell.RowIndex;
-            dataGridView2.Rows.RemoveAt(rowIndex);
-        }
-
-        private void Quantity_book()
-        {
-
-            if (txtSoluong.Text ==null)
+            if (txbSoluong.Text != "")
             {
-                MessageBox.Show("Nhập số lượng");
-                return;
-            }
-        }
-
-        private void txtSoluong_TextChanged(object sender, EventArgs e)
-        {
-            if (txtSoluong.Text == null)
-            {
-                return;
-            }
-
-            if (txtSoluong.Text != "")
-            {
-                if (Convert.ToInt32(txtSoluong.Text) > soluong)
+                if (Convert.ToInt32(txbSoluong.Text) > soluong)
                 {
                     MessageBox.Show("Số lượng hàng không đủ");
                 }
                 else
                 {
-                    total = Convert.ToInt32(txtSoluong.Text) * Convert.ToInt32(txtGiatien.Text);
+                    total = Convert.ToInt32(txbSoluong.Text) * Convert.ToInt32(txtGiatien.Text);
                 }
             }
           
@@ -309,35 +373,61 @@ namespace QuanLyNhaSach.UserControls
             }
         }
 
-        private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dtgvHoaDon_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            foreach (DataGridViewCell oneCell in dataGridView2.SelectedCells)
+            foreach (DataGridViewCell oneCell in dtgvHoaDon.SelectedCells)
             {
                 if (oneCell.Selected)
-                    dataGridView2.Rows.RemoveAt(oneCell.RowIndex);
+                    dtgvHoaDon.Rows.RemoveAt(oneCell.RowIndex);
             }
         }
 
-        void showTotal()
+        private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            int total = 0;
-            for (int i = 0; i < dataGridView2.Rows.Count; i++)
+            bool inHD = true;
+            if (txtMaKH.Text == "")
             {
-                total += Convert.ToInt32(dataGridView2.Rows[i].Cells[3].Value);
+                msb.Messageshow("Nhập mã khách hàng!");
+                return;
             }
-            txtTongcong.Text = total.ToString();
-        }
+            int cnt = 0;
+            query = string.Format("select count(*) from khachhang where MaKH = {0}", txtMaKH.Text);
+            cnt = Convert.ToInt32(DataProvider.Instance.ExecuteScalar(query));
+            if (cnt == 0)
+            {
+                msb.Messageshow("Khách hàng không tồn tại!");
+                return;
+            }
 
-        private void containedButton1_Click_1(object sender, EventArgs e)
-        {
-            if (dataGridView2.Rows.Count == 0)
+            //Khách hàng vượt quá sô nợ quy định
+            string query1 = string.Format("select NoKH from KHACHHANG where MaKH='{0}'", txtMaKH.Text);
+
+            int noKH = (Int32)DataProvider.Instance.ExecuteScalar(query1);
+            string query2 = string.Format("select GiaTri from THAMSO where TenTS='notoida'");
+            int notoida = (Int32)DataProvider.Instance.ExecuteScalar(query2);
+            if (noKH > notoida)
             {
-                MessageBox.Show("Chưa có sản phẩm nào được chọn");
+                msb.Messageshow("Khách hàng đang nợ quá số tiền quy định. Bạn có muốn thay đổi số tiền nợ?");
+                if (msb.yes == true)
+                {
+                    Dialog_Thaydoithamso d = new Dialog_Thaydoithamso();
+                    d.ShowDialog();
+                }
+                else { return; }
             }
+
             else
             {
-                this.Print_HoaDon();
-                this.PrintPhieuThu();
+                if (dtgvHoaDon.Rows.Count == 0)
+                {
+                    MessageBox.Show("Chưa có sản phẩm nào được chọn");
+                }
+                else
+                {
+                    int total = Convert.ToInt32(txtTongtien.Text);
+                    bool allow = this.Print_HoaDon();
+                    this.PrintPhieuThu(total, allow);
+                }
             }
             
         }
@@ -362,17 +452,11 @@ namespace QuanLyNhaSach.UserControls
 
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnHuy_Click(object sender, EventArgs e)
         {
-
-        }
+            this.Clear();
+        }        
     }
     #endregion
 
-    public class sach
-    {
-        public string Tensach { get; set; }
-        public int SL { get; set; }
-        public int Giatien { get; set; }
-    }
 }
