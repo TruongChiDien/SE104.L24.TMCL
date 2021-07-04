@@ -663,10 +663,7 @@ namespace QuanLyNhaSach.UserControls
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.TextBox txtSoluong;
         private System.Windows.Forms.TextBox txtGiatien;
-<<<<<<< HEAD
-=======
-        //private System.Windows.Forms.TextBox txtTensach;
->>>>>>> 1bca9750bc6606aba7e8f6623a668868123af1da
+
         private System.Windows.Forms.TextBox txtTongcong;
         private MaterialSurface.ContainedButton containedButton1;
         private System.Windows.Forms.TextBox txtMaKH;

@@ -74,6 +74,30 @@ namespace QuanLyNhaSach.Forms
             Load_grid_phieu_nhap();
         }
 
+        private void update_SachTonKho ( string MS,string SL)
+        {
+            string query = @"select TonDau from CTTONKHO where month(ThoiGian) = (select month(getdate()))" + " and MaSach = " + MS;
+            object i = DataProvider.Instance.ExecuteScalar(query);
+            if ( i == null)
+            {
+                query = @" insert into CTTONKHO values((select getdate()," + MS + ",0," + SL + "," + SL + ")";
+                DataProvider.Instance.ExecuteNonQuery(query);
+            }
+            else
+            {
+
+            }
+        }
+        private void update_TonKho(string MaPN)
+        {
+            string query = @"select MaSach, SL from CTPHIEUNHAP where MaPN = " + MaPN;
+            DataTable dt = new DataTable();
+            dt = DataProvider.Instance.ExecuteQuery(query);
+            foreach ( DataRow dr in dt.Rows )
+            {
+                update_SachTonKho(dr["MaSach"].ToString(), dr["SL"].ToString());
+            }
+        }
         private void BtXuatPhieu_Click(object sender, EventArgs e)
         {
             string query = @"select a.MaSach [Mã sách], a.SL [Số lượng], DGNhap [Đơn giá nhập], DGBan [Đơn giá bán]
@@ -100,7 +124,7 @@ namespace QuanLyNhaSach.Forms
             printer.PorportionalColumns = true;
             printer.HeaderCellAlignment = StringAlignment.Near;
             printer.PrintPreviewDataGridView(temp.Getdtgv());
-
+            //update_TonKho(MaPN.ToString());
             this.Dispose();
         }
 

@@ -96,11 +96,10 @@ namespace QuanLyNhaSach.Forms
             {
                 //Check if a book existed
                 query = " SELECT COUNT(1) FROM SACH WHERE MaSach = N'" + TxMasach.Text+"'";
-                int i = 0;
-                i = DataProvider.Instance.ExecuteNonQuery(query);
+                object i = 0;
+                i = DataProvider.Instance.ExecuteScalar(query);
                 //add book
-                MessageBox.Show(i.ToString());
-                if (i == -1 ) 
+                if (int.Parse(i.ToString()) == 0 ) 
                 {
                     query = @"INSERT INTO SACH " +
                                          "VALUES(" + TxMasach.Text + ",'"
@@ -119,22 +118,13 @@ namespace QuanLyNhaSach.Forms
                 else
                 {
                     YesNo MesBox = new YesNo();
-                    MesBox.Messageshow("Mã sách đã tồn tại, bạn có muốn cập nhật lại?");
+                    MesBox.Messageshow("Mã sách đã tồn tại, bạn có muốn thêm?");
                     bool Yes = MesBox.yes;
                     MesBox.Dispose();
                     if (Yes)
                     { 
-                        query = @"DELETE FROM SACH WHERE MaSach = " + TxMasach.Text;
-                        DataProvider.Instance.ExecuteNonQuery(query);
 
-                        query = @"INSERT INTO SACH " +
-                                             "VALUES(" + TxMasach.Text + ",'"
-                                             + TxTenSach.Text + "','"
-                                             + CbTheLoai.Text + "','"
-                                             + TxTacGia.Text + "',"
-                                             + TxGianhap.Text + ","
-                                             + TxGiaban.Text + ","
-                                             + TxSoluong.Text + ")";
+                        query = @" update SACH set SoLuong = Soluong + " + TxSoluong.Text + " where Masach = " + TxMasach.Text;
                         DataProvider.Instance.ExecuteNonQuery(query);
                         query = @"insert into CTPHIEUNHAP values((select max(MaPN) from PHIEUNHAP),"
                                 + TxMasach.Text + ", "
@@ -149,6 +139,26 @@ namespace QuanLyNhaSach.Forms
         {
             if (!isTextConstraintTypeSatisfied())
                 return;
+            string query = @"select SoLuong from SACH where MaSach = '" + TxMasach.Text + "'";
+            object i = DataProvider.Instance.ExecuteScalar(query);
+            query = @"select GiaTri from THAMSO where TenTS = 'MaxTon'";
+            object j = DataProvider.Instance.ExecuteScalar(query);
+            if (i != null)
+                if (int.Parse(i.ToString()) > int.Parse(j.ToString()))
+                    {
+                        YesNo noti = new YesNo();
+                        noti.Messageshow(" Số lượng tồn quá lớn, không được phép sách này nhập!");
+                        return;
+                    }
+            query = @"select GiaTri from THAMSO where TenTS = 'MinNhap'";
+            i = DataProvider.Instance.ExecuteScalar(query);
+            if (int.Parse(i.ToString()) > int.Parse(TxSoluong.Text))
+            {
+                YesNo noti = new YesNo();
+                noti.Messageshow(" Số lượng nhập quá ít! Phải lớn hơn: " + int.Parse(i.ToString()));
+                return;
+            }
+
             add_new_books();
             Binding_the_loai();
             this.Dispose();

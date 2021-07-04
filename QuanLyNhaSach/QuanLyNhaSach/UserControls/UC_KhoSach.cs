@@ -135,5 +135,11 @@ namespace QuanLyNhaSach.UserControls
         {
             Search_book();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ThamSo TS = new ThamSo();
+            TS.ShowDialog();
+        }
     }
 }
