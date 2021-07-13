@@ -85,7 +85,7 @@ namespace QuanLyNhaSach.UserControls
                 msb.Messageshow("Vui lòng nhập đầy đủ thông tin Khách hàng!");
                 return;
             }
-            string query = string.Format("select MaKH from khachhang where DienThoai = {0}", txbDienThoai.Text);
+            string query = string.Format("select MaKH from khachhang where DienThoai = '{0}'", txbDienThoai.Text);
             int check = Convert.ToInt32(DataProvider.Instance.ExecuteScalar(query));
             if (check != 0)
             {

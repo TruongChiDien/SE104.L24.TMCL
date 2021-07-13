@@ -222,12 +222,13 @@ namespace QuanLyNhaSach.UserControls
             if (txtGiatien.Text == "")
             {
                 msb.Messageshow("Vui lòng chọn sách!");
-                if (msb.yes == true)
-                {
-                    Dialog_Thaydoithamso d = new Dialog_Thaydoithamso();
-                    d.ShowDialog();
-                }
-                else { return; }
+                return;
+                //if (msb.yes == true)
+                //{
+                //    Dialog_Thaydoithamso d = new Dialog_Thaydoithamso();
+                //    d.ShowDialog();
+                //}
+                //else { return; }
                 
             }
             
