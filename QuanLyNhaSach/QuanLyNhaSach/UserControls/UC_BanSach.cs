@@ -371,7 +371,7 @@ namespace QuanLyNhaSach.UserControls
             string query1 = string.Format("select NoKH from KHACHHANG where MaKH='{0}'", txtMaKH.Text);
 
             int noKH = (Int32)DataProvider.Instance.ExecuteScalar(query1);
-            string query2 = string.Format("select GiaTri from THAMSO where TenTS='notoida'");
+            string query2 = string.Format("select GiaTri from THAMSO where TenTS='MaxNo'");
             int notoida = (Int32)DataProvider.Instance.ExecuteScalar(query2);
             if (noKH > notoida)
             {

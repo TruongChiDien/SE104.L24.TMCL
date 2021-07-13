@@ -48,7 +48,7 @@ namespace QuanLyNhaSach.Forms
                 msb.Messageshow("Số sách tồn kho tối đa không hợp lệ !");
                 return;
             }
-            string query = string.Format("update THAMSO set GiaTri='{0}' where TenTS='tonkho' ;update THAMSO set GiaTri='{1}' where TenTS='notoida' ",txbTonKhoToiDa.Text,txtNoToiDa.Text);
+            string query = string.Format("update THAMSO set GiaTri='{0}' where TenTS='MaxTon' ;update THAMSO set GiaTri='{1}' where TenTS='MaxNo' ",txbTonKhoToiDa.Text,txtNoToiDa.Text);
 
             DataProvider.Instance.ExecuteNonQuery(query);
 

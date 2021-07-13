@@ -95,7 +95,7 @@ namespace QuanLyNhaSach.UserControls
             query = "INSERT INTO KHACHHANG (HoTenKH, DiaChi, DienThoai, Email, NoKH) VALUES (N'" + txbTenKH.Text + "', N'" + txbDiaChi.Text + "', N'" + txbDienThoai.Text + "', N'" + txbEmail.Text + "', " + Convert.ToInt32(txbNo.Text) + ")";
             DataProvider.Instance.ExecuteNonQuery(query);
 
-            query = string.Format("select MaKH from khachhang where DienThoai = {0}", txbDienThoai.Text);
+            query = string.Format("select MaKH from khachhang where DienThoai = '{0}'", txbDienThoai.Text);
             int MaKH = Convert.ToInt32(DataProvider.Instance.ExecuteScalar(query));
 
             query = string.Format("insert into ctcongno values('{0}/{5}/{1}', {2}, {3}, 0, {4})", DateTime.Now.Month, DateTime.Now.Year, MaKH, txbNo.Text, txbNo.Text, DateTime.Now.Day);
